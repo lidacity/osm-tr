@@ -1,0 +1,23 @@
+.donut-text {
+    color: black;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    line-height: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+.donut-legend {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1px;
+    white-space: nowrap;
+}
+.donut-style {
+    size: 40;
+    fill: rgba(13, 13, 13, 1.0);
+    opacity: 0.7;
+    weight: 8;
+}
