@@ -1,4 +1,5 @@
-const DateTrade = "2025-09-09";
-const DateNominatim = "2025-09-??";
-const DateGeofabrik = "2025-09-??";
-const DateUpdate = "2025-09-??";
+var ModifyDate =
+{
+  "Trade": "2025-09-19",
+  "Update": "2025-09-22 08:12:50Z"
+};
