@@ -112,7 +112,7 @@ function Unpack3NFsub(Properties, Name)
   Value = Data3NF[Name][ID];
   Result.push(Value);
  }
- return Result.join('; ');
+ return Result.join('\n');
 }
 
 
