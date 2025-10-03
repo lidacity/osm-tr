@@ -1,0 +1,4 @@
+﻿loguru
+geojson
+nominatim-api
+GitPython

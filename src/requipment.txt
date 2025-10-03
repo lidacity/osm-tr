@@ -1,0 +1,6 @@
+﻿loguru
+geojson
+nominatim-api
+GitPy
+requests
+haversine
