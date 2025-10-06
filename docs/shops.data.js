@@ -11275,8 +11275,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.575055,
-        53.928872
+        27.573645,
+        53.927479
       ]
     },
     "properties": {
@@ -11295,12 +11295,12 @@ var Data =
         3
       ],
       "format:view.id": 1,
-      "ID": "n5091576923",
-      "shortCoords": "0lrHjvwdjyL8",
+      "ID": null,
+      "shortCoords": "0lrHjpwRu_Kc",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "green"
+      "status": "red"
     }
   },
   {
@@ -96353,7 +96353,7 @@ var Data =
       "contact": "",
       "distance": 1205,
       "food": "",
-      "status": "green"
+      "status": "blue"
     }
   },
   {
@@ -163780,7 +163780,7 @@ var Data =
       "contact": "+375293917948 office@alcotrade.by",
       "distance": 63,
       "food": "",
-      "status": "green"
+      "status": "blue"
     }
   },
   {
@@ -197591,8 +197591,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.473966,
-        53.844645
+        26.763725,
+        54.110275
       ]
     },
     "properties": {
@@ -197611,12 +197611,12 @@ var Data =
         34
       ],
       "format:view.id": 1,
-      "ID": "n13157275239",
-      "shortCoords": "0lrBki~axqIv",
+      "ID": null,
+      "shortCoords": "0lpVkF2vrvBd",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "green"
+      "status": "red"
     }
   },
   {
@@ -216085,8 +216085,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.815194,
-        52.596007
+        24.808635,
+        52.597043
       ]
     },
     "properties": {
@@ -216105,12 +216105,12 @@ var Data =
         2
       ],
       "format:view.id": 1,
-      "ID": "w523656894",
-      "shortCoords": "0kbYc2t~p4Nr",
+      "ID": null,
+      "shortCoords": "0kbYcXV9TeF1",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "green"
+      "status": "red"
     }
   },
   {
@@ -216482,8 +216482,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        25.166519,
-        52.508878
+        25.168231,
+        52.508028
       ]
     },
     "properties": {
@@ -216502,12 +216502,12 @@ var Data =
         2
       ],
       "format:view.id": 1,
-      "ID": "w462514875",
-      "shortCoords": "0kbsc3y0ofN8",
+      "ID": null,
+      "shortCoords": "0kbsc8u01lPL",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "green"
+      "status": "red"
     }
   },
   {
@@ -217300,7 +217300,7 @@ var Data =
       "contact": "",
       "distance": 40,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -297074,9 +297074,9 @@ var Data =
       "ID": "w478353587",
       "shortCoords": "0kSrHN33JoDd",
       "contact": "375298543370 375298543370 felicewuman@mail.ru",
-      "distance": null,
+      "distance": 164,
       "food": "",
-      "status": "green"
+      "status": "blue"
     }
   },
   {
@@ -355253,9 +355253,9 @@ var Data =
       "ID": "w157515540",
       "shortCoords": "0nVqo~8NlFP~",
       "contact": "",
-      "distance": null,
+      "distance": 186,
       "food": "",
-      "status": "green"
+      "status": "blue"
     }
   },
   {
@@ -358638,9 +358638,9 @@ var Data =
       "ID": "n13078003496",
       "shortCoords": "0l4U_wzmVrMM",
       "contact": "",
-      "distance": null,
+      "distance": 230,
       "food": "",
-      "status": "green"
+      "status": "blue"
     }
   },
   {
@@ -367535,9 +367535,9 @@ var Data =
       "ID": "w294951371",
       "shortCoords": "0l7QJIY_4ZCG",
       "contact": "+375292301492",
-      "distance": null,
+      "distance": 0,
       "food": "",
-      "status": "green"
+      "status": "blue"
     }
   },
   {
@@ -464264,8 +464264,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        25.31728,
-        53.896931
+        25.31722,
+        53.896941
       ]
     },
     "properties": {
@@ -464283,12 +464283,12 @@ var Data =
         21
       ],
       "format:view.id": 1,
-      "ID": "n5666477321",
-      "shortCoords": "0lhEFbK8oRGy",
+      "ID": null,
+      "shortCoords": "0lhEFbKe~8Gy",
       "contact": "",
-      "distance": 4,
+      "distance": null,
       "food": "",
-      "status": "green"
+      "status": "red"
     }
   },
   {
@@ -465464,9 +465464,9 @@ var Data =
       "ID": "w264435610",
       "shortCoords": "0liiGV1MoeFd",
       "contact": "",
-      "distance": null,
+      "distance": 0,
       "food": "",
-      "status": "green"
+      "status": "blue"
     }
   },
   {
@@ -484980,9 +484980,9 @@ var Data =
       "ID": "w494512391",
       "shortCoords": "0lnoZLtevlC7",
       "contact": "",
-      "distance": null,
+      "distance": 0,
       "food": "",
-      "status": "green"
+      "status": "orange"
     }
   },
   {
@@ -487256,8 +487256,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.972407,
-        53.954398
+        24.969179,
+        53.954891
       ]
     },
     "properties": {
@@ -487276,12 +487276,12 @@ var Data =
         41
       ],
       "format:view.id": 1,
-      "ID": "n13176252339",
-      "shortCoords": "0lLlWAcslFAH",
+      "ID": null,
+      "shortCoords": "0lLlUpQAEzKU",
       "contact": "vor_torgotd@oblpo.by",
       "distance": null,
       "food": "",
-      "status": "green"
+      "status": "red"
     }
   },
   {
@@ -553471,9 +553471,9 @@ var Data =
       "ID": "w498170874",
       "shortCoords": "0lsXL5pgp_Oa",
       "contact": "",
-      "distance": null,
+      "distance": 0,
       "food": "",
-      "status": "green"
+      "status": "orange"
     }
   },
   {
@@ -553504,9 +553504,9 @@ var Data =
       "ID": "n6782296964",
       "shortCoords": "0lnq1c9utXHP",
       "contact": "",
-      "distance": null,
+      "distance": 5,
       "food": "",
-      "status": "green"
+      "status": "orange"
     }
   },
   {
@@ -560334,9 +560334,9 @@ var Data =
       "ID": "w618073513",
       "shortCoords": "0lsj43AjjANw",
       "contact": "",
-      "distance": null,
+      "distance": 128,
       "food": "",
-      "status": "green"
+      "status": "blue"
     }
   },
   {
@@ -680259,8 +680259,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        23.824808,
-        52.395313
+        23.824782,
+        52.389277
       ]
     },
     "properties": {
@@ -680279,12 +680279,12 @@ var Data =
         5
       ],
       "format:view.id": 1,
-      "ID": "w184447628",
-      "shortCoords": "0kTqEkjxgVJI",
+      "ID": "w1192343262",
+      "shortCoords": "0kTqBhnOYiIZ",
       "contact": "+375173965297 office@energo-oil.by",
-      "distance": null,
+      "distance": 416,
       "food": "",
-      "status": "green"
+      "status": "blue"
     }
   },
   {
