@@ -10325,7 +10325,7 @@ var Data =
       "contact": "+375173434155 +375173092868 AZS-68@lukoil.by",
       "distance": 7,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -11275,8 +11275,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.573645,
-        53.927479
+        27.575055,
+        53.928872
       ]
     },
     "properties": {
@@ -11295,12 +11295,12 @@ var Data =
         3
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lrHjpwRu_Kc",
+      "ID": "n5091576923",
+      "shortCoords": "0lrHjvwdjyL8",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -16889,7 +16889,7 @@ var Data =
       "contact": "",
       "distance": 8,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -35728,7 +35728,7 @@ var Data =
       "contact": "info@eurotorg.by",
       "distance": 21,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -47232,7 +47232,7 @@ var Data =
       "contact": "info@eurotorg.by",
       "distance": 17,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -57146,7 +57146,7 @@ var Data =
       "contact": "info@eurotorg.by",
       "distance": 27,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -61668,7 +61668,7 @@ var Data =
       "contact": "info@eurotorg.by",
       "distance": 75,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -68027,7 +68027,7 @@ var Data =
       "contact": "info@sosedi.by",
       "distance": 4,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -81385,8 +81385,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.556052,
-        53.908079
+        27.556034,
+        53.907748
       ]
     },
     "properties": {
@@ -81403,12 +81403,12 @@ var Data =
         25
       ],
       "format:view.id": 3,
-      "ID": null,
-      "shortCoords": "0lrGxTmzDBE5",
+      "ID": "n9504278687",
+      "shortCoords": "0lrGxS20MEEt",
       "contact": "",
-      "distance": null,
+      "distance": 36,
       "food": "",
-      "status": "red"
+      "status": "orange"
     }
   },
   {
@@ -84930,7 +84930,7 @@ var Data =
       "contact": "brt@brt.by",
       "distance": 24,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -117949,7 +117949,7 @@ var Data =
       "contact": "info@dobronom.by",
       "distance": 11,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -129483,8 +129483,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.556034,
-        53.907748
+        27.556515,
+        53.928124
       ]
     },
     "properties": {
@@ -129502,10 +129502,10 @@ var Data =
         7
       ],
       "format:view.id": 1,
-      "ID": "n9504278687",
-      "shortCoords": "0lrGxS20MEEt",
+      "ID": "n13081328701",
+      "shortCoords": "0lrHhMQJyIDE",
       "contact": "info@dobronom.by",
-      "distance": 1603,
+      "distance": 1125,
       "food": "",
       "status": "blue"
     }
@@ -130564,7 +130564,7 @@ var Data =
       "contact": "+375172359966 info@dobronom.by",
       "distance": 25,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -135024,7 +135024,7 @@ var Data =
       "contact": "+375172359966 info@dobronom.by",
       "distance": 0,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -135771,8 +135771,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.556514,
-        53.928105
+        27.556515,
+        53.928124
       ]
     },
     "properties": {
@@ -135790,12 +135790,12 @@ var Data =
         7
       ],
       "format:view.id": 1,
-      "ID": "n10113897290",
-      "shortCoords": "0lrHhMFdx_DB",
+      "ID": "n13081328701",
+      "shortCoords": "0lrHhMQJyIDE",
       "contact": "+375172359966 info@dobronom.by",
       "distance": 12,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -147201,8 +147201,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.556052,
-        53.908079
+        27.556034,
+        53.907748
       ]
     },
     "properties": {
@@ -147220,12 +147220,12 @@ var Data =
         77
       ],
       "format:view.id": 2,
-      "ID": null,
-      "shortCoords": "0lrGxTmzDBE5",
+      "ID": "n9504278687",
+      "shortCoords": "0lrGxS20MEEt",
       "contact": "andrey@technologyalliance.by",
-      "distance": null,
+      "distance": 36,
       "food": "",
-      "status": "red"
+      "status": "orange"
     }
   },
   {
@@ -148677,7 +148677,7 @@ var Data =
       "contact": "info@sosedi.by",
       "distance": 29,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -148869,7 +148869,7 @@ var Data =
       "contact": "info@sosedi.by",
       "distance": 273,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -157882,7 +157882,7 @@ var Data =
       "contact": "",
       "distance": 44,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -161826,7 +161826,7 @@ var Data =
       "contact": "+375293917948 fm_minskdolginovsky@alcotrade.by",
       "distance": 19,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -224884,7 +224884,7 @@ var Data =
       "contact": "",
       "distance": 383,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -280279,8 +280279,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.556405,
-        53.926435
+        27.572959,
+        53.926811
       ]
     },
     "properties": {
@@ -280298,12 +280298,12 @@ var Data =
         7
       ],
       "format:view.id": 1,
-      "ID": "n1845147133",
-      "shortCoords": "0lrHhCqygaAq",
+      "ID": "n11107427506",
+      "shortCoords": "0lrHjoQXATKE",
       "contact": "",
       "distance": 1134,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -280335,7 +280335,7 @@ var Data =
       "contact": "",
       "distance": 19,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -281071,7 +281071,7 @@ var Data =
       "contact": "",
       "distance": 16,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -287452,7 +287452,7 @@ var Data =
       "contact": "+375293295281 mag211.zav.mps@svetofor-rb.by",
       "distance": 10,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -328354,7 +328354,7 @@ var Data =
       "contact": "client@unistore.by",
       "distance": 10,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -331489,7 +331489,7 @@ var Data =
       "contact": "client@unistore.by",
       "distance": 15,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -333403,7 +333403,7 @@ var Data =
       "contact": "client@unistore.by",
       "distance": 10,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -585872,7 +585872,7 @@ var Data =
       "contact": "+375259309450",
       "distance": 19,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -678638,7 +678638,7 @@ var Data =
       "contact": "",
       "distance": 10,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -684504,7 +684504,7 @@ var Data =
       "contact": "",
       "distance": 12,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
