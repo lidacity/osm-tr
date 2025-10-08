@@ -356,7 +356,7 @@ var Data =
       "contact": "traktorozav@mail.ru",
       "distance": 1,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -13073,8 +13073,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.606686,
-        53.89789
+        27.612837,
+        53.884063
       ]
     },
     "properties": {
@@ -13093,10 +13093,10 @@ var Data =
         48
       ],
       "format:view.id": 1,
-      "ID": "n4219062893",
-      "shortCoords": "0lrMF8l1tlPJ",
+      "ID": "n4215297693",
+      "shortCoords": "0lrMDOEeb5Dh",
       "contact": "",
-      "distance": 1212,
+      "distance": 386,
       "food": "",
       "status": "blue"
     }
@@ -13106,8 +13106,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.613027,
-        53.884198
+        27.612837,
+        53.884063
       ]
     },
     "properties": {
@@ -13126,12 +13126,12 @@ var Data =
         48
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lrMDOSlMnDk",
+      "ID": "n4215297693",
+      "shortCoords": "0lrMDOEeb5Dh",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -13139,8 +13139,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.612837,
-        53.884063
+        27.61909,
+        53.889252
       ]
     },
     "properties": {
@@ -13159,12 +13159,12 @@ var Data =
         19
       ],
       "format:view.id": 1,
-      "ID": "n4215297693",
-      "shortCoords": "0lrMDOEeb5Dh",
+      "ID": "n4317973602",
+      "shortCoords": "0lrMGr1suHK9",
       "contact": "375172466966 mtztorgservis@mail.ru",
-      "distance": 698,
+      "distance": null,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -16857,7 +16857,7 @@ var Data =
       "contact": "",
       "distance": 41,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -34447,7 +34447,7 @@ var Data =
       "contact": "info@eurotorg.by",
       "distance": 18,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -44988,7 +44988,7 @@ var Data =
       "contact": "info@eurotorg.by",
       "distance": 9,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -46834,7 +46834,7 @@ var Data =
       "contact": "+375447888095 info@eurotorg.by",
       "distance": 3,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -60456,7 +60456,7 @@ var Data =
       "contact": "info@eurotorg.by",
       "distance": 0,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -61997,7 +61997,7 @@ var Data =
       "contact": "+375447888095 info@eurotorg.by",
       "distance": 10,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -66410,7 +66410,7 @@ var Data =
       "contact": "info@sosedi.by",
       "distance": 7,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -67202,7 +67202,7 @@ var Data =
       "contact": "info@sosedi.by",
       "distance": 29,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -70063,7 +70063,7 @@ var Data =
       "contact": "",
       "distance": 0,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -71018,7 +71018,7 @@ var Data =
       "contact": "",
       "distance": 21,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -74376,7 +74376,7 @@ var Data =
       "contact": "+375445654463 +375445654463 info@sosedi.by",
       "distance": 18,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -104096,8 +104096,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.102868,
-        54.263845
+        27.102843,
+        54.263838
       ]
     },
     "properties": {
@@ -104117,7 +104117,7 @@ var Data =
       ],
       "format:view.id": 1,
       "ID": "n4996500625",
-      "shortCoords": "0lskcvnyXnL5",
+      "shortCoords": "0lskcvnwEEL5",
       "contact": "info@dobronom.by",
       "distance": null,
       "food": "",
@@ -133668,7 +133668,7 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.581219,
+        27.581218,
         53.896323
       ]
     },
@@ -133688,11 +133688,11 @@ var Data =
       ],
       "format:view.id": 1,
       "ID": "n4262432793",
-      "shortCoords": "0lrGtwBTvjMA",
+      "shortCoords": "0lrGtwBTvLMA",
       "contact": "info@dobronom.by",
       "distance": 10,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -141862,7 +141862,7 @@ var Data =
       "contact": "",
       "distance": 17,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -145103,8 +145103,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.608644,
-        53.941427
+        27.608678,
+        53.941373
       ]
     },
     "properties": {
@@ -145123,12 +145123,12 @@ var Data =
         94
       ],
       "format:view.id": 5,
-      "ID": null,
-      "shortCoords": "0lrNHRVBFaEV",
+      "ID": "n7716628786",
+      "shortCoords": "0lrNHRUSmXEV",
       "contact": "",
-      "distance": null,
+      "distance": 6,
       "food": "",
-      "status": "red"
+      "status": "orange"
     }
   },
   {
@@ -163133,7 +163133,7 @@ var Data =
       "contact": "+375293917948 fm_minskvaneeva@alcotrade.by",
       "distance": 32,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -191232,8 +191232,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.608644,
-        53.941427
+        27.608678,
+        53.941373
       ]
     },
     "properties": {
@@ -191252,12 +191252,12 @@ var Data =
         96
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lrNHRVBFaEV",
+      "ID": "n7716628786",
+      "shortCoords": "0lrNHRUSmXEV",
       "contact": "yrsa@tut.by",
-      "distance": null,
+      "distance": 6,
       "food": "",
-      "status": "red"
+      "status": "orange"
     }
   },
   {
@@ -205459,7 +205459,7 @@ var Data =
       "contact": "375291965933@yandex.by",
       "distance": 13,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -205467,8 +205467,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.581285,
-        53.896248
+        27.581495,
+        53.896176
       ]
     },
     "properties": {
@@ -205486,12 +205486,12 @@ var Data =
         5
       ],
       "format:view.id": 1,
-      "ID": "n12806388654",
-      "shortCoords": "0lrGtwA2FNMA",
+      "ID": "n305683050",
+      "shortCoords": "0lrGtlX95yJV",
       "contact": "375291965933 375296655025 375291965933@yandex.by",
       "distance": 38,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -332308,7 +332308,7 @@ var Data =
       "contact": "client@unistore.by",
       "distance": 42,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -397500,8 +397500,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.18191,
-        52.187889
+        28.183914,
+        52.187801
       ]
     },
     "properties": {
@@ -397520,12 +397520,12 @@ var Data =
         23
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0mQFySK1WwEi",
+      "ID": "w1436202920",
+      "shortCoords": "0mQFyN~Xw9Df",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -397723,7 +397723,7 @@ var Data =
       "contact": "",
       "distance": 297,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -406589,8 +406589,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.292691,
-        52.106615
+        28.293264,
+        52.106158
       ]
     },
     "properties": {
@@ -406609,12 +406609,12 @@ var Data =
         88
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0mQD7ZUo64GV",
+      "ID": "w318673100",
+      "shortCoords": "0mQD7ZgT3cGY",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -434155,8 +434155,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.292691,
-        52.106615
+        28.292224,
+        52.106951
       ]
     },
     "properties": {
@@ -434175,12 +434175,12 @@ var Data =
         45
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0mQD7ZUo64GV",
+      "ID": "w318673017",
+      "shortCoords": "0mQD7WpXWyFq",
       "contact": "korolvalentina1954@bk.ru",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -434221,8 +434221,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.190033,
-        52.18829
+        28.179261,
+        52.188918
       ]
     },
     "properties": {
@@ -434241,12 +434241,12 @@ var Data =
         45
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0mQFy6Z5j7Om",
+      "ID": "w652073850",
+      "shortCoords": "0mQFw7wV5RO8",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -434254,8 +434254,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.18191,
-        52.187889
+        28.178037,
+        52.189591
       ]
     },
     "properties": {
@@ -434274,12 +434274,12 @@ var Data =
         45
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0mQFySK1WwEi",
+      "ID": "w652073855",
+      "shortCoords": "0mQFw8w_nOPM",
       "contact": "sevanprod@mail.ru",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -570886,8 +570886,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.608644,
-        53.941427
+        27.608678,
+        53.941373
       ]
     },
     "properties": {
@@ -570905,12 +570905,12 @@ var Data =
         175
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lrNHRVBFaEV",
+      "ID": "n7716628786",
+      "shortCoords": "0lrNHRUSmXEV",
       "contact": "Pozhiprod@tut.by",
-      "distance": null,
+      "distance": 6,
       "food": "",
-      "status": "red"
+      "status": "orange"
     }
   },
   {
@@ -683603,7 +683603,7 @@ var Data =
       "contact": "sp03.upr@almi.by",
       "distance": 36,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
