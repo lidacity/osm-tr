@@ -539099,8 +539099,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.452317,
-        53.458716
+        26.452339,
+        53.458713
       ]
     },
     "properties": {
@@ -539121,7 +539121,7 @@ var Data =
       ],
       "format:view.id": 1,
       "ID": "n6898758613",
-      "shortCoords": "0ligv2~rYiNv",
+      "shortCoords": "0ligv8VBJ5PF",
       "contact": "a600027@beloil.by",
       "distance": null,
       "food": "",
@@ -543908,7 +543908,7 @@ var Data =
       "contact": "",
       "distance": 52,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
