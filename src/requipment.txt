@@ -4,3 +4,4 @@ nominatim-api
 GitPy
 requests
 haversine
+python-dateutil

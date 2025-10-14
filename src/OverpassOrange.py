@@ -2,8 +2,6 @@
 
 import os
 import sys
-import geojson
-import html
 from datetime import datetime
 
 from loguru import logger
@@ -13,7 +11,8 @@ from haversine import haversine
 import Utils
 
 
-Overpass = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+#Overpass = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+URL = "http://localhost:8091/api/interpreter"
 
 Shop = {
  'Прочие продовольственные неспециализорованные магазины со смешанным ассортиментом товаров, не включенные в другие типы': ["shop=convenience"],
@@ -154,8 +153,9 @@ def GetCoord(Lat, Lon, Elements):
 #https://maps.mail.ru/osm/tools/overpass/
 def GetBlue(Lat, Lon, Names):
  for Name in Names:
-  URL = f"{Overpass}?data=[out:json];area[name='Беларусь'];(node['name'~'{Name}'](around:1000.0,{Lat},{Lon});node['name:ru'~'{Name}'](around:1000.0,{Lat},{Lon}););out qt center;"
-  Response = requests.get(URL)
+  #URL = f"{Overpass}?data=[out:json];area[name='Беларусь'];(node['name'~'{Name}'](area)(around:1000.0,{Lat},{Lon});node['name:ru'~'{Name}'](area)(around:1000.0,{Lat},{Lon}););out qt center;"
+  Overpass = f"[out:json];(node['name'~'{Name}'](around:1000.0,{Lat},{Lon});node['name:ru'~'{Name}'](around:1000.0,{Lat},{Lon}););out qt center;"
+  Response = requests.get(URL, params={'data': Overpass})
   if Response.status_code == 200:
    Result = Response.json()
    if len(Result['elements']) > 0:
@@ -172,15 +172,16 @@ def GetKeys(Key, Properties, NF3, Array):
 
 
 #https://maps.mail.ru/osm/tools/overpass/
-def GetOrange(Lat, Lon, Keys):
- Query = "[out:json];area[name='Беларусь'];("
+def GetGold(Lat, Lon, Keys):
+ #Query = "[out:json];area[name='Беларусь'];("
+ #Query += f"node[{Key}](area)(around:100.0,{Lat},{Lon});"
+ #URL = f"{Overpass}?data={Query}"
+ Overpass = "[out:json];("
  for Key in Keys:
-  Query += f"node[{Key}](around:100.0,{Lat},{Lon});"
- Query += ");out qt center;"
+  Overpass += f"node[{Key}](around:100.0,{Lat},{Lon});"
+ Overpass += ");out qt center;"
  #
- URL = f"{Overpass}?data={Query}"
- #
- Response = requests.get(URL)
+ Response = requests.get(URL, params={'data': Overpass})
  if Response.status_code == 200:
   Result = Response.json()
   if len(Result['elements']) > 0:
@@ -190,22 +191,20 @@ def GetOrange(Lat, Lon, Keys):
 
 
 def Generate():
-# Date = GetDateFromFileName(FileName)
-# Utils.SetDate('Nominatim', Date)
-# DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
-# Utils.SetDate('Nominatim', DateTime)
+ DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
+ Utils.SetDate('Address', DateTime)
  #
  logger.info("read js")
  Data = Utils.LoadGeoJson(os.path.join("..", ".temp", "shops.3.js"), "Data")
  NF3 = Utils.LoadJson(os.path.join("..", "docs", "shops.3nf.js"), "Data3NF")
  #
- logger.info("parse red")
+ logger.info("parse orange")
  #
  for Index, Feature in enumerate(Data['features']):
   Geometry, Properties = Feature['geometry'], Feature['properties']
   Status = Properties.get('status', "")
-  if Status in ["red"] and Properties['addr:accuracy']:
-   Name = [ Properties[Key] for Key in ['name', 'alt_name', 'official_name'] if Key in Properties ]
+  if Status in ["orange"]:
+   Name = [ Utils.DeNormalize(Properties[Key]) for Key in ['name', 'alt_name', 'official_name'] if Key in Properties ]
    if Name:
     Lon, Lat = Geometry['coordinates']
     Coord = GetBlue(Lat, Lon, Name)
@@ -213,16 +212,16 @@ def Generate():
      Properties['ID'] = Coord['ID']
      Geometry['coordinates'] = Coord['Coordinates']
      Properties['status'] = "blue"
-     logger.info(f"{Properties.get('ref:BY:trade_register', "?")} {Properties.get('name', "")} blue = {Lon}, {Lat}")
+     #logger.info(f"{Properties.get('ref:BY:trade_register', "?")} {Properties.get('name', "")} blue = {Lon}, {Lat}")
     else:
      Keys = GetKeys('amenity:type', Properties, NF3, Shop) + GetKeys('cafe:type', Properties, NF3, Cafe)
      if Keys:
-      Coord = GetOrange(Lat, Lon, Keys)
+      Coord = GetGold(Lat, Lon, Keys)
       if Coord is not None:
        Properties['ID'] = Coord['ID']
        Geometry['coordinates'] = Coord['Coordinates']
-       Properties['status'] = "orange"
-       logger.info(f"{Properties.get('ref:BY:trade_register', "?")} {Properties.get('name', "")} orange = {Lon}, {Lat}")
+       Properties['status'] = "gold"
+       #logger.info(f"{Properties.get('ref:BY:trade_register', "?")} {Properties.get('name', "")} orange = {Lon}, {Lat}")
   #
   if Index % 10000 == 0:
    if Index > 0:
@@ -240,7 +239,7 @@ if __name__ == "__main__":
  #
  logger.add(os.path.join("..", ".log", "tr.log"))
  if not Utils.RunOnce():
-  logger.info("Start overpass red to blue/orange")
+  logger.info("Start overpass orange to blue/gold")
   Generate()
-  logger.info("Done overpass red to blue/orange")
+  logger.info("Done overpass orange to blue/gold")
 

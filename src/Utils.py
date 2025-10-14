@@ -2,7 +2,6 @@ import os
 import html
 import json
 import geojson
-import re
 
 from loguru import logger
 
@@ -94,6 +93,13 @@ def Normalize(Text):
  return html.escape(Text)
 
 
+def DeNormalize(Text):
+ Text = Text.replace("&quot;", "")
+# Text = Text.replace("", "")
+ return Text
+# return html.unescape(Text)
+
+
 def SaveJson(FileName, Name, Json):
  with open(FileName, "w", encoding='utf-8') as File:
   File.write(f"const {Name} =\n")
@@ -144,6 +150,68 @@ def SetDate(Key, Date):
 def GetDate(Key):
  Dates = LoadJson(os.path.join("docs", "date.js"), "ModifyDate");
  return Dates.get(Key, "")
+
+
+def NormalizeAddress(Address):
+ Result = []
+ for Index, Item in enumerate(Address):
+  Item = Item.strip()
+  if not(Index == 0 and Item.isdigit()):
+   # выдаліць пачатковыя літары
+   for Start in ["с/с", "аг.", "г.", "д.", "пр-т", "пр.", "Пр.", "Пл.", "тр-т", "б-р", "ул.", "ул ", "пер.", "Пер.", "переулок", "пр-д", "проспект", "улица", "Пр-т.", "Пр-т", "Им.", "гп ", "район", "Ст.", ]:
+    if Item[:len(Start)] == Start:
+     Item = Item[len(Start):]
+   Item = Item.strip()
+   # выдаліць канцавыя літары
+   for End in ["обл.", "р-н.", "р-н", "А.А.", "с/с", ]:
+    if Item[-len(End):] == End:
+     Item = Item[:-len(End)]
+   Item = Item.strip()
+   # выдаліць, калі пачынаецца з
+   for Start in ["ком.", "оф.", "каб.", "пом.", "кв.", "район", "офис", "административное", "помещение", "Инв.", "кабинет", "этаж", "торговый объект", "нежилое помещение", "нежилое пом.", ]:
+    if Item[:len(Start)] == Start:
+     Item = ""
+   Item = Item.strip()
+   # выдаліць, калі заканчваецца на
+   for End in ["с-с.", "этаж", "помещение", "зданию", " под", " эт", ]:
+    if Item[-len(End):] == End:
+     Item = ""
+   Item = Item.strip()
+   # замяніць некаторыя супадзенні
+   for Replace in ["р-н Центральный (г. Минск)", "р-н Ленинский (г. Минск)", "р-н Советский (г.Минск)", "р-н Московский (г. Минск)", "р-н Октябрьский (г. Минск)", "р-н Первомайский (г. Минск)", "р-н Партизанский (г. Минск)", "р-н Фрунзенский (г. Минск)", "р-н Заводской (г. Минск)", "р-н Ленинский (г. Могилев)", "р-н Октябрьский (г. Могилев)", "р-н Ленинский (г. Брест)", "р-н Московский (г. Брест)", "р-н Октябрьский (г. Витебск)",	"р-н Первомайский (г. Витебск)", "р-н Железнодорожный (г. Витебск)", "р-н Ленинский (г. Гродно)", "р-н Октябрьский (г. Гродно)", "р-н Центральный (г. Гомель)", "р-н Советский (г. Гомель)", "р-н Железнодорожный (г. Гомель)",  "р-н Новобелицкий (г. Гомель)", "р-н Ленинский (г. Бобруйск)", "р-н Первомайский (г. Бобруйск)", ]:
+    Item = Item.replace(Replace, "")
+   for Replace in ["техподполье", "&quot;", "Газ.", "АХЗ УП Ватра", "(открытая площадка)", "(аг.)", ]:
+    Item = Item.replace(Replace, "")
+   Item = Item.strip()
+   # выдаліць пачатковыя літары яшчэ раз
+   for Start in ["Б.", "В.", "Ф.", "П.", "К.", "Я.", "Э.", "Д.", "М.", "Л.", "О.", "Зм.", "С.", "А.", "Ю.", "Ак.", "И.", "Е.", "З.", ]:
+    if Item[:len(Start)] == Start:
+     Item = Item[len(Start):]
+   #
+   if Item:
+    Result.append(Item)
+ #
+ if Result:
+  Result.append("")
+ return Result
+
+
+def GetAddress(Properties, Full=True):
+ Result = []
+ # адрас з частак
+ Addr = [ Properties[Key] for Key in [ 'addr:region', 'addr:district', 'addr:city', 'addr:street', 'addr:housenumber' ] if Key in Properties ]
+ Addr = NormalizeAddress(Addr)
+ if Addr:
+  Result.append(Addr)
+ # поўны адрас
+ if Full:
+  if 'addr:full' in Properties:
+   Addr = Properties['addr:full'].split(",")
+   Addr = NormalizeAddress(Addr)
+   if Addr:
+    Result.append(Addr)
+ #
+ return Result
 
 
 def RunOnce():

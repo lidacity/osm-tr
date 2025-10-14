@@ -9,7 +9,7 @@ import git
 def GitPush(Message):
  logger.info("Git Push")
  try:
-  Path = os.path.dirname(os.path.abspath(__file__))
+  Path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
   Repo = git.Repo(Path)
   Repo.git.add("docs")
   #Repo.git.add(update=True)

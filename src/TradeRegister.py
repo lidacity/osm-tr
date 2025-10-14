@@ -1,8 +1,8 @@
 #!.venv/bin/python
 
-import os, sys
+import os
+import sys
 import glob
-import json
 import geojson
 from datetime import datetime
 from loguru import logger
@@ -30,7 +30,7 @@ def GetDateFromFileName(FileName):
 
 
 def GetLastFile():
- ListOfFiles = glob.glob(os.path.join(".data", "*.csv"))
+ ListOfFiles = glob.glob(os.path.join("..", ".data", "*.csv"))
  return max(ListOfFiles, key=os.path.getctime)
 
 
@@ -87,7 +87,7 @@ def Generate(FileName):
      elif Key in Float:
       Items[Key] = float(Value)
      elif Key in Bool:
-      Items[Key] = True if Value == "Да" else False if Value == "Нет" else print(f"{Key}: неизвестный bool {Value}")
+      Items[Key] = True if Value == "Да" else False if Value == "Нет" else logger.error(f"{Key}: неизвестный bool {Value}")
      elif Key in Date:
       Items[Key] = ConvertDate(Value)
      else:
@@ -101,8 +101,8 @@ def Generate(FileName):
  #
  logger.info("write js")
  FeatureCollection = geojson.FeatureCollection(Features)
- Utils.SaveJson(os.path.join("docs", "shops.3nf.js"), "Data3NF", Base3NF)
- Utils.SaveGeoJson(os.path.join(".temp", f"shops.1.js"), "Data", FeatureCollection)
+ Utils.SaveJson(os.path.join("..", "docs", "shops.3nf.js"), "Data3NF", Base3NF)
+ Utils.SaveGeoJson(os.path.join("..", ".temp", f"shops.1.js"), "Data", FeatureCollection)
 
 
 
@@ -110,15 +110,14 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- Path = os.path.dirname(os.path.abspath(__file__))
- logger.add(os.path.join(Path, ".log", "tr.log"))
+ logger.add(os.path.join("..", ".log", "tr.log"))
  if not Utils.RunOnce():
   logger.info("Start trade register")
   FileName = GetLastFile()
   Temp = Utils.GetDate('File')
   if Temp != FileName:
-   Utils.SetDate('File', FileName)
    Generate(FileName)
+   Utils.SetDate('File', FileName)
   else:
    logger.warning("already converted")
   logger.info("Done trade register")
