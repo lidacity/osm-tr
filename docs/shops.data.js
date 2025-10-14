@@ -16184,8 +16184,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.565612,
-        53.936426
+        27.565558,
+        53.936403
       ]
     },
     "properties": {
@@ -16203,12 +16203,12 @@ var Data =
         22
       ],
       "format:view.id": 1,
-      "ID": "n6649066987",
-      "shortCoords": "0lrHmUydjXFM",
+      "ID": "n1024918492",
+      "shortCoords": "0lrHmUyRCRFM",
       "contact": "",
       "distance": 11,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -35868,8 +35868,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.477874,
-        53.860531
+        27.459917,
+        53.862368
       ]
     },
     "properties": {
@@ -35889,12 +35889,12 @@ var Data =
         16
       ],
       "format:view.id": 1,
-      "ID": "n3862622544",
-      "shortCoords": "0lrBzAoTtAAK",
+      "ID": "w49845375",
+      "shortCoords": "0lrBbO2g6WDt",
       "contact": "info@eurotorg.by",
       "distance": 503,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -37436,7 +37436,7 @@ var Data =
       "contact": "+375447888307 info@eurotorg.by",
       "distance": 18,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -45259,8 +45259,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.983413,
-        52.53963
+        24.983656,
+        52.539608
       ]
     },
     "properties": {
@@ -45279,7 +45279,7 @@ var Data =
       ],
       "format:view.id": 1,
       "ID": "n7760316868",
-      "shortCoords": "0kblYQNqPlED",
+      "shortCoords": "0kblYQkctQEJ",
       "contact": "info@eurotorg.by",
       "distance": null,
       "food": "",
@@ -52522,8 +52522,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        30.884988,
-        52.283876
+        30.886024,
+        52.282897
       ]
     },
     "properties": {
@@ -52542,12 +52542,12 @@ var Data =
         43
       ],
       "format:view.id": 1,
-      "ID": "w804534815",
-      "shortCoords": "0ma7bX9EtHF~",
+      "ID": "n3779493556",
+      "shortCoords": "0ma7bclXBHHJ",
       "contact": "info@eurotorg.by",
       "distance": 45,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -55870,8 +55870,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.459917,
-        53.862368
+        27.467575,
+        53.865438
       ]
     },
     "properties": {
@@ -55891,10 +55891,10 @@ var Data =
         16
       ],
       "format:view.id": 1,
-      "ID": "w49845375",
-      "shortCoords": "0lrBbO2g6WDt",
+      "ID": "n8556326515",
+      "shortCoords": "0lrBxXJW5UFy",
       "contact": "info@eurotorg.by",
-      "distance": 601,
+      "distance": 1152,
       "food": "",
       "status": "blue"
     }
@@ -84358,7 +84358,7 @@ var Data =
       "contact": "",
       "distance": 2,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -84597,8 +84597,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.501184,
-        53.92085
+        27.501149,
+        53.92081
       ]
     },
     "properties": {
@@ -84618,7 +84618,7 @@ var Data =
       ],
       "format:view.id": 1,
       "ID": "w198329111",
-      "shortCoords": "0lrE~X9FF2F~",
+      "shortCoords": "0lrE~X29egF9",
       "contact": "",
       "distance": null,
       "food": "",
@@ -140059,8 +140059,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.499438,
-        53.874403
+        27.499021,
+        53.874898
       ]
     },
     "properties": {
@@ -140077,12 +140077,12 @@ var Data =
         1
       ],
       "format:view.id": 1,
-      "ID": "n11168856637",
-      "shortCoords": "0lrB~QOsmbED",
+      "ID": "n13197801182",
+      "shortCoords": "0lrB~RCKNNEQ",
       "contact": "",
       "distance": 44,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -187676,8 +187676,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.475479,
-        53.859165
+        27.486649,
+        53.869857
       ]
     },
     "properties": {
@@ -187696,12 +187696,12 @@ var Data =
         54
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lrBw_AcCDPg",
+      "ID": "n9071243428",
+      "shortCoords": "0lrB27TMylO0",
       "contact": "strelsky@milkimport.ru",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -188000,8 +188000,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.565672,
-        53.936389
+        27.555253,
+        53.920404
       ]
     },
     "properties": {
@@ -188020,10 +188020,10 @@ var Data =
         23
       ],
       "format:view.id": 1,
-      "ID": "n1024918492",
-      "shortCoords": "0lrHmUyneNFM",
+      "ID": "n13078052123",
+      "shortCoords": "0lrG1XEr9oFx",
       "contact": "",
-      "distance": 1145,
+      "distance": 1197,
       "food": "",
       "status": "blue"
     }
@@ -267188,7 +267188,7 @@ var Data =
       "contact": "",
       "distance": 33,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -448245,8 +448245,8 @@ var Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        30.883511,
-        52.28059
+        30.884988,
+        52.283876
       ]
     },
     "properties": {
@@ -448265,12 +448265,12 @@ var Data =
         19
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0ma7bFjKrPBY",
+      "ID": "w804534815",
+      "shortCoords": "0ma7bX9EtHF~",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -685056,7 +685056,7 @@ var Data =
       "contact": "uprmag.as5@almi.by",
       "distance": 9,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
