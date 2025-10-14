@@ -54185,7 +54185,7 @@ const Data =
       "contact": "info@eurotorg.by",
       "distance": 5,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -62360,7 +62360,7 @@ const Data =
       "contact": "AkulinT@eurotorg.by",
       "distance": 2,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -112204,8 +112204,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        23.752111,
-        52.071472
+        23.752814,
+        52.073156
       ]
     },
     "properties": {
@@ -112224,8 +112224,8 @@ const Data =
         32
       ],
       "format:view.id": 3,
-      "ID": "n8665564893",
-      "shortCoords": "0kSoXu4Q12Lu",
+      "ID": "n7987391800",
+      "shortCoords": "0kSodRIDdrES",
       "contact": "dobronom@tut.by",
       "distance": null,
       "food": "",
@@ -114732,7 +114732,7 @@ const Data =
       "contact": "dobronom@tut.by",
       "distance": 52,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -120070,8 +120070,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        23.752814,
-        52.073156
+        23.752111,
+        52.071472
       ]
     },
     "properties": {
@@ -120090,12 +120090,12 @@ const Data =
         32
       ],
       "format:view.id": 1,
-      "ID": "n7987391800",
-      "shortCoords": "0kSodRIDdrES",
+      "ID": "n8665564893",
+      "shortCoords": "0kSoXu4Q12Lu",
       "contact": "info@dobronom.by",
       "distance": 197,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -217973,8 +217973,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        23.740885,
-        52.078175
+        23.740879,
+        52.07833
       ]
     },
     "properties": {
@@ -217994,12 +217994,12 @@ const Data =
         16
       ],
       "format:view.id": 1,
-      "ID": "n8077649551",
-      "shortCoords": "0kSpA6kzb0Op",
+      "ID": "w103115466",
+      "shortCoords": "0kSpA6wyDSOs",
       "contact": "375297402862 zav.miks@prodtovary.com",
       "distance": 6,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -218466,7 +218466,7 @@ const Data =
       "contact": "",
       "distance": 11,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -263038,8 +263038,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        23.723693,
-        52.077039
+        23.723712,
+        52.076996
       ]
     },
     "properties": {
@@ -263057,12 +263057,12 @@ const Data =
         117
       ],
       "format:view.id": 1,
-      "ID": "n12820436743",
-      "shortCoords": "0kSjqORlW2Dk",
+      "ID": "n5312439979",
+      "shortCoords": "0kSjqOQ3UtDk",
       "contact": "",
       "distance": 3,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -263432,8 +263432,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        23.750918,
-        52.072052
+        23.734013,
+        52.063538
       ]
     },
     "properties": {
@@ -263452,12 +263452,12 @@ const Data =
         163
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0kSoXtvE~_Lb",
+      "ID": "n306062044",
+      "shortCoords": "0kSoRdgjHbHY",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -266438,7 +266438,7 @@ const Data =
       "contact": "",
       "distance": 40,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -268939,7 +268939,7 @@ const Data =
       "contact": "",
       "distance": 3,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -284595,8 +284595,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        23.697707,
-        52.062539
+        23.699905,
+        52.064284
       ]
     },
     "properties": {
@@ -284615,12 +284615,12 @@ const Data =
         42
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0kSizRSSGeEU",
+      "ID": "w1339869198",
+      "shortCoords": "0kSi2Ci_17Ao",
       "contact": "+375162301433 +375162301433 info@retail.santa.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -285270,7 +285270,7 @@ const Data =
       "contact": "",
       "distance": 47,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -296716,8 +296716,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        23.756751,
-        52.072242
+        23.756676,
+        52.072035
       ]
     },
     "properties": {
@@ -296736,12 +296736,12 @@ const Data =
         36
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0kSodPTQ8jD0",
+      "ID": "n13232441115",
+      "shortCoords": "0kSodPFjNpDx",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -336909,7 +336909,7 @@ const Data =
       "contact": "+375447007468 +375296230028 LukashikO@unistore.by",
       "distance": 9,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -683473,7 +683473,7 @@ const Data =
       "contact": "",
       "distance": 0,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
