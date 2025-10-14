@@ -1,4 +1,4 @@
-var Data3NF =
+const Data3NF =
 {
   "type": [
     "type.id",
