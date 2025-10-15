@@ -142,13 +142,13 @@ def LoadGeoJson(FileName, Name):
 
 # задаць дату абнаўлення
 def SetDate(Key, Date):
- Dates = LoadJson(os.path.join("docs", "date.js"), "ModifyDate");
+ Dates = LoadJson(os.path.join("..", "docs", "date.js"), "ModifyDate");
  Dates[Key] = Date
- SaveJson(os.path.join("docs", "date.js"), "ModifyDate", Dates)
+ SaveJson(os.path.join("..", "docs", "date.js"), "ModifyDate", Dates)
 
 
 def GetDate(Key):
- Dates = LoadJson(os.path.join("docs", "date.js"), "ModifyDate");
+ Dates = LoadJson(os.path.join("..", "docs", "date.js"), "ModifyDate");
  return Dates.get(Key, "")
 
 
@@ -163,12 +163,12 @@ def NormalizeAddress(Address):
      Item = Item[len(Start):]
    Item = Item.strip()
    # выдаліць канцавыя літары
-   for End in ["обл.", "р-н.", "р-н", "А.А.", "с/с", ]:
+   for End in ["обл.", "р-н.", "р-н", "А.А.", "с/с", "область", ]:
     if Item[-len(End):] == End:
      Item = Item[:-len(End)]
    Item = Item.strip()
    # выдаліць, калі пачынаецца з
-   for Start in ["ком.", "оф.", "каб.", "пом.", "кв.", "район", "офис", "административное", "помещение", "Инв.", "кабинет", "этаж", "торговый объект", "нежилое помещение", "нежилое пом.", ]:
+   for Start in ["ком.", "оф.", "каб.", "пом.", "кв.", "район", "офис", "административное", "помещение", "Инв.", "кабинет", "этаж", "торговый объект", "нежилое помещение", "нежилое пом.", "Республика Беларусь", "РБ", ]:
     if Item[:len(Start)] == Start:
      Item = ""
    Item = Item.strip()

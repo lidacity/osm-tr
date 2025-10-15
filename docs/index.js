@@ -1,13 +1,9 @@
 const LayerMain = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; OpenStreetMap contributors'});
 const LayerGray = new L.TileLayer.Grayscale('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; OpenStreetMap contributors'});
-//const LayerHot = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {attribution: '© OpenStreetMap contributors'});
-//const LayerMapbox = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {attribution: 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', id: 'TR', accessToken: 'pk.eyJ1IjoibGlkYWNpdHkiLCJhIjoiY21ma3Yzc2czMDB5MTJsc2Jnajg2aG9taCJ9.F7iCB_GkZFAa-MHxF4H27w'});
 
 var BaseMaps = {
  "OpenStreetMap": LayerMain,
  "OpenStreetMap.Gray": LayerGray,
-// "OpenStreetMap.HOT": LayerHot,
-// "Mapbox": LayerMapbox,
 };
 
 var MapOption =
@@ -33,7 +29,7 @@ var Group =
  blue: L.layerGroup([], {title: 'Совпадение имени', short: 'Имя', icon: new LeafIcon({iconUrl: './img/marker-icon-blue.png'}), }),
  gold: L.layerGroup([], {title: 'Совпадение места', short: 'Место', icon: new LeafIcon({iconUrl: './img/marker-icon-gold.png'}), }),
  orange: L.layerGroup([], {title: 'Совпадение адреса', short: 'Адрес', icon: new LeafIcon({iconUrl: './img/marker-icon-orange.png'}), }),
- violet: L.layerGroup([], {title: 'В процессе ликвидации', short: 'Ликвидация', icon: new LeafIcon({iconUrl: './img/marker-icon-violet.png'}), }),
+ //violet: L.layerGroup([], {title: 'В процессе ликвидации', short: 'Ликвидация', icon: new LeafIcon({iconUrl: './img/marker-icon-violet.png'}), }),
  black: L.layerGroup([], {title: 'Нет в реестре, но есть на карте', short: 'Ошибка', icon: new LeafIcon({iconUrl: './img/marker-icon-black.png'}), }),
  red: L.layerGroup([], {title: 'Не найден', short: 'Отсутстует', icon: new LeafIcon({iconUrl: './img/marker-icon-red.png'}), }),
 };
@@ -329,8 +325,15 @@ var Control = L.control.layers(BaseMaps, null).addTo(Map);
 
 Markers.addTo(Map);
 
-var GeoJsonLayer = L.geoJSON(Data, DataOption);
-Map.fitBounds(GeoJsonLayer.getBounds().pad(0.1));
+var GeoJsonLayer1 = L.geoJSON(Data1, DataOption);
+var GeoJsonLayer2 = L.geoJSON(Data2, DataOption);
+var GeoJsonLayer3 = L.geoJSON(Data3, DataOption);
+var GeoJsonLayer4 = L.geoJSON(Data4, DataOption);
+var GeoJsonLayer5 = L.geoJSON(Data5, DataOption);
+var GeoJsonLayer6 = L.geoJSON(Data6, DataOption);
+var GeoJsonLayer7 = L.geoJSON(Data7, DataOption);
+var GeoJsonLayer8 = L.geoJSON(Data8, DataOption);
+//Map.fitBounds(GeoJsonLayer7.getBounds().pad(0.1));
 
 for (const [Color, Layer] of Object.entries(Group))
 {

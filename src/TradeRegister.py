@@ -101,7 +101,7 @@ def Generate(FileName):
  #
  logger.info("write js")
  FeatureCollection = geojson.FeatureCollection(Features)
- Utils.SaveJson(os.path.join("..", "docs", "shops.3nf.js"), "Data3NF", Base3NF)
+ Utils.SaveJson(os.path.join("..", "docs", "shops.nf3.js"), "Data3NF", Base3NF)
  Utils.SaveGeoJson(os.path.join("..", ".temp", f"shops.1.js"), "Data", FeatureCollection)
 
 

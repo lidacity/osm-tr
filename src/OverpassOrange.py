@@ -196,7 +196,7 @@ def Generate():
  #
  logger.info("read js")
  Data = Utils.LoadGeoJson(os.path.join("..", ".temp", "shops.3.js"), "Data")
- NF3 = Utils.LoadJson(os.path.join("..", "docs", "shops.3nf.js"), "Data3NF")
+ NF3 = Utils.LoadJson(os.path.join("..", "docs", "shops.nf3.js"), "Data3NF")
  #
  logger.info("parse orange")
  #
