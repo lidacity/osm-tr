@@ -28,7 +28,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 547209,
         "start_date": "07.12.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -57,7 +57,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 370568,
         "start_date": "07.03.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -112,7 +112,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 252894,
         "start_date": "08.05.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -149,7 +149,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 376512,
         "start_date": "05.04.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -179,7 +179,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 520129,
         "start_date": "01.10.2021",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -209,7 +209,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 520130,
         "start_date": "01.10.2021",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -846,7 +846,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 309104,
         "start_date": "05.03.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -885,7 +885,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 330440,
         "start_date": "12.05.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -919,7 +919,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 375747,
         "start_date": "03.04.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -987,7 +987,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 185852,
         "start_date": "03.02.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1023,7 +1023,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 306385,
         "start_date": "22.02.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1063,7 +1063,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 313245,
         "start_date": "24.03.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1130,7 +1130,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 239361,
         "start_date": "01.04.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1198,7 +1198,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 239366,
         "start_date": "01.04.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1230,7 +1230,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 361816,
         "start_date": "15.12.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1264,7 +1264,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 395743,
         "start_date": "24.10.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1293,7 +1293,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 497216,
         "start_date": "30.11.2020",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1339,7 +1339,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 454160,
         "start_date": "05.07.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1372,7 +1372,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 329944,
         "start_date": "06.05.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1405,7 +1405,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 329945,
         "start_date": "06.05.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1438,7 +1438,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 466880,
         "start_date": "28.11.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1471,7 +1471,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 455966,
         "start_date": "24.07.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1519,7 +1519,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 395091,
         "start_date": "16.10.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1567,7 +1567,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 395092,
         "start_date": "16.10.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1606,7 +1606,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 401197,
         "start_date": "22.12.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1669,7 +1669,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 430048,
         "start_date": "25.10.2018",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1700,7 +1700,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 430049,
         "start_date": "25.10.2018",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1737,7 +1737,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 528739,
         "start_date": "15.02.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1825,7 +1825,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 534663,
         "start_date": "30.05.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1858,7 +1858,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 571542,
         "start_date": "11.01.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1891,7 +1891,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 571543,
         "start_date": "11.01.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1929,7 +1929,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 571544,
         "start_date": "11.01.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1962,7 +1962,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 571546,
         "start_date": "11.01.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -1992,7 +1992,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 571547,
         "start_date": "11.01.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2058,7 +2058,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 572673,
         "start_date": "26.01.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2087,7 +2087,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 571698,
         "start_date": "15.01.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2117,7 +2117,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 581191,
         "start_date": "22.05.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2146,7 +2146,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 572615,
         "start_date": "26.01.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2175,7 +2175,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 573686,
         "start_date": "09.02.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2217,7 +2217,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 572793,
         "start_date": "29.01.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2250,7 +2250,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 577868,
         "start_date": "03.04.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2296,7 +2296,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 576281,
         "start_date": "14.03.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2362,7 +2362,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 576282,
         "start_date": "14.03.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2420,7 +2420,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 576873,
         "start_date": "21.03.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2452,7 +2452,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 576979,
         "start_date": "22.03.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2485,7 +2485,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 576981,
         "start_date": "22.03.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2518,7 +2518,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 578152,
         "start_date": "08.04.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2549,7 +2549,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 580829,
         "start_date": "17.05.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2586,7 +2586,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 579602,
         "start_date": "25.04.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2622,7 +2622,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 168300,
         "start_date": "31.03.2008",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2654,7 +2654,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 269409,
         "start_date": "25.05.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2684,7 +2684,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 284073,
         "start_date": "26.08.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2716,7 +2716,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 154391,
         "start_date": "16.10.2014",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2755,7 +2755,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 578770,
         "start_date": "15.04.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2788,7 +2788,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 243098,
         "start_date": "25.03.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2858,7 +2858,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 201648,
         "start_date": "18.02.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2921,7 +2921,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 259372,
         "start_date": "25.05.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -2951,7 +2951,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 483349,
         "start_date": "01.06.2020",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3189,7 +3189,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 425392,
         "start_date": "04.09.2018",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3220,7 +3220,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 364023,
         "start_date": "05.01.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3253,7 +3253,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 355497,
         "start_date": "17.10.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3286,7 +3286,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 391319,
         "start_date": "01.09.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3352,7 +3352,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 271789,
         "start_date": "31.03.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3427,7 +3427,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 313953,
         "start_date": "24.03.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3473,7 +3473,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 271573,
         "start_date": "27.03.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3566,7 +3566,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 270689,
         "start_date": "24.03.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3600,7 +3600,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 452357,
         "start_date": "13.06.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3624,7 +3624,7 @@ const Data8 =
         "place:is": false,
         "ref:BY:trade_register": 503016,
         "start_date": "19.02.2021",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3654,7 +3654,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 517326,
         "start_date": "23.08.2021",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3684,7 +3684,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 534564,
         "start_date": "27.05.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3714,7 +3714,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 534565,
         "start_date": "27.05.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3748,7 +3748,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 171410,
         "start_date": "08.01.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3782,7 +3782,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 290434,
         "start_date": "14.10.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -3952,7 +3952,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 510550,
         "start_date": "21.05.2021",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4020,7 +4020,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 328599,
         "start_date": "29.04.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4118,7 +4118,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 232292,
         "start_date": "30.03.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4148,7 +4148,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 563558,
         "start_date": "25.08.2023",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4177,7 +4177,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 551266,
         "start_date": "03.02.2023",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4214,7 +4214,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 250170,
         "start_date": "29.04.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4251,7 +4251,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 250175,
         "start_date": "29.04.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4288,7 +4288,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 250182,
         "start_date": "29.04.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4325,7 +4325,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 250185,
         "start_date": "29.04.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4358,7 +4358,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 313282,
         "start_date": "24.03.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4389,7 +4389,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 202245,
         "start_date": "09.02.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4423,7 +4423,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 490730,
         "start_date": "31.08.2020",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4471,7 +4471,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 337640,
         "start_date": "28.06.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4503,7 +4503,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 224490,
         "start_date": "16.03.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4536,7 +4536,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 441849,
         "start_date": "27.02.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4587,7 +4587,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 357247,
         "start_date": "02.11.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4621,7 +4621,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 293012,
         "start_date": "06.11.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4654,7 +4654,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 497632,
         "start_date": "02.12.2020",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4687,7 +4687,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 497633,
         "start_date": "02.12.2020",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4782,7 +4782,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 157145,
         "start_date": "11.07.2014",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4823,7 +4823,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 341149,
         "start_date": "29.06.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4856,7 +4856,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 355447,
         "start_date": "17.10.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4903,7 +4903,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 724491,
         "start_date": "15.08.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4933,7 +4933,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 546223,
         "start_date": "24.11.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -4976,7 +4976,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 251707,
         "start_date": "05.05.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5026,7 +5026,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 464332,
         "start_date": "31.10.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5071,7 +5071,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 527020,
         "start_date": "18.01.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5104,7 +5104,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 459859,
         "start_date": "09.09.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5164,7 +5164,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 352468,
         "start_date": "20.09.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5193,7 +5193,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 353595,
         "start_date": "29.09.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5229,7 +5229,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 468577,
         "start_date": "17.12.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5265,7 +5265,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 469007,
         "start_date": "20.12.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5301,7 +5301,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 469009,
         "start_date": "20.12.2019",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5336,7 +5336,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 377853,
         "start_date": "12.04.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5370,7 +5370,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 377886,
         "start_date": "12.04.2017",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5440,7 +5440,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 327180,
         "start_date": "31.03.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5469,7 +5469,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 361576,
         "start_date": "13.12.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5499,7 +5499,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 353541,
         "start_date": "29.09.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5528,7 +5528,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 283736,
         "start_date": "24.08.2015",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5570,7 +5570,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 408490,
         "start_date": "16.03.2018",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5602,7 +5602,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 326315,
         "start_date": "31.03.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5637,7 +5637,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 326419,
         "start_date": "31.03.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5667,7 +5667,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 361542,
         "start_date": "12.12.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5697,7 +5697,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 551405,
         "start_date": "06.02.2023",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5729,7 +5729,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 328857,
         "start_date": "11.04.2016",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5763,7 +5763,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 539808,
         "start_date": "19.08.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5797,7 +5797,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 539810,
         "start_date": "19.08.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5831,7 +5831,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 539811,
         "start_date": "19.08.2022",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5929,7 +5929,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 557741,
         "start_date": "18.05.2023",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -5996,7 +5996,7 @@ const Data8 =
         ],
         "ref:BY:trade_register": 578790,
         "start_date": "15.04.2024",
-        "status": "orange"
+        "status": "violet"
       }
     },
     {
@@ -6044,21 +6044,6 @@ const Data8 =
       "properties": {
         "ID": "n912512983",
         "ref:BY:trade_register": 133180,
-        "status": "black"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          25.317919,
-          53.8996
-        ]
-      },
-      "properties": {
-        "ID": "n1321474297",
-        "ref:BY:trade_register": 723388,
         "status": "black"
       }
     },
@@ -6127,13 +6112,28 @@ const Data8 =
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.611527,
+          27.611457,
           53.889934
         ]
       },
       "properties": {
         "ID": "n4219172492",
         "ref:BY:trade_register": 367470,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.57064,
+          53.864109
+        ]
+      },
+      "properties": {
+        "ID": "n4269778699",
+        "ref:BY:trade_register": 401719,
         "status": "black"
       }
     },
@@ -6307,21 +6307,6 @@ const Data8 =
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.314677,
-          53.88915
-        ]
-      },
-      "properties": {
-        "ID": "n13133255738",
-        "ref:BY:trade_register": 519059,
-        "status": "black"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           31.015007,
           52.362041
         ]
@@ -6389,6 +6374,51 @@ const Data8 =
       "properties": {
         "ID": "n13174858711",
         "ref:BY:trade_register": 285301,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.046692,
+          53.959688
+        ]
+      },
+      "properties": {
+        "ID": "n13243455996",
+        "ref:BY:trade_register": 302110,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.044776,
+          53.980054
+        ]
+      },
+      "properties": {
+        "ID": "n13243455997",
+        "ref:BY:trade_register": 517889,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.049854,
+          53.96835
+        ]
+      },
+      "properties": {
+        "ID": "n13243479703",
+        "ref:BY:trade_register": 510223,
         "status": "black"
       }
     },
@@ -6524,6 +6554,21 @@ const Data8 =
       "properties": {
         "ID": "w1431495912",
         "ref:BY:trade_register": 272865,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.049818,
+          53.968351
+        ]
+      },
+      "properties": {
+        "ID": "w1443247018",
+        "ref:BY:trade_register": 522925,
         "status": "black"
       }
     }

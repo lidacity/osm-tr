@@ -108983,8 +108983,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.88956,
-        52.86575
+        24.889592,
+        52.865677
       ]
     },
     "properties": {
@@ -109004,7 +109004,7 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": "n6733369154",
-      "shortCoords": "0keOX1ETghNR",
+      "shortCoords": "0keOX1BeB0NQ",
       "contact": "dobronom@tut.by",
       "distance": null,
       "food": "",
@@ -272273,8 +272273,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.888729,
-        52.865708
+        24.888834,
+        52.865622
       ]
     },
     "properties": {
@@ -272293,7 +272293,7 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": "w716902014",
-      "shortCoords": "0keOXfOJpsHz",
+      "shortCoords": "0keOXfLri9Hy",
       "contact": "",
       "distance": null,
       "food": "",
@@ -629394,8 +629394,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.889191,
-        52.865717
+        24.889218,
+        52.865655
       ]
     },
     "properties": {
@@ -629414,9 +629414,9 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": "n6733369153",
-      "shortCoords": "0keOXfsBfFH7",
+      "shortCoords": "0keOXfpSjQH6",
       "contact": "",
-      "distance": 13,
+      "distance": 11,
       "food": "",
       "status": "orange"
     }

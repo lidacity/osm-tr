@@ -28,8 +28,9 @@ var Group =
  green: L.layerGroup([], {title: 'Всё в порядке', short: 'Ok', icon: new LeafIcon({iconUrl: './img/marker-icon-green.png'}), }),
  blue: L.layerGroup([], {title: 'Совпадение имени', short: 'Имя', icon: new LeafIcon({iconUrl: './img/marker-icon-blue.png'}), }),
  gold: L.layerGroup([], {title: 'Совпадение места', short: 'Место', icon: new LeafIcon({iconUrl: './img/marker-icon-gold.png'}), }),
- orange: L.layerGroup([], {title: 'Совпадение адреса', short: 'Адрес', icon: new LeafIcon({iconUrl: './img/marker-icon-orange.png'}), }),
- //violet: L.layerGroup([], {title: 'В процессе ликвидации', short: 'Ликвидация', icon: new LeafIcon({iconUrl: './img/marker-icon-violet.png'}), }),
+ violet: L.layerGroup([], {title: 'Совпадение адреса', short: 'Адрес', icon: new LeafIcon({iconUrl: './img/marker-icon-violet.png'}), }),
+ orange: L.layerGroup([], {title: 'Дубли и ошибки', short: 'Дубли', icon: new LeafIcon({iconUrl: './img/marker-icon-orange.png'}), }),
+ //gray: L.layerGroup([], {title: 'В процессе ликвидации', short: 'Ликвидация', icon: new LeafIcon({iconUrl: './img/marker-icon-gray.png'}), }),
  black: L.layerGroup([], {title: 'Нет в реестре, но есть на карте', short: 'Ошибка', icon: new LeafIcon({iconUrl: './img/marker-icon-black.png'}), }),
  red: L.layerGroup([], {title: 'Не найден', short: 'Отсутстует', icon: new LeafIcon({iconUrl: './img/marker-icon-red.png'}), }),
 };
@@ -275,7 +276,7 @@ function JsonEachFeature(Feature, Layer)
   Content.push(`<a target="_blank" href="https://pewu.github.io/osm-history/#/${Type}/${ID}">history</a>`);
   Content.push(`<a target="_blank" href="https://mapillary.com/app/?lat=${Lat}&lng=${Lon}&z=18">Mapillary</a>`);
  }
- else if (Properties['status'] == "red")
+ else if (["violet", "red"].includes(Properties['status']))
  {
   Content.push(`<a target="_blank" href="https://openstreetmap.org/#map=17/${Lat}/${Lon}" target="_blank">osm</a>`);
   Content.push(`<a target="_josm" href="http://localhost:8111/load_and_zoom?left=${Lon}&top=${Lat}&right=${Lon}&bottom=${Lat}" onclick='return LoadAndZoom(${Lat}, ${Lon});'>josm</a>`);
