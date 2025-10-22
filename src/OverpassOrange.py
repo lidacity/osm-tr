@@ -7,6 +7,7 @@ from datetime import datetime
 from loguru import logger
 import requests
 from haversine import haversine
+import geojson
 
 import Utils
 
@@ -154,7 +155,7 @@ def GetCoord(Lat, Lon, Elements):
 def GetBlue(Lat, Lon, Names):
  for Name in Names:
   #URL = f"{Overpass}?data=[out:json];area[name='Беларусь'];(node['name'~'{Name}'](area)(around:1000.0,{Lat},{Lon});node['name:ru'~'{Name}'](area)(around:1000.0,{Lat},{Lon}););out qt center;"
-  Overpass = f"[out:json];(node['name'~'{Name}'](around:1000.0,{Lat},{Lon});node['name:ru'~'{Name}'](around:1000.0,{Lat},{Lon}););out qt center;"
+  Overpass = f"[out:json];(node['name'~'{Name}'](around:150.0,{Lat},{Lon});node['name:ru'~'{Name}'](around:150.0,{Lat},{Lon}););out qt center;"
   Response = requests.get(URL, params={'data': Overpass})
   if Response.status_code == 200:
    Result = Response.json()
@@ -172,7 +173,7 @@ def GetKeys(Key, Properties, NF3, Array):
 
 
 #https://maps.mail.ru/osm/tools/overpass/
-def GetGold(Lat, Lon, Keys):
+def GetViolet(Lat, Lon, Keys):
  #Query = "[out:json];area[name='Беларусь'];("
  #Query += f"node[{Key}](area)(around:100.0,{Lat},{Lon});"
  #URL = f"{Overpass}?data={Query}"
@@ -210,17 +211,19 @@ def Generate():
     Coord = GetBlue(Lat, Lon, Name)
     if Coord is not None:
      Properties['ID'] = Coord['ID']
-     Geometry['coordinates'] = Coord['Coordinates']
+     Lon, Lat = Coord['Coordinates']
+     Geometry['coordinates'] = geojson.Point((Lon, Lat))
      Properties['status'] = "blue"
      #logger.info(f"{Properties.get('ref:BY:trade_register', "?")} {Properties.get('name', "")} blue = {Lon}, {Lat}")
     else:
      Keys = GetKeys('amenity:type', Properties, NF3, Shop) + GetKeys('cafe:type', Properties, NF3, Cafe)
      if Keys:
-      Coord = GetGold(Lat, Lon, Keys)
+      Coord = GetViolet(Lat, Lon, Keys)
       if Coord is not None:
        Properties['ID'] = Coord['ID']
-       Geometry['coordinates'] = Coord['Coordinates']
-       Properties['status'] = "gold"
+       Lon, Lat = Coord['Coordinates']
+       Geometry['coordinates'] = geojson.Point((Lon, Lat))
+       Properties['status'] = "violet"
        #logger.info(f"{Properties.get('ref:BY:trade_register', "?")} {Properties.get('name', "")} orange = {Lon}, {Lat}")
   #
   if Index % 10000 == 0:
@@ -239,7 +242,7 @@ if __name__ == "__main__":
  #
  logger.add(os.path.join("..", ".log", "tr.log"))
  if not Utils.RunOnce():
-  logger.info("Start overpass orange to blue/gold")
+  logger.info("Start overpass orange to blue/violet")
   Generate()
-  logger.info("Done overpass orange to blue/gold")
+  logger.info("Done overpass orange to blue/violet")
 

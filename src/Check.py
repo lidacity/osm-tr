@@ -17,7 +17,7 @@ def Check(Geometry, Properties):
   return False
  elif 'status' not in Properties:
   return False
- elif Properties['status'] not in ["black", "blue", "gold", "green", "orange", "red", ]: #"violet"
+ elif Properties['status'] not in ["violet", "blue", "orange", "red", ]:
   return False
  else:
   return True

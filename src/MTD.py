@@ -31,7 +31,7 @@ def SetMTD(Features, PAN, Text):
   Properties = Feature['properties']
   if Properties['operator:ref:BY:PAN'] == PAN:
    Properties['MTD'] = Text
-   Properties['status'] = "violet"
+   Properties['status'] = "gray"
    #logger.warning(f"УНП={PAN}: {Text}")
 
 
@@ -52,7 +52,7 @@ def Generate():
    if MTD['ckodsost'] != "1":
     SetMTD(Data['features'], PAN, f"({MTD['ckodsost']}) {MTD['vkods']}")
     ##Properties['MTD'] = f"({MTD['ckodsost']}) {MTD['vkods']}"
-    ##Properties['status'] = "violet"
+    ##Properties['status'] = "gray"
     #logger.warning(f"УНП={PAN}: {MTD['vnaimk']} - {MTD['vkods']} ({MTD['ckodsost']})")
   #
   if Index % 5 == 0: # паўза каб сайт МНС не блакаваў
@@ -73,6 +73,6 @@ if __name__ == "__main__":
  #
  logger.add(os.path.join("..", ".log", "tr.log"))
  if not Utils.RunOnce():
-  logger.info("Start MTD to violet")
+  logger.info("Start MTD to gray")
   Generate()
-  logger.info("Done MTD to violet")
+  logger.info("Done MTD to gray")

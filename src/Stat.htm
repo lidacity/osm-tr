@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="be">
+<head>
+ <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+ <title>Статыстыка валідатару Тарговага рээестру Рэспублікі Беларусь</title>
+ <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+ <table border='1' cellpadding='2'>
+  <caption>
+   Статыстыка валідатару Тарговага рээестру Рэспублікі Беларусь
+  </caption>
+  <thead>
+   <tr valign='top'>
+    <th>№</th>
+    <th>карыстальнік</th>
+    <th>колькасць ref:BY:trade_register</th>
+    <th>за апошнія 60 дзён</th>
+    <th>першая вядомая праўка</th>
+    <th>апошняя вядомая праўка</th>
+    <th>у сярэднім за дзень</th>
+   </tr>
+  </thead>
+  <tbody>
+{%- for User in Users %}
+   <tr valign='top'>
+    <td align='right'>{{User['index']}}</td>
+    <td><a href="http://openstreetmap.org/user/{{User['name']}}">{{User['name']}}</td>
+    <td align='right'>{{User['count']}}</td>
+    <td align='right'>{{User['count60']}}</td>
+    <td>{{User['timestamp:first']}}</td>
+    <td>{{User['timestamp:last']}}</td>
+    <td align='right'>{{'{0:0.3f}'.format(User['average'])}}</td>
+   </tr>
+{%- endfor %}
+  </tbody>
+ </table>
+ <p>
+  Калі ёсць заўвагі, дасылайце свае думкі ў <a href='https://openstreetmap.org/message/new/LidaCity'>асабістыя паведамленні</a>.
+  <!-- сакрэтная частка: валідатар знаходзіцца на https://github.com/lidacity/osm-tr, ну і даслаць ліст мне можна на mailto:dzmitry@lidacity.by -->
+  <br />
+  <font size='-1'>Cтаронка створаная {{DateTime}} і змяшчае ўсе дадзеныя OSM за перыяд да {{PBFDateTime}}</font>
+ </p>
+
+</body>
+</html>

@@ -1,6 +1,7 @@
 import os
 import sys
 from datetime import datetime
+from collections import Counter
 
 import geojson
 from loguru import logger
@@ -15,11 +16,14 @@ URL = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
 def GetCoord(Elements):
  Result = {}
  for Element in Elements:
-  Ref = int(Element['tags']['ref:BY:trade_register'])
+  S = Element['tags']['ref:BY:trade_register']
+  Ref = int(S) if S.isdigit() else S
+  if Ref not in Result:
+   Result[Ref] = []
   if Element['type'] == "node":
-   Result[Ref] = { 'ID': f"n{Element['id']}", 'Coordinates': [Element['lon'], Element['lat']] }
+   Result[Ref].append({ 'ID': f"n{Element['id']}", 'Coordinates': [Element['lon'], Element['lat']] })
   elif Element['type'] == "way":
-   Result[Ref] = { 'ID': f"w{Element['id']}", 'Coordinates': [Element['center']['lon'], Element['center']['lat']] }
+   Result[Ref].append({ 'ID': f"w{Element['id']}", 'Coordinates': [Element['center']['lon'], Element['center']['lat']] })
  return Result
 
 
@@ -32,6 +36,11 @@ def GetGreens():
   return Result
  else:
   return None
+
+
+#def GetDoubles(Elements):
+# Result = Counter([ Element['tags']['ref:BY:trade_register'] for Element in Elements ])
+# return [ int(Key) for Key, Value in Result.items() if Value > 1 ]
 
 
 
@@ -52,20 +61,34 @@ def Generate():
   Geometry, Properties = Feature['geometry'], Feature['properties']
   Ref = Properties.get('ref:BY:trade_register', "")
   if Ref in Elements.keys():
-   Item = Elements.pop(Ref)
-   Properties['ID'] = Item['ID']
-   Geometry['coordinates'] = Item['Coordinates']
-   if Properties['status'] in ["red", "orange", "blue", "gold", "green"]:
-    Properties['status'] = "green"
-   elif Properties['status'] in ["violet"]:
-    Properties['status'] = "black"
- #
+   Value = Elements.pop(Ref)
+   if len(Value) == 1:
+    Item = Value[0]
+    Properties['ID'] = Item['ID']
+    Lon, Lat = Item['Coordinates']
+    Geometry['coordinates'] = geojson.Point((Lon, Lat))
+    if Properties['status'] in ["red", "orange", "blue", "violet", "green"]:
+     Properties['status'] = "green"
+    elif Properties['status'] in ["gray"]:
+     Properties['status'] = "black"
+   else:
+    Elements[Ref] = Value
+ # калі засталіся неапрацаваныя аб'екты, значыць іх не павінна існаваць
  for Key, Value in Elements.items():
-  Lon, Lat = Value['Coordinates']
-  Geometry = geojson.Point((Lon, Lat))
-  Properties = { 'ID': Value['ID'], 'ref:BY:trade_register': Key, 'status': "black", }
-  Feature = geojson.Feature(geometry=Geometry, properties=Properties)
-  Data['features'].append(Feature)
+  if len(Value) == 1:
+   Item = Value[0]
+   Lon, Lat = Item['Coordinates']
+   Geometry = geojson.Point((Lon, Lat))
+   Properties = { 'ID': Item['ID'], 'ref:BY:trade_register': Key, 'status': "black", } # "black" if isinstance(Key, int) else "gold"
+   Feature = geojson.Feature(geometry=Geometry, properties=Properties)
+   Data['features'].append(Feature)
+  else:
+   for Item in Value:
+    Lon, Lat = Item['Coordinates']
+    Geometry = geojson.Point((Lon, Lat))
+    Properties = { 'ID': Item['ID'], 'ref:BY:trade_register': Key, 'status': "gold", }
+    Feature = geojson.Feature(geometry=Geometry, properties=Properties)
+    Data['features'].append(Feature)
  #
  logger.info(f"обработано всего {len(Greens['elements'])} записей")
  #
@@ -81,7 +104,7 @@ if __name__ == "__main__":
  #
  logger.add(os.path.join("..", ".log", "tr.log"))
  if not Utils.RunOnce():
-  logger.info("Start overpass red/orange/blue/gold/green\\violet -> green\\black")
+  logger.info("Start overpass all -> green\\gold\\black")
   Generate()
-  logger.info("Done overpass red/orange/blue/gold/green\\violet -> green\\black")
+  logger.info("Done overpass all -> green\\gold\\black")
 

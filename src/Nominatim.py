@@ -6,6 +6,7 @@ import sys
 from loguru import logger
 import asyncio
 import nominatim_api as napi
+import geojson
 
 import Utils
 import Download
@@ -39,14 +40,14 @@ def Generate():
   Status = Properties.get('status', "")
   #
   Addresses = Utils.GetAddress(Properties)
-  if Status in ["violet"]:
+  if Status in ["gray"]:
    for Address in Addresses:
     for Count in range(1, len(Address)):
      Addr = ", ".join(Address[:-Count])
      Results = asyncio.run(Search(Addr))
      if Results:
       Lon, Lat = Results[0].centroid.x, Results[0].centroid.y
-      Geometry['coordinates'] = [Lon, Lat]
+      Geometry['coordinates'] = geojson.Point((Lon, Lat))
       break
      else:
       logger.warning(f"адрес для {Properties.get('ref:BY:trade_register', "?")} ({Address[:-Count]} => '{Addr}') не найден")
@@ -64,7 +65,7 @@ def Generate():
      Results = asyncio.run(Search(Addr))
      if Results: # знайшлі
       Lon, Lat = Results[0].centroid.x, Results[0].centroid.y
-      Geometry['coordinates'] = [Lon, Lat]
+      Geometry['coordinates'] = geojson.Point((Lon, Lat))
       if Count == 1:
        Properties['status'] = "orange"
       #logger.info(f"{Addr} = {Lon}, {Lat}")

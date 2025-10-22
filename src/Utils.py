@@ -54,36 +54,9 @@ KeyList = {
 }
 
 
-#'Status':
-#gray	Не найден на местности
-#4	red	Не найден
-#3	black	Нет в реестре, но есть на карте
-#2	orange	Совпадение места
-#1	blue	Совпадение имени
-#0	green	Все в порядке
-
-
 def ConvertDate(Text):
  Date = datetime.strptime(Text, "%d.%m.%Y").date()
  return Date.strftime("%Y-%m-%d") #%Y-%m-%dT%H:%M:%SZ
-
-
-
-#Address0 = "addr:full"
-#Address1 = [
-# "addr:region",
-# "addr:district",
-# "addr:city",
-# "addr:street",
-# "addr:housenumber",
-#]
-
-
-#def GetAddress(Items):
-# Result = " ".join([Items[Item] for Item in Address1 if Item in Items])
-# if not Result:
-#  Result = Items.get(Address0, "")
-# return Result
 
 
 def Normalize(Text):

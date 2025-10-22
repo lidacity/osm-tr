@@ -5,3 +5,4 @@ GitPy
 requests
 haversine
 python-dateutil
+Jinja2

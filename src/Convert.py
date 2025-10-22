@@ -36,7 +36,7 @@ def Generate():
     Regions[R].append(Feature)
    else:
     Regions[''].append(Feature)
-  elif Properties['status'] in ["black", ]:
+  elif Properties['status'] in ["gold", "black", ]:
    Regions[''].append(Feature)
  #
  logger.info("write js")
