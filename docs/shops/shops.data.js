@@ -41436,7 +41436,7 @@ const Data =
       "contact": "info@eurotorg.by",
       "distance": 418,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -125911,7 +125911,7 @@ const Data =
       "contact": "info@dobronom.by",
       "distance": 21,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -229841,7 +229841,7 @@ const Data =
       "contact": "",
       "distance": 128,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -255887,8 +255887,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.080825,
-        51.790514
+        24.080788,
+        51.79084
       ]
     },
     "properties": {
@@ -255907,12 +255907,12 @@ const Data =
         19
       ],
       "format:view.id": 1,
-      "ID": "w1106313234",
-      "shortCoords": "0kNG6rFr8IKx",
+      "ID": "n10977249088",
+      "shortCoords": "0kNG6rVoBzK1",
       "contact": "",
       "distance": 46,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -256136,12 +256136,12 @@ const Data =
         3
       ],
       "format:view.id": 3,
-      "ID": null,
+      "ID": "w961668806",
       "shortCoords": "0kNMYcdW_qHH",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -256149,8 +256149,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.080788,
-        51.79084
+        24.067965,
+        51.793342
       ]
     },
     "properties": {
@@ -256169,12 +256169,12 @@ const Data =
         3
       ],
       "format:view.id": 1,
-      "ID": "n10977249088",
-      "shortCoords": "0kNG6rVoBzK1",
+      "ID": null,
+      "shortCoords": "0kNG4z4BO7M_",
       "contact": "",
-      "distance": 924,
+      "distance": null,
       "food": "",
-      "status": "blue"
+      "status": "red"
     }
   },
   {
@@ -256545,8 +256545,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.066058,
-        51.792181
+        24.066654,
+        51.791536
       ]
     },
     "properties": {
@@ -256565,12 +256565,12 @@ const Data =
         23
       ],
       "format:view.id": 3,
-      "ID": null,
-      "shortCoords": "0kNG4lc7g~JX",
+      "ID": "w1093368402",
+      "shortCoords": "0kNG4k9Kd~JP",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -256669,7 +256669,7 @@ const Data =
       "contact": "",
       "distance": 0,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -256677,8 +256677,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.078083,
-        51.806023
+        24.078241,
+        51.801976
       ]
     },
     "properties": {
@@ -256697,12 +256697,12 @@ const Data =
         23
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0kNG_3XVETN1",
+      "ID": "n10977247276",
+      "shortCoords": "0kNG_mC_JqJg",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -261242,8 +261242,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.083525,
-        51.791935
+        24.142324,
+        51.891956
       ]
     },
     "properties": {
@@ -261262,12 +261262,12 @@ const Data =
         124
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0kNMQHF2jQBx",
+      "ID": "n4316662397",
+      "shortCoords": "0kNY2brC9qG6",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -264732,7 +264732,7 @@ const Data =
       "contact": "nataklun@mail.ru",
       "distance": 0,
       "food": "",
-      "status": "orange"
+      "status": "green"
     }
   },
   {
@@ -268332,8 +268332,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.071592,
-        51.789532
+        24.072433,
+        51.78988
       ]
     },
     "properties": {
@@ -268352,12 +268352,12 @@ const Data =
         64
       ],
       "format:view.id": 3,
-      "ID": null,
-      "shortCoords": "0kNGvVfWkAFX",
+      "ID": "n5228751033",
+      "shortCoords": "0kNG6CFUzjAh",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -277099,7 +277099,7 @@ const Data =
       "contact": "",
       "distance": 0,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -277522,8 +277522,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.065555,
-        51.794599
+        24.065426,
+        51.794561
       ]
     },
     "properties": {
@@ -277541,12 +277541,12 @@ const Data =
         9
       ],
       "format:view.id": 1,
-      "ID": "n4350247084",
-      "shortCoords": "0kNG41EUSNNR",
+      "ID": "w437208068",
+      "shortCoords": "0kNG4fuMXRH7",
       "contact": "",
       "distance": 0,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -293392,8 +293392,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.055062,
-        51.937859
+        24.055164,
+        51.93781
       ]
     },
     "properties": {
@@ -293413,11 +293413,11 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": "n13046508144",
-      "shortCoords": "0kNT21d~GUNX",
+      "shortCoords": "0kNT21fO_JNX",
       "contact": "kartinakonon@mail.ru",
       "distance": 24,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -293515,7 +293515,7 @@ const Data =
       "contact": "",
       "distance": 0,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
