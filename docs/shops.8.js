@@ -6031,6 +6031,21 @@ const Data8 =
         "start_date": "15.06.2015",
         "status": "red"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.055164,
+          51.93781
+        ]
+      },
+      "properties": {
+        "ID": "n13046508144",
+        "ref:BY:trade_register": 544259,
+        "status": "black"
+      }
     }
   ]
 };

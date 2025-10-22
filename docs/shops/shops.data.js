@@ -442116,8 +442116,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        31.029164,
-        52.359557
+        31.029157,
+        52.359634
       ]
     },
     "properties": {
@@ -442136,7 +442136,7 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": "n6127866062",
-      "shortCoords": "0mwXFcjqt4HI",
+      "shortCoords": "0mwXFcj~wRHI",
       "contact": "+375293130744",
       "distance": null,
       "food": "",
