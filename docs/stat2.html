@@ -2,115 +2,59 @@
 <html lang="en">
 <meta charset="utf-8"/>
 <head>
- <title>OSM User/Tag statistic</title>
+ <title>Статыстыка валідатару Тарговага рэестру Рэспублікі Беларусь</title>
  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
- <style type="text/css" class="init">
- </style>
-<style>
-      h1 { font-size: 2.0em; }
-      p  { font-size: 0.8em; }
-   </style>
+ <style type="text/css" class="init"></style>
  <script type="text/javascript" language="javascript" src="https://unpkg.com/jquery.min.js@3.5.1/jquery.min.js"></script>
  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
-    <script type="text/javascript" class="init">
-       $(document).ready(function() {
-         var t = $('#example').DataTable( {
-               "lengthMenu": [ 25, 50, 100 ],"pageLength": 50,
-               "columnDefs": [ {
-                   "searchable": false,
-                   "orderable": false,
-                   "targets": 0
-               } ],
-            "order": [[ 5, 'desc' ]]
-            } );
-       } );
-    </script>
- </head>
- <body class="wide comments example">
-     <div class="content">
-       <h1 class="page_title">OSM User Statistic</h1>
-	<div class="info">
-	    <p> Full history OSM data  - user added the tag  ref:BY:trade_register  to x objects</p>
-     <p> File parsed : belarus-latest-internal.osm.pbf </p>
-     <p> File timestamp : Mon Oct  6 15:05:51 2025 </p>
-     <p> Score = node*1 + ways* 5  + relations* 10  </p>
-	    <p>  <br>  </p>
- </div>
- <table id="example" class="display" style="width:100%">
-    <thead>
-        <tr>
-            <th> Rank </th>
-            <th> User </th>
-            <th> Nodes </th>
-            <th> Ways </th>
-            <th> Relations </th>
-            <th> Score </th>
-            <th> Count </th>
-        </tr>
-    </thead>
-    <tbody>
-            <tr>
-                <td>1                </td>
-                <td>pooh79                </td>
-                <td>210                </td>
-                <td>188                </td>
-                <td>0                </td>
-                <td>1150                </td>
-                <td>398                </td>
-            </tr>
-            <tr>
-                <td>2                </td>
-                <td>bigopenmac                </td>
-                <td>348                </td>
-                <td>112                </td>
-                <td>0                </td>
-                <td>908                </td>
-                <td>460                </td>
-            </tr>
-            <tr>
-                <td>3                </td>
-                <td>Prusaker                </td>
-                <td>125                </td>
-                <td>136                </td>
-                <td>0                </td>
-                <td>805                </td>
-                <td>261                </td>
-            </tr>
-            <tr>
-                <td>4                </td>
-                <td>Vodevil_Mark                </td>
-                <td>60                </td>
-                <td>117                </td>
-                <td>0                </td>
-                <td>645                </td>
-                <td>177                </td>
-            </tr>
-            <tr>
-                <td>5                </td>
-                <td>Reinkarnator                </td>
-                <td>302                </td>
-                <td>32                </td>
-                <td>0                </td>
-                <td>462                </td>
-                <td>334                </td>
-            </tr>
-            <tr>
-                <td>6                </td>
-                <td>Virkom                </td>
-                <td>107                </td>
-                <td>49                </td>
-                <td>0                </td>
-                <td>352                </td>
-                <td>156                </td>
-            </tr>
-            <tr>
-                <td>7                </td>
-                <td>LidaCity                </td>
-                <td>239                </td>
-                <td>2                </td>
-                <td>0                </td>
-                <td>249                </td>
-                <td>241                </td>
-            </tr>
-    </tbody>
-</table>
+ <script type="text/javascript" class="init">
+  $(document).ready(function() {
+   var t = $('#example').DataTable( {
+    searching: false,
+    layout: { topStart: null, bottomStart: null },
+    paging: false,
+    pageLength: -1,
+    columnDefs: [ { searchable: false, orderable: false, targets: 0 } ],
+    order: [[ 5, 'desc' ]]
+   } );
+  } );
+ </script>
+</head>
+
+<body>
+ <div>
+  <h1 class="page_title">Статыстыка валідатару Тарговага рэестру Рэспублікі Беларусь</h1>
+  <div class="info">
+   <p>Поўная гісторыя дадзеных OSM - карыстальнікі, якія дадалі і правілі тэг 'ref:BY:trade_register' да x аб'ектаў</p>
+   <p>Файл даддзеных: ..\.data\belarus-latest-internal.osm.pbf</p>
+   <p>Час файла дадзеных: Mon Oct  6 15:05:51 2025</p>
+   <p>Score = node*3 + ways*2 + relations*1</p>
+   <p><br></p>
+  </div>
+  <table id="example">
+   <thead>
+    <tr>
+     <th>Рэйтынг</th>
+     <th>Карыстальнік</th>
+     <th>Вузлы</th>
+     <th>Лініі</th>
+     <th>Адносіны</th>
+     <th>Балы</th>
+     <th>Колькасць</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr><td>1</td><td>bigopenmac</td><td>348</td><td>112</td><td>0</td><td>1268</td><td>460</td></tr>
+    <tr><td>2</td><td>pooh79</td><td>210</td><td>188</td><td>0</td><td>1006</td><td>398</td></tr>
+    <tr><td>3</td><td>Reinkarnator</td><td>302</td><td>32</td><td>0</td><td>970</td><td>334</td></tr>
+    <tr><td>4</td><td>LidaCity</td><td>239</td><td>2</td><td>0</td><td>721</td><td>241</td></tr>
+    <tr><td>5</td><td>Prusaker</td><td>125</td><td>136</td><td>0</td><td>647</td><td>261</td></tr>
+    <tr><td>6</td><td>Virkom</td><td>107</td><td>49</td><td>0</td><td>419</td><td>156</td></tr>
+    <tr><td>7</td><td>Vodevil_Mark</td><td>60</td><td>117</td><td>0</td><td>414</td><td>177</td></tr>
+    <tr><td>8</td><td>semigradsky</td><td>47</td><td>5</td><td>0</td><td>151</td><td>52</td></tr>
+    <tr><td>9</td><td>Rico557</td><td>32</td><td>11</td><td>0</td><td>118</td><td>43</td></tr>
+    <tr><td>10</td><td>Андрей Кирилов</td><td>29</td><td>12</td><td>0</td><td>111</td><td>41</td></tr>
+   </tbody>
+  </table>
+ </body>
+</html>
