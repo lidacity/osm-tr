@@ -6052,14 +6052,14 @@ const Data8 =
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.253867,
-          53.942237
+          27.046694,
+          53.959688
         ]
       },
       "properties": {
-        "ID": "n3701725121",
-        "ref:BY:trade_register": 546391,
-        "status": "gold"
+        "ID": "n13243455996",
+        "ref:BY:trade_register": 302110,
+        "status": "black"
       }
     },
     {
@@ -6067,14 +6067,29 @@ const Data8 =
       "geometry": {
         "type": "Point",
         "coordinates": [
-          25.263432,
-          53.931834
+          27.044776,
+          53.980054
         ]
       },
       "properties": {
-        "ID": "n13252073799",
-        "ref:BY:trade_register": 546391,
-        "status": "gold"
+        "ID": "n13243455997",
+        "ref:BY:trade_register": 517889,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.049854,
+          53.96835
+        ]
+      },
+      "properties": {
+        "ID": "n13243479703",
+        "ref:BY:trade_register": 510223,
+        "status": "black"
       }
     }
   ]
