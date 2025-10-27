@@ -262,17 +262,19 @@ function JsonEachFeature(Feature, Layer)
  Content = new Array();
  var Lat = Feature.geometry.coordinates[1];
  var Lon = Feature.geometry.coordinates[0];
- if (Properties['ID'])
+ FullID = Properties['ID'];
+ if (FullID)
  {
-  ShortType = Array.from(Properties['ID'])[0];
-  ID = Properties['ID'].substring(1);
+  ShortType = Array.from(FullID)[0];
+  ID = FullID.substring(1);
   Type = '';
   if (ShortType == 'n')
    Type = 'node';
   if (ShortType == 'w')
    Type = 'way';
   Content.push(`<a target="_blank" href="https://openstreetmap.org/${Type}/${ID}">osm</a>`);
-  Content.push(`<a target="_josm" href="http://localhost:8111/load_object?objects=${Properties['ID']}&relation_members=true&referrers=true" onclick='return LoadObject("${Properties['ID']}");'>josm</a>`);
+  Content.push(`<a target="_josm" href="http://localhost:8111/load_object?objects=${FullID}&relation_members=true&referrers=true" onclick='return LoadObject("${FullID}");'>josm</a>`);
+  Content.push(`<a target="_id" href="https://www.openstreetmap.org/edit?${ShortType}=${ID}#map=19/${Lat}/${Lon}");'>iD</a>`);
   Content.push(`<a target="_blank" href="https://pewu.github.io/osm-history/#/${Type}/${ID}">history</a>`);
   Content.push(`<a target="_blank" href="https://mapillary.com/app/?lat=${Lat}&lng=${Lon}&z=18">Mapillary</a>`);
  }
