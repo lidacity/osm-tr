@@ -1,13 +1,14 @@
-﻿	Utils.py
+	Utils.py
 	Git.py
 1	TradeRegister.py	1 раз в месяц (при чтении нового торгового реестра)
 2	MTD.py			1 раз в месяц	"" -> gray
 3	Nominantim.py		1 раз в неделю	"" gray red orange -> red orange
 4	OverpassOrange.py	1 раз в неделю	orange -> blue violet
 5       Check.py		1 раз в неделю	red orange blue violet | delete
-3	Stat.py			1 раз в неделю
-6	OverpassGreen.py	1 раз в час	all -> green gold black
-7	Convert.py		1 раз в час
+6	Stat.py			1 раз в неделю
+7	oshCounter.py		1 раз в неделю
+8	OverpassGreen.py	1 раз в час	all -> green gold black
+9	Convert.py		1 раз в час
 
 
 https://download.geofabrik.de/bz2.html

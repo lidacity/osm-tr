@@ -4,11 +4,12 @@ import os
 import sys
 import time
 from datetime import datetime
+from pathlib import Path
 
 from loguru import logger
 import requests
 
-import Utils
+from Utils import SetDate, LoadGeoJson, SaveGeoJson
 
 
 #https://grp.nalog.gov.by/grp/rest-api
@@ -38,10 +39,10 @@ def SetMTD(Features, PAN, Text):
 
 def Generate():
  DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
- Utils.SetDate('MTD', DateTime)
+ SetDate("../docs/date.js", 'MTD', DateTime)
  #
  logger.info("read js")
- Data = Utils.LoadGeoJson(os.path.join("..", ".temp", "shops.1.js"), "Data")
+ Data = LoadGeoJson("../.temp/shops.1.json"))
  #
  logger.info("parse nalog.gov.by")
  for Index, Feature in enumerate(Data['features']):
@@ -63,7 +64,7 @@ def Generate():
  logger.info(f"обработано всего {Index+1} записей")
  #
  logger.info("write js")
- Utils.SaveGeoJson(os.path.join("..", ".temp", "shops.2.js"), "Data", Data)
+ SaveGeoJson("../.temp/shops.2.json", Data)
  
 
 
@@ -71,8 +72,7 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(os.path.join("..", ".log", "tr.log"))
- if not Utils.RunOnce():
-  logger.info("Start MTD to gray")
-  Generate()
-  logger.info("Done MTD to gray")
+ logger.add(Path("../.log/tr.log"))
+ logger.info("Start MTD to gray")
+ Generate()
+ logger.info("Done MTD to gray")

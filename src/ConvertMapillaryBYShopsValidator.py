@@ -4,16 +4,17 @@
 
 import os, sys
 import json
-import geojson
 import html
 import urllib.request
 import hashlib
-
 from datetime import datetime
+from pathlib import Path
+
+import geojson
 from loguru import logger
 
-import Utils
 from Git import GitPush
+from Utils import SetDate, SaveJson, SaveGeoJson, LoadJson
 
 
 NF3 = { 'type', 'format:view', 'place:view', 'assortment:view', 'amenity:type', 'retail:place', 'cafe:type', 'mall:specialization', 'marketplace:type', 'marketplace:specialization', 'category:class', }
@@ -89,7 +90,7 @@ def GetDate(FileName):
 
 def Generate():
 
- FileName = os.path.join("..", ".temp", "shops.html")
+ FileName = Path("../.temp/shops.html")
 
  logger.info("Downloading")
  urllib.request.urlretrieve("https://raw.githubusercontent.com/MapillaryBY/ShopsValidator/refs/heads/main/shops.html", FileName)
@@ -103,9 +104,8 @@ def Generate():
    logger.warning("already updated")
    sys.exit()
 
- Dates = Utils.LoadJson(os.path.join("..", "docs", "shops", "date.js"), "ModifyDate");
- Dates['Update'] = GetDate(FileName)
- Utils.SaveJson(os.path.join("..", "docs", "shops", "date.js"), "ModifyDate", Dates)
+ Date = GetDate(FileName)
+ SetDate("../docs/shops/date.js", "Update", Date)
 
  logger.info("get json")
 
@@ -189,8 +189,8 @@ def Generate():
 
  logger.info("save js")
 
- Utils.SaveJson(os.path.join("..", "docs", "shops", "shops.3nf.js"), "Data3NF", Base3NF)
- Utils.SaveGeoJson(os.path.join("..", "docs", "shops", "shops.data.js"), "Data", Features)
+ SaveJson("../docs/shops/shops.3nf.js", Base3NF, Variable="Data3NF")
+ SaveGeoJson("../docs/shops/shops.data.js", Features, Variable="Data")
 
  with open(f"{FileName}.md5", "w") as File:
   File.write(MD5)
@@ -211,7 +211,7 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
 
- logger.add(os.path.join("..", ".log", "tr.log"))
+ logger.add(Path("../.log/tr.log"))
  logger.info("Start")
 
  Generate()

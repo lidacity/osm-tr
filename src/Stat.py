@@ -1,16 +1,20 @@
+#!.venv/bin/python
+
 import os
 import sys
 from datetime import datetime
+from pathlib import Path
 
 import requests
 from loguru import logger
 from jinja2 import Environment, FileSystemLoader
 from dateutil import parser
 
-import Utils
+from Utils import GetDate
 
 
 URL = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+#URL = "http://localhost:8091/api/interpreter"
 
 
 def GetOverpass():
@@ -69,7 +73,7 @@ def GetUsers(List):
   Result.append(User)
   Index += 1
  #
- return { 'Users': Result, 'DateTime': datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 'PBFDateTime': Utils.GetDate("Nominatim") } #Geofabrik
+ return { 'Users': Result, 'DateTime': datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 'PBFDateTime': GetDate("../docs/date.js", 'Geofabrik') }
 
 
 def Jinja(Users):
@@ -77,7 +81,7 @@ def Jinja(Users):
  Env = Environment(loader=Loader)
  Template = Env.get_template("Stat.htm")
  Render = Template.render(Users)
- FileName = os.path.join("..", "docs", "stat.html")
+ FileName = Path("../docs/stat.html")
  with open(FileName, mode="w", encoding="utf-8") as File:
   File.write(Render)
 
@@ -118,8 +122,7 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(os.path.join("..", ".log", "tr.log"))
- if not Utils.RunOnce():
-  logger.info("Start stat")
-  Generate()
-  logger.info("Done stat")
+ logger.add(Path("../.log/tr.log"))
+ logger.info("Start stat")
+ Generate()
+ logger.info("Done stat")

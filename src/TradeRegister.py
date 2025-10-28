@@ -2,13 +2,17 @@
 
 import os
 import sys
-import glob
-import geojson
+from glob import glob
 from datetime import datetime
-from loguru import logger
 import re
+from pathlib import Path
 
-import Utils
+import geojson
+from loguru import logger
+
+from Utils import GetDate, SetDate, SaveJson, SaveGeoJson, Normalize
+import UtilsTrade
+
 
 Bool = ['firm:is', 'retail:is', 'trade:is', 'place:is', ]
 Float = ['trade:area', 'building:area', ]
@@ -30,14 +34,14 @@ def GetDateFromFileName(FileName):
 
 
 def GetLastFile():
- ListOfFiles = glob.glob(os.path.join("..", ".data", "*.csv"))
+ ListOfFiles = glob(Path("../.data/*.csv"))
  return max(ListOfFiles, key=os.path.getctime)
 
 
 
 def Generate(FileName):
  Date = GetDateFromFileName(FileName)
- Utils.SetDate('Trade', Date)
+ SetDate("../docs/date.js", 'Trade', Date)
  #
  logger.info("parse csv")
  Features = []
@@ -51,16 +55,16 @@ def Generate(FileName):
   for Line in File:
    Line = OldLine + Line
    OldLine = ""
-   Values = [Utils.Normalize(Item) for Item in Line[1:-2].split('";"')]
+   Values = [Normalize(Item) for Item in Line[1:-2].split('";"')]
    if len(Values) < len(Fulls): # импарт з крывога csv
     OldLine = Line
     continue
-#   Items = {Utils.KeyList[Key]: Value for Key, Value in zip(Keys, Values) if Value}
+#   Items = {UtilsTrade.KeyList[Key]: Value for Key, Value in zip(Keys, Values) if Value}
 #   for Key, Value in Items.copy().items():
    Items = {}
    for Full, Value in zip(Fulls, Values):
     if Value:
-     Key = Utils.KeyList[Full]
+     Key = UtilsTrade.KeyList[Full]
      # ідэнтыфікатары
      if Key in NF3:
       if Key not in Base3NF:
@@ -101,8 +105,8 @@ def Generate(FileName):
  #
  logger.info("write js")
  FeatureCollection = geojson.FeatureCollection(Features)
- Utils.SaveJson(os.path.join("..", "docs", "shops.nf3.js"), "Data3NF", Base3NF)
- Utils.SaveGeoJson(os.path.join("..", ".temp", f"shops.1.js"), "Data", FeatureCollection)
+ SaveJson("../docs/shops.nf3.js", Base3NF, Variable="Data3NF")
+ SaveGeoJson("../.temp/shops.1.json", FeatureCollection)
 
 
 
@@ -110,14 +114,13 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(os.path.join("..", ".log", "tr.log"))
- if not Utils.RunOnce():
-  logger.info("Start trade register")
-  FileName = GetLastFile()
-  Temp = Utils.GetDate('File')
-  if Temp != FileName:
-   Generate(FileName)
-   Utils.SetDate('File', FileName)
-  else:
-   logger.warning("already converted")
-  logger.info("Done trade register")
+ logger.add(Path("../.log/tr.log"))
+ logger.info("Start trade register")
+ FileName = GetLastFile()
+ Temp = GetDate("../docs/date.js", 'File')
+ if Temp != FileName:
+  Generate(FileName)
+  SetDate("../docs/date.js", 'File', FileName)
+ else:
+  logger.warning("already converted")
+ logger.info("Done trade register")

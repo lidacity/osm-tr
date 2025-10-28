@@ -1,13 +1,16 @@
+#!.venv/bin/python
+
 import os
 import sys
 from datetime import datetime
 from collections import Counter
+from pathlib import Path
 
 import geojson
 from loguru import logger
 import requests
 
-import Utils
+from Utils import SetDate, LoadGeoJson, SaveGeoJson, SaveJson
 
 
 URL = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
@@ -46,15 +49,15 @@ def GetGreens():
 
 def Generate():
  DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
- Utils.SetDate('Update', DateTime)
+ SetDate("../docs/date.js", 'Update', DateTime)
  #
  logger.info("read js")
- Data = Utils.LoadGeoJson(os.path.join("..", ".temp", "shops.5.js"), "Data")
+ Data = LoadGeoJson("../.temp/shops.5.json")
  #
  logger.info("read overpass")
  Greens = GetGreens()
  Elements = GetCoord(Greens['elements'])
- Utils.SaveJson(os.path.join("..", ".temp", "shops.6.overpass.js"), "Data", Greens)
+ SaveJson("../.temp/shops.6.overpass.json", Greens)
  #
  logger.info("parse green")
  for Feature in Data['features']:
@@ -93,8 +96,8 @@ def Generate():
  logger.info(f"обработано всего {len(Greens['elements'])} записей")
  #
  logger.info("write js")
- Utils.SaveGeoJson(os.path.join("..", ".temp", "shops.6.js"), "Data", Data)
- #Utils.SaveJson(os.path.join("..", ".temp", "shops.6.absent.js"), "Data", Elements)
+ SaveGeoJson("../.temp/shops.6.json", Data)
+ #SaveJson("../.temp/shops.6.absent.json", Elements)
  
 
 
@@ -102,9 +105,8 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(os.path.join("..", ".log", "tr.log"))
- if not Utils.RunOnce():
-  logger.info("Start overpass all -> green\\gold\\black")
-  Generate()
-  logger.info("Done overpass all -> green\\gold\\black")
+ logger.add(Path("../.log/tr.log"))
+ logger.info("Start overpass all -> green\\gold\\black")
+ Generate()
+ logger.info("Done overpass all -> green\\gold\\black")
 

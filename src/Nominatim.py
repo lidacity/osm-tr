@@ -2,14 +2,16 @@
 
 import os
 import sys
+import asyncio
 
 from loguru import logger
-import asyncio
 import nominatim_api as napi
 import geojson
+from pathlib import Path
 
-import Utils
 import Download
+from Utils import SetDate, LoadGeoJson, SaveGeoJson
+import UtilsTrade
 
 
 async def Search(Query):
@@ -28,18 +30,17 @@ def Generate():
  OSM = Download.PBF(Download=False)
  #!!
  Date = OSM.ReadState()
- Utils.SetDate('Nominatim', Date)
+ SetDate("../docs/date.js", 'Nominatim', Date)
  #
  logger.info("read js")
- Data = Utils.LoadGeoJson(os.path.join("..", ".temp", "shops.2.js"), "Data")
- #Delete = []
+ Data = LoadGeoJson("../.temp/shops.2.json")
  #
  logger.info("parse nominatim")
  for Index, Feature in enumerate(Data['features']):
   Geometry, Properties = Feature['geometry'], Feature['properties']
   Status = Properties.get('status', "")
   #
-  Addresses = Utils.GetAddress(Properties)
+  Addresses = UtilsTrade.GetAddress(Properties, Full=False)
   if Status in ["gray"]:
    for Address in Addresses:
     for Count in range(1, len(Address)):
@@ -75,10 +76,6 @@ def Generate():
     else:
      continue
     break
-   #else: # калі аніякага адраса не знайшлі
-   # Delete.append(Feature)
-   # Data['features'].remove(Feature)
-   # logger.error(f"для {Properties.get('ref:BY:trade_register', "?")} с адресом ({Address[:-1]}) координаты не найдены")
   #
   if Index % 10000 == 0:
    if Index > 0:
@@ -86,8 +83,7 @@ def Generate():
  logger.info(f"обработано всего {Index+1} записей")
  #
  logger.info("write js")
- Utils.SaveGeoJson(os.path.join("..", ".temp", "shops.3.js"), "Data", Data)
- #Utils.SaveJson(os.path.join("..", ".temp", "shops.3delete.js"), "Delete", Delete)
+ SaveGeoJson("../.temp/shops.3.json", Data)
 
 
 
@@ -95,8 +91,7 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(os.path.join("..", ".log", "tr.log"))
- if not Utils.RunOnce():
-  logger.info("Start nominatim to red\\orange")
-  Generate()
-  logger.info("Done nominatim to red\\orange")
+ logger.add(Path("../.log/tr.log"))
+ logger.info("Start nominatim to red\\orange")
+ Generate()
+ logger.info("Done nominatim to red\\orange")

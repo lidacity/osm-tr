@@ -3,14 +3,16 @@
 import os
 import sys
 from datetime import datetime
+from pathlib import Path
 
 from loguru import logger
 
-import Utils
+from Utils import LoadGeoJson, SaveGeoJson, SaveJson
+import UtilsTrade
 
 
 def Check(Geometry, Properties):
- Address = Utils.GetAddress(Properties, Full=False)
+ Address = UtilsTrade.GetAddress(Properties, Full=False)
  if Geometry['coordinates'] == [0.0, 0.0]:
   return False
  elif Properties['official_name'][:30] == "Индивидуальный предприниматель" and Address == []:
@@ -26,7 +28,7 @@ def Check(Geometry, Properties):
 
 def Generate():
  logger.info("read js")
- Data = Utils.LoadGeoJson(os.path.join("..", ".temp", "shops.4.js"), "Data")
+ Data = LoadGeoJson("../.temp/shops.4.json")
  Delete = []
  #
  logger.info("check")
@@ -47,8 +49,8 @@ def Generate():
  logger.info(f"{len(Data['features'])} записей для сохранения")
 
  logger.info("write js")
- Utils.SaveGeoJson(os.path.join("..", ".temp", "shops.5.js"), "Data", Data)
- Utils.SaveJson(os.path.join("..", ".temp", "shops.5.delete.js"), "Delete", Delete)
+ SaveGeoJson("../.temp/shops.5.json", Data)
+ SaveJson("../.temp/shops.5.delete.json", Delete)
  
 
 
@@ -56,9 +58,8 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(os.path.join("..", ".log", "tr.log"))
- if not Utils.RunOnce():
-  logger.info("Start check")
-  Generate()
-  logger.info("Done check")
+ logger.add(Path("../.log/tr.log"))
+ logger.info("Start check")
+ Generate()
+ logger.info("Done check")
 

@@ -3,16 +3,17 @@
 import os
 import sys
 from datetime import datetime
+from pathlib import Path
 
 from loguru import logger
 import requests
 from haversine import haversine
 import geojson
 
-import Utils
+from Utils import SetDate, LoadGeoJson, LoadJson, SaveGeoJson, DeNormalize
 
 
-#Overpass = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+#URL = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
 URL = "http://localhost:8091/api/interpreter"
 
 Shop = {
@@ -193,11 +194,11 @@ def GetViolet(Lat, Lon, Keys):
 
 def Generate():
  DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
- Utils.SetDate('Address', DateTime)
+ SetDate("../docs/date.js", 'Address', DateTime)
  #
  logger.info("read js")
- Data = Utils.LoadGeoJson(os.path.join("..", ".temp", "shops.3.js"), "Data")
- NF3 = Utils.LoadJson(os.path.join("..", "docs", "shops.nf3.js"), "Data3NF")
+ Data = LoadGeoJson("../.temp/shops.3.json")
+ NF3 = LoadJson("../docs/shops.nf3.js", Variable="Data3NF")
  #
  logger.info("parse orange")
  #
@@ -205,7 +206,7 @@ def Generate():
   Geometry, Properties = Feature['geometry'], Feature['properties']
   Status = Properties.get('status', "")
   if Status in ["orange"]:
-   Name = [ Utils.DeNormalize(Properties[Key]) for Key in ['name', 'alt_name', 'official_name'] if Key in Properties ]
+   Name = [ DeNormalize(Properties[Key]) for Key in ['name', 'alt_name', 'official_name'] if Key in Properties ]
    if Name:
     Lon, Lat = Geometry['coordinates']
     Coord = GetBlue(Lat, Lon, Name)
@@ -232,7 +233,7 @@ def Generate():
  logger.info(f"обработано всего {Index+1} записей")
  #
  logger.info("write js")
- Utils.SaveGeoJson(os.path.join("..", ".temp", "shops.4.js"), "Data", Data)
+ SaveGeoJson("../.temp/shops.4.json", Data)
 
 
 
@@ -240,9 +241,8 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(os.path.join("..", ".log", "tr.log"))
- if not Utils.RunOnce():
-  logger.info("Start overpass orange to blue/violet")
-  Generate()
-  logger.info("Done overpass orange to blue/violet")
+ logger.add(Path("../.log/tr.log"))
+ logger.info("Start overpass orange to blue/violet")
+ Generate()
+ logger.info("Done overpass orange to blue/violet")
 

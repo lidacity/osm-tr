@@ -3,10 +3,11 @@ import sys
 import hashlib
 import json
 import re
+from datetime import datetime
+from pathlib import Path
 
 import requests
 from urllib.parse import urlencode
-from datetime import datetime
 #from dateutil.parser import parse as parsedate
 
 from loguru import logger
@@ -25,10 +26,10 @@ class PBF:
   self.Cookie = {}
   self.DateTime = None
   self.UserAgent = {"User-agent": "https://osm-tr.lidacity.by/"}
-  self.StateFileName = os.path.join("..", ".data", "belarus-latest-internal.state.txt")
-  self.FileName = os.path.join("..", ".data", "belarus-latest-internal.osm.pbf")
+  self.StateFileName = Path("../.data/belarus-latest-internal.state.txt")
+  self.FileName = Path("../.data/belarus-latest-internal.osm.pbf")
   if Download:
-   PasswordFile = {'Type': "PasswordFile", 'FileName': os.path.join("..", ".data", ".passwd")}
+   PasswordFile = {'Type': "PasswordFile", 'FileName': Path("../.data/.passwd")}
    self.Cookie = self.GetCookie(Auth=PasswordFile, Header=self.UserAgent)
    #print(self.Cookie)
    self.Download(State, self.StateFileName)

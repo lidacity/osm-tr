@@ -6,3 +6,4 @@ requests
 haversine
 python-dateutil
 Jinja2
+osmium
