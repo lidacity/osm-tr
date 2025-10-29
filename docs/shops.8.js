@@ -189,6 +189,21 @@ const Data8 =
       "geometry": {
         "type": "Point",
         "coordinates": [
+          23.780116,
+          52.106185
+        ]
+      },
+      "properties": {
+        "ID": "w375573428",
+        "ref:BY:trade_register": 256783,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           27.330269,
           54.005246
         ]
