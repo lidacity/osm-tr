@@ -327,16 +327,8 @@ var Map = L.map('map', MapOption);
 var Control = L.control.layers(BaseMaps, null).addTo(Map);
 
 Markers.addTo(Map);
-
-var GeoJsonLayer1 = L.geoJSON(Data1, DataOption);
-var GeoJsonLayer2 = L.geoJSON(Data2, DataOption);
-var GeoJsonLayer3 = L.geoJSON(Data3, DataOption);
-var GeoJsonLayer4 = L.geoJSON(Data4, DataOption);
-var GeoJsonLayer5 = L.geoJSON(Data5, DataOption);
-var GeoJsonLayer6 = L.geoJSON(Data6, DataOption);
-var GeoJsonLayer7 = L.geoJSON(Data7, DataOption);
-var GeoJsonLayer8 = L.geoJSON(Data8, DataOption);
-//Map.fitBounds(GeoJsonLayer7.getBounds().pad(0.1));
+var GeoJsonLayer = L.geoJSON(Data, DataOption);
+Map.fitBounds(GeoJsonLayer.getBounds().pad(0.1));
 
 for (const [Color, Layer] of Object.entries(Group))
 {
