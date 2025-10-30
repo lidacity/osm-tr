@@ -105,8 +105,8 @@ def Generate(FileName):
  #
  logger.info("write js")
  FeatureCollection = geojson.FeatureCollection(Features)
- SaveJson("../docs/shops.nf3.js", Base3NF, Variable="Data3NF")
- SaveGeoJson("../.temp/shops.1.json", FeatureCollection)
+ SaveJson("../docs/tr.nf3.js", Base3NF, Const="Data3NF")
+ SaveGeoJson("../.temp/tr.1.json", FeatureCollection)
 
 
 

@@ -28,7 +28,7 @@ def Check(Geometry, Properties):
 
 def Generate():
  logger.info("read js")
- Data = LoadGeoJson("../.temp/shops.4.json")
+ Data = LoadGeoJson("../.temp/tr.4.json")
  Delete = []
  #
  logger.info("check")
@@ -49,8 +49,8 @@ def Generate():
  logger.info(f"{len(Data['features'])} записей для сохранения")
 
  logger.info("write js")
- SaveGeoJson("../.temp/shops.5.json", Data)
- SaveJson("../.temp/shops.5.delete.json", Delete)
+ SaveGeoJson("../.temp/tr.5.json", Data)
+ SaveJson("../.temp/tr.5.delete.json", Delete)
  
 
 

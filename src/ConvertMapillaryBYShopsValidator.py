@@ -13,12 +13,11 @@ from pathlib import Path
 import geojson
 from loguru import logger
 
-from Git import GitPush
 from Utils import SetDate, SaveJson, SaveGeoJson, LoadJson
 
 
-NF3 = { 'type', 'format:view', 'place:view', 'assortment:view', 'amenity:type', 'retail:place', 'cafe:type', 'mall:specialization', 'marketplace:type', 'marketplace:specialization', 'category:class', }
-NF3sub = { 'category:group', 'category:subgroup', }
+NF3 = { 'type', 'format:view', 'place:view', 'assortment:view', 'amenity:type', 'retail:place', 'cafe:type', 'mall:specialization', 'marketplace:type', 'marketplace:specialization', }
+NF3sub = { 'category:class', 'category:group', 'category:subgroup', }
 
 
 def Del(Key, Item):
@@ -55,25 +54,6 @@ def GetMD5(FileName):
  return Result.hexdigest()
 
 
-def LoadJson(FileName, Name):
- Result = {}
- if os.path.isfile(FileName):
-  with open(FileName, "r", encoding='utf-8') as File:
-   Data = File.readlines()
-   #Data = "".join(Data).replace("\n", " ")
-   #Data = re.search(f"var {Name} =(.*);", Data).group(1)
-   Data = "".join(Data)
-   Start = Data.find(f"var {Name} =") + len(f"var {Name} =")
-   End = Start + Data[Start::].find(f";\n")
-   Data = Data[Start:End]
-   #Data = Data[1:] # 'Data[1:]' прапускае 'var {Var} ='
-   #Data = "".join(Data)
-   #Data = Data.strip()
-   #Data = Data[:-1] # 'Data[:-1]' прапускае ';'
-   Result = json.loads(Data)
- return Result
-
-
 def GetDate(FileName):
  Result = {}
  if os.path.isfile(FileName):
@@ -105,11 +85,11 @@ def Generate():
    sys.exit()
 
  Date = GetDate(FileName)
- SetDate("../docs/shops/date.js", "Update", Date)
+ SetDate("../docs/shops.date.js", "Update", Date)
 
  logger.info("get json")
 
- Data = LoadJson(FileName, "markersData")
+ Data = LoadJson(FileName, Variable="markersData")
 
  #
 
@@ -153,7 +133,7 @@ def Generate():
   elif Item['detectStatus'] == 2:
    Properties['status'] = "blue"
   elif Item['detectStatus'] == 1:
-   Properties['status'] = "orange"
+   Properties['status'] = "violet"
   else:
    Properties['status'] = "red"
   del Item['detectStatus']
@@ -189,31 +169,21 @@ def Generate():
 
  logger.info("save js")
 
- SaveJson("../docs/shops/shops.3nf.js", Base3NF, Variable="Data3NF")
- SaveGeoJson("../docs/shops/shops.data.js", Features, Variable="Data")
+ SaveJson("../docs/shops.3nf.js", Base3NF, Const="Data3NF")
+ SaveGeoJson("../docs/shops.js", Features, Const="Data")
 
  with open(f"{FileName}.md5", "w") as File:
   File.write(MD5)
 
  #
 
- logger.info("git")
-
- Diff = GitPush(f"autogenerate shops {datetime.now().strftime('%Y-%m-%d')}")
- if Diff:
-  pass #logger.info(f"git push complete:\n{Diff}")
- else:
-  logger.error(f"Git error")
-
-
-
 if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
 
  logger.add(Path("../.log/tr.log"))
- logger.info("Start")
+ logger.info("Start shops")
 
  Generate()
 
- logger.info("Done")
+ logger.info("Done shops")

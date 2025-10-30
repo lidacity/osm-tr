@@ -6,15 +6,11 @@ from datetime import datetime
 from pathlib import Path
 
 from loguru import logger
-import requests
 from haversine import haversine
 import geojson
 
-from Utils import SetDate, LoadGeoJson, LoadJson, SaveGeoJson, DeNormalize
+from Utils import GetOverpass, SetDate, LoadGeoJson, LoadJson, SaveGeoJson, DeNormalize
 
-
-#URL = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
-URL = "http://localhost:8091/api/interpreter"
 
 Shop = {
  'Прочие продовольственные неспециализорованные магазины со смешанным ассортиментом товаров, не включенные в другие типы': ["shop=convenience"],
@@ -152,16 +148,12 @@ def GetCoord(Lat, Lon, Elements):
  return { 'ID': f"{Item['type'][0]}{Item['id']}", 'Coordinates': [Item['lon'], Item['lat']] }
 
 
-#https://maps.mail.ru/osm/tools/overpass/
 def GetBlue(Lat, Lon, Names):
  for Name in Names:
-  #URL = f"{Overpass}?data=[out:json];area[name='Беларусь'];(node['name'~'{Name}'](area)(around:1000.0,{Lat},{Lon});node['name:ru'~'{Name}'](area)(around:1000.0,{Lat},{Lon}););out qt center;"
   Overpass = f"[out:json];(node['name'~'{Name}'](around:150.0,{Lat},{Lon});node['name:ru'~'{Name}'](around:150.0,{Lat},{Lon}););out qt center;"
-  Response = requests.get(URL, params={'data': Overpass})
-  if Response.status_code == 200:
-   Result = Response.json()
-   if len(Result['elements']) > 0:
-    return GetCoord(Lat, Lon, Result['elements'])
+  Result = GetOverpass(Overpass, URL="http://localhost:8091/api/interpreter")
+  if len(Result['elements']) > 0:
+   return GetCoord(Lat, Lon, Result['elements'])
  return None
 
 
@@ -173,21 +165,15 @@ def GetKeys(Key, Properties, NF3, Array):
   return []
 
 
-#https://maps.mail.ru/osm/tools/overpass/
 def GetViolet(Lat, Lon, Keys):
- #Query = "[out:json];area[name='Беларусь'];("
- #Query += f"node[{Key}](area)(around:100.0,{Lat},{Lon});"
- #URL = f"{Overpass}?data={Query}"
  Overpass = "[out:json];("
  for Key in Keys:
   Overpass += f"node[{Key}](around:100.0,{Lat},{Lon});"
  Overpass += ");out qt center;"
  #
- Response = requests.get(URL, params={'data': Overpass})
- if Response.status_code == 200:
-  Result = Response.json()
-  if len(Result['elements']) > 0:
-   return GetCoord(Lat, Lon, Result['elements'])
+ Result = GetOverpass(Overpass, URL="http://localhost:8091/api/interpreter")
+ if len(Result['elements']) > 0:
+  return GetCoord(Lat, Lon, Result['elements'])
  return None
 
 
@@ -197,8 +183,8 @@ def Generate():
  SetDate("../docs/date.js", 'Address', DateTime)
  #
  logger.info("read js")
- Data = LoadGeoJson("../.temp/shops.3.json")
- NF3 = LoadJson("../docs/shops.nf3.js", Variable="Data3NF")
+ Data = LoadGeoJson("../.temp/tr.3.json")
+ NF3 = LoadJson("../docs/tr.nf3.js", Const="Data3NF")
  #
  logger.info("parse orange")
  #
@@ -233,7 +219,7 @@ def Generate():
  logger.info(f"обработано всего {Index+1} записей")
  #
  logger.info("write js")
- SaveGeoJson("../.temp/shops.4.json", Data)
+ SaveGeoJson("../.temp/tr.4.json", Data)
 
 
 

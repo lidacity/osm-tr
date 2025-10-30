@@ -5,36 +5,24 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-import requests
 from loguru import logger
 from jinja2 import Environment, FileSystemLoader
 from dateutil import parser
 
-from Utils import GetDate
+from Utils import GetOverpass, GetDate
 
 
-URL = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
-#URL = "http://localhost:8091/api/interpreter"
+#URL = 
 
 
-def GetOverpass():
+def GetJson():
  Overpass = f"[out:json];area[name='Беларусь'];nw['ref:BY:trade_register'](area);out meta;"
- Response = requests.get(URL, params={'data': Overpass})
- if Response.status_code == 200:
-  Result = Response.json()
-  return Result
- else:
-  return None
+ return GetOverpass(Overpass)#, URL="http://localhost:8091/api/interpreter")
 
 
 def GetHistory(Type, ID):
  Overpass = f"[out:json];timeline({Type},{ID});foreach(retro(u(t['created']))({Type}({ID});out meta;););"
- Response = requests.get(URL, params={'data': Overpass})
- if Response.status_code == 200:
-  Result = Response.json()
-  return Result
- else:
-  return None
+ return GetOverpass(Overpass)#, URL="http://localhost:8091/api/interpreter")
 
 
 def GetUsers(List):
@@ -90,7 +78,7 @@ def Jinja(Users):
 def Generate():
  Result = {}
  logger.info("get overpass")
- Json = GetOverpass()
+ Json = GetJson()
  logger.info("parse overpass")
  for Index, Element in enumerate(Json['elements']):
   Type, ID = Element['type'], Element['id']

@@ -1,8 +1,3 @@
-import os
-import html
-import json
-import geojson
-
 
 KeyList = {
  'Полное наименование юр. лица или ФИО ИП': "official_name",

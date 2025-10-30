@@ -8,12 +8,8 @@ from pathlib import Path
 
 import geojson
 from loguru import logger
-import requests
 
-from Utils import SetDate, LoadGeoJson, SaveGeoJson, SaveJson
-
-
-URL = "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+from Utils import GetOverpass, SetDate, LoadGeoJson, SaveGeoJson, SaveJson
 
 
 def GetCoord(Elements):
@@ -30,17 +26,6 @@ def GetCoord(Elements):
  return Result
 
 
-#https://maps.mail.ru/osm/tools/overpass/
-def GetGreens():
- Overpass = f"[out:json];area[name='Беларусь'];nw['ref:BY:trade_register'](area);out center;"
- Response = requests.get(URL, params={'data': Overpass})
- if Response.status_code == 200:
-  Result = Response.json()
-  return Result
- else:
-  return None
-
-
 #def GetDoubles(Elements):
 # Result = Counter([ Element['tags']['ref:BY:trade_register'] for Element in Elements ])
 # return [ int(Key) for Key, Value in Result.items() if Value > 1 ]
@@ -52,12 +37,12 @@ def Generate():
  SetDate("../docs/date.js", 'Update', DateTime)
  #
  logger.info("read js")
- Data = LoadGeoJson("../.temp/shops.5.json")
+ Data = LoadGeoJson("../.temp/tr.5.json")
  #
  logger.info("read overpass")
- Greens = GetGreens()
+ Greens = GetOverpass("[out:json];area[name='Беларусь'];nw['ref:BY:trade_register'](area);out center;")
  Elements = GetCoord(Greens['elements'])
- SaveJson("../.temp/shops.6.overpass.json", Greens)
+ SaveJson("../.temp/tr.6.overpass.json", Greens)
  #
  logger.info("parse green")
  for Feature in Data['features']:
@@ -96,8 +81,8 @@ def Generate():
  logger.info(f"обработано всего {len(Greens['elements'])} записей")
  #
  logger.info("write js")
- SaveGeoJson("../.temp/shops.6.json", Data)
- #SaveJson("../.temp/shops.6.absent.json", Elements)
+ SaveGeoJson("../.temp/tr.6.json", Data)
+ #SaveJson("../.temp/tr.6.absent.json", Elements)
  
 
 

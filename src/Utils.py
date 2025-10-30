@@ -4,6 +4,7 @@ import json
 import geojson
 from pathlib import Path
 
+import requests
 from loguru import logger
 
 from sys import platform
@@ -25,50 +26,68 @@ def DeNormalize(Text):
 # return html.unescape(Text)
 
 
-def SaveJson(FileName, Json, Variable=None):
+def SaveJson(FileName, Json, Const=None, Variable=None):
  FileName = Path(FileName)
  with open(FileName, "w", encoding='utf-8') as File:
-  if Variable is not None:
-   File.write(f"const {Variable} =\n")
-  json.dump(Json, File, indent=2, ensure_ascii=False, sort_keys=False)
-  if Variable is not None:
+  if Const is not None:
+   File.write(f"const {Const} =\n")
+   json.dump(Json, File, indent=2, ensure_ascii=False, sort_keys=False)
    File.write(";\n")
+  elif Variable is not None:
+   File.write(f"const {Variable} =\n")
+   json.dump(Json, File, indent=2, ensure_ascii=False, sort_keys=False)
+   File.write(";\n")
+  else:
+   json.dump(Json, File, indent=2, ensure_ascii=False, sort_keys=False)
 
 
-def SaveGeoJson(FileName, GeoJson, Variable=None):
+def SaveGeoJson(FileName, GeoJson, Const=None, Variable=None):
  FileName = Path(FileName)
  with open(FileName, "w", encoding='utf-8') as File:
-  if Variable is not None:
-   File.write(f"const {Variable} =\n")
-  geojson.dump(GeoJson, File, indent=2, ensure_ascii=False, sort_keys=False)
-  if Variable is not None:
+  if Const is not None:
+   File.write(f"const {Const} =\n")
+   geojson.dump(GeoJson, File, indent=2, ensure_ascii=False, sort_keys=False)
    File.write(";\n")
+  elif Variable is not None:
+   File.write(f"const {Variable} =\n")
+   geojson.dump(GeoJson, File, indent=2, ensure_ascii=False, sort_keys=False)
+   File.write(";\n")
+  else:
+   geojson.dump(GeoJson, File, indent=2, ensure_ascii=False, sort_keys=False)
 
 
-def LoadJson(FileName, Variable=None):
+def LoadJson(FileName, Const=None, Variable=None):
  FileName = Path(FileName)
  Result = {}
  if os.path.isfile(FileName):
   with open(FileName, "r", encoding='utf-8') as File:
    Data = File.readlines()
    Data = "".join(Data)
-   if Variable is not None:
-    Start = Data.find(f"const {Variable} =") + len(f"const {Variable} =")
+   if Const is not None:
+    Start = Data.find(f"const {Const} =") + len(f"const {Const} =")
+    End = Start + Data[Start::].find(f";\n")
+    Data = Data[Start:End]
+   elif Variable is not None:
+    Start = Data.find(f"var {Variable} =") + len(f"var {Variable} =")
     End = Start + Data[Start::].find(f";\n")
     Data = Data[Start:End]
    Result = json.loads(Data)
  return Result
 
 
-def LoadGeoJson(FileName, Variable=None):
+def LoadGeoJson(FileName, Const=None, Variable=None):
  FileName = Path(FileName)
  Result = {}
  if os.path.isfile(FileName):
   with open(FileName, "r", encoding='utf-8') as File:
    Data = File.readlines()
    Data = "".join(Data)
-   if Variable is not None:
-    Start = Data.find(f"const {Variable} =") + len(f"const {Variable} =")
+   if Const is not None:
+    Start = Data.find(f"const {Const} =") + len(f"const {Const} =")
+    End = Start + Data[Start::].find(f";\n")
+    Data = Data[Start:End]
+   elif Variable is not None:
+    Start = Data.find(f"var {Variable} =") + len(f"var {Variable} =")
     End = Start + Data[Start::].find(f";\n")
     Data = Data[Start:End]
    Result = geojson.loads(Data)
@@ -77,13 +96,13 @@ def LoadGeoJson(FileName, Variable=None):
 
 # задаць дату абнаўлення
 def SetDate(FileName, Key, Date):
- Dates = LoadJson(FileName, Variable="ModifyDate");
+ Dates = LoadJson(FileName, Const="ModifyDate");
  Dates[Key] = Date
- SaveJson(FileName, Dates, Variable="ModifyDate")
+ SaveJson(FileName, Dates, Const="ModifyDate")
 
 
 def GetDate(FileName, Key):
- Dates = LoadJson(FileName, Variable="ModifyDate");
+ Dates = LoadJson(FileName, Const="ModifyDate");
  return Dates.get(Key, "")
 
 
@@ -93,6 +112,11 @@ def GetRequest(URL, Params={}, Cookies={}, Headers={}, Files={}, Json={}):
   return Response.json()
  else:
   return {}
+
+
+#https://maps.mail.ru/osm/tools/overpass/
+def GetOverpass(Overpass, URL="https://maps.mail.ru/osm/tools/overpass/api/interpreter"):
+ return GetRequest(URL, Params={'data': Overpass})
 
 
 def RunOnce():

@@ -33,7 +33,7 @@ def Generate():
  SetDate("../docs/date.js", 'Nominatim', Date)
  #
  logger.info("read js")
- Data = LoadGeoJson("../.temp/shops.2.json")
+ Data = LoadGeoJson("../.temp/tr.2.json")
  #
  logger.info("parse nominatim")
  for Index, Feature in enumerate(Data['features']):
@@ -83,7 +83,7 @@ def Generate():
  logger.info(f"обработано всего {Index+1} записей")
  #
  logger.info("write js")
- SaveGeoJson("../.temp/shops.3.json", Data)
+ SaveGeoJson("../.temp/tr.3.json", Data)
 
 
 

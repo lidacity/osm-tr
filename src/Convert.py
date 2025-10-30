@@ -26,7 +26,7 @@ Regions = {
 
 def Generate():
  logger.info("read js")
- Data = LoadGeoJson("../.temp/shops.6.json")
+ Data = LoadGeoJson("../.temp/tr.6.json")
  #
  logger.info("convert")
  for Feature in Data['features']:
@@ -44,7 +44,7 @@ def Generate():
  logger.info("write js")
  for Index, Name in enumerate(Regions):
   FeatureCollection = geojson.FeatureCollection(Regions[Name])
-  SaveGeoJson(f"../docs/shops.{Index + 1}.js", FeatureCollection, Variable=f"Data{Index + 1}")
+  SaveGeoJson(f"../docs/tr.{Index + 1}.js", FeatureCollection, Const=f"Data{Index + 1}")
 
 
 

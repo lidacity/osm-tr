@@ -42,7 +42,7 @@ def Generate():
  SetDate("../docs/date.js", 'MTD', DateTime)
  #
  logger.info("read js")
- Data = LoadGeoJson("../.temp/shops.1.json"))
+ Data = LoadGeoJson("../.temp/tr.1.json"))
  #
  logger.info("parse nalog.gov.by")
  for Index, Feature in enumerate(Data['features']):
@@ -64,7 +64,7 @@ def Generate():
  logger.info(f"обработано всего {Index+1} записей")
  #
  logger.info("write js")
- SaveGeoJson("../.temp/shops.2.json", Data)
+ SaveGeoJson("../.temp/tr.2.json", Data)
  
 
 
