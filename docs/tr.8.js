@@ -303,6 +303,36 @@ const Data8 =
         "ref:BY:trade_register": 470201,
         "status": "black"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.860737,
+          54.295169
+        ]
+      },
+      "properties": {
+        "ID": "n2175223354",
+        "ref:BY:trade_register": 383135,
+        "status": "gold"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.868898,
+          54.297978
+        ]
+      },
+      "properties": {
+        "ID": "n4157975258",
+        "ref:BY:trade_register": 383135,
+        "status": "gold"
+      }
     }
   ]
 };
