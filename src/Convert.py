@@ -25,7 +25,7 @@ Regions = {
 
 
 def Generate():
- logger.info("read js")
+ logger.info("read json")
  Data = LoadGeoJson("../.temp/tr.6.json")
  #
  logger.info("convert")

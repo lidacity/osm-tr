@@ -54,6 +54,36 @@ const Data8 =
       "geometry": {
         "type": "Point",
         "coordinates": [
+          27.475308,
+          53.896856
+        ]
+      },
+      "properties": {
+        "ID": "n7684674185",
+        "ref:BY:trade_register": 349963,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.698485,
+          52.096052
+        ]
+      },
+      "properties": {
+        "ID": "n11497187405",
+        "ref:BY:trade_register": 498535,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           24.055164,
           51.93781
         ]
@@ -144,6 +174,21 @@ const Data8 =
       "geometry": {
         "type": "Point",
         "coordinates": [
+          23.643976,
+          52.108291
+        ]
+      },
+      "properties": {
+        "ID": "n13247511089",
+        "ref:BY:trade_register": 120493,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           27.586897,
           53.924949
         ]
@@ -174,6 +219,21 @@ const Data8 =
       "geometry": {
         "type": "Point",
         "coordinates": [
+          27.476931,
+          53.901389
+        ]
+      },
+      "properties": {
+        "ID": "n13295036922",
+        "ref:BY:trade_register": 306207,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           27.330324,
           54.005394
         ]
@@ -196,6 +256,21 @@ const Data8 =
       "properties": {
         "ID": "w375573428",
         "ref:BY:trade_register": 256783,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.959627,
+          51.945382
+        ]
+      },
+      "properties": {
+        "ID": "w766528775",
+        "ref:BY:trade_register": 753536,
         "status": "black"
       }
     },

@@ -36,7 +36,7 @@ def Generate():
  DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
  SetDate("../docs/date.js", 'Update', DateTime)
  #
- logger.info("read js")
+ logger.info("read json")
  Data = LoadGeoJson("../.temp/tr.5.json")
  #
  logger.info("read overpass")
@@ -80,7 +80,7 @@ def Generate():
  #
  logger.info(f"обработано всего {len(Greens['elements'])} записей")
  #
- logger.info("write js")
+ logger.info("write json")
  SaveGeoJson("../.temp/tr.6.json", Data)
  #SaveJson("../.temp/tr.6.absent.json", Elements)
  

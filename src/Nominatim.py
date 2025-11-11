@@ -32,7 +32,7 @@ def Generate():
  Date = OSM.ReadState()
  SetDate("../docs/date.js", 'Nominatim', Date)
  #
- logger.info("read js")
+ logger.info("read json")
  Data = LoadGeoJson("../.temp/tr.2.json")
  #
  logger.info("parse nominatim")
@@ -82,7 +82,7 @@ def Generate():
     logger.info(f"обработано {Index} записей")
  logger.info(f"обработано всего {Index+1} записей")
  #
- logger.info("write js")
+ logger.info("write json")
  SaveGeoJson("../.temp/tr.3.json", Data)
 
 

@@ -27,14 +27,23 @@ def Check(Geometry, Properties):
 
 
 def Generate():
- logger.info("read js")
+ logger.info("read json")
+ Base3NF = LoadJson("../docs/tr.nf3.js")
  Data = LoadGeoJson("../.temp/tr.4.json")
  Delete = []
+ #
+ logger.info("parse")
+ Exclude = []
+ for Index, Item in enumerate(Base3NF['type']):
+  if Item in ["Розничная торговля без использования торгового объекта", "Интернет-магазин", "Оптовая торговля без использования торгового объекта", ]:
+   Exclude.append(Index)
  #
  logger.info("check")
  for Feature in Data['features']:
   Geometry, Properties = Feature['geometry'], Feature['properties']
   if not Check(Geometry, Properties):
+   Delete.append(Feature)
+  elif Properties['type.id'] in Exclude:
    Delete.append(Feature)
  #
  logger.info(f"{len(Delete)} записей для удаления")
@@ -48,7 +57,7 @@ def Generate():
  #
  logger.info(f"{len(Data['features'])} записей для сохранения")
 
- logger.info("write js")
+ logger.info("write json")
  SaveGeoJson("../.temp/tr.5.json", Data)
  SaveJson("../.temp/tr.5.delete.json", Delete)
  

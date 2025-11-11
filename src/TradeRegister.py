@@ -103,7 +103,7 @@ def Generate(FileName):
    Features.append(Feature)
    IsLine = True
  #
- logger.info("write js")
+ logger.info("write json")
  FeatureCollection = geojson.FeatureCollection(Features)
  SaveJson("../docs/tr.nf3.js", Base3NF, Const="Data3NF")
  SaveGeoJson("../.temp/tr.1.json", FeatureCollection)

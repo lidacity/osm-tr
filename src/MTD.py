@@ -41,7 +41,7 @@ def Generate():
  DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
  SetDate("../docs/date.js", 'MTD', DateTime)
  #
- logger.info("read js")
+ logger.info("read json")
  Data = LoadGeoJson("../.temp/tr.1.json"))
  #
  logger.info("parse nalog.gov.by")
@@ -63,7 +63,7 @@ def Generate():
      logger.info(f"обработано {Index} записей")
  logger.info(f"обработано всего {Index+1} записей")
  #
- logger.info("write js")
+ logger.info("write json")
  SaveGeoJson("../.temp/tr.2.json", Data)
  
 
