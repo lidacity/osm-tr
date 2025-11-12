@@ -14,26 +14,12 @@ var MapOption =
  fadeAnimation: false,
 };
 
-var OptionIcon =
+var FilterOption =
 {
- iconSize: [25, 41],
- iconAnchor: [12, 41],
- popupAnchor: [1, -34],
-};
-
-var LeafIcon = L.Icon.extend({options: OptionIcon});
-
-var Group =
-{
- green: L.layerGroup([], {title: 'Всё в порядке', short: 'Ok', icon: new LeafIcon({iconUrl: './img/marker-icon-green.png'}), }),
- blue: L.layerGroup([], {title: 'Совпадение имени', short: 'Имя', icon: new LeafIcon({iconUrl: './img/marker-icon-blue.png'}), }),
- violet: L.layerGroup([], {title: 'Совпадение места', short: 'Место', icon: new LeafIcon({iconUrl: './img/marker-icon-violet.png'}), }),
- orange: L.layerGroup([], {title: 'Совпадение адреса', short: 'Адрес', icon: new LeafIcon({iconUrl: './img/marker-icon-orange.png'}), }),
- gold: L.layerGroup([], {title: 'Повторы', short: 'Дубли', icon: new LeafIcon({iconUrl: './img/marker-icon-gold.png'}), }),
- grey: L.layerGroup([], {title: 'В процессе ликвидации', short: 'Ликвидация', icon: new LeafIcon({iconUrl: './img/marker-icon-grey.png'}), }),
- black: L.layerGroup([], {title: 'Нет в реестре, но есть на карте', short: 'Ошибка', icon: new LeafIcon({iconUrl: './img/marker-icon-black.png'}), }),
- red: L.layerGroup([], {title: 'Не найден', short: 'Отсутстует', icon: new LeafIcon({iconUrl: './img/marker-icon-red.png'}), }),
-};
+ position: "topright",
+ expand: "left",
+ iconPath: "./img/filter_icon.png",
+}
 
 
 var Orders = new Array();
@@ -56,10 +42,6 @@ var MarkerOption =
  textClassName: 'donut-text',
  legendClassName: 'donut-legend',
 };
-
-var Markers = L.DonutCluster({chunkedLoading: true}, MarkerOption);
-
-const Storage = new Map();
 
 var DataOption =
 {
@@ -85,15 +67,48 @@ function GetFilter(Feature, Layer)
 }
 
 
+function IsFilter(Filter, Properties)
+{
+ if (!Filter)
+  return true;
+ //
+ for (const [Key, Value] of Object.entries(Properties))
+ {
+  if (Key.substr(Key.length-3) == ".id")
+  {
+   const Values = Unpack3NF(Properties, Key.substr(0, Key.length-3));
+   if (Values.toLowerCase().includes(Filter))
+    return true;
+  }
+  else if (Key.substr(Key.length-4) == ".ids")
+  {
+   const Values = Unpack3NFsub(Properties, Key.substr(0, Key.length-4));
+   for (const Item of Values.split("\n"))
+    if (Item.toLowerCase().includes(Filter))
+     return true;
+  }
+  else if (typeof Value == "string")
+   if (Value.toLowerCase().includes(Filter))
+    return true;
+ }
+ return false
+}
+
+
+const Storage = new Map();
+
 function PointToLayer(Feature, LatLng)
 {
  if ('status' in Feature.properties)
  {
-  var Icon = Group[Feature.properties.status].options.icon;
-  var Marker = L.marker(LatLng, {icon: Icon, title: Feature.properties.status});
-  Marker.addTo(Group[Feature.properties.status]);
-  Storage.set(Feature.properties['ref:BY:trade_register'], Marker);
-  return Marker;
+  if (IsFilter(Filter, Feature.properties))
+  {
+   var Icon = Group[Feature.properties.status].options.icon;
+   var Marker = L.marker(LatLng, {icon: Icon, title: Feature.properties.status});
+   Marker.addTo(Group[Feature.properties.status]);
+   Storage.set(Feature.properties['ref:BY:trade_register'], Marker);
+   return Marker;
+  }
  }
 }
 
@@ -113,11 +128,18 @@ function Clipboard(Text)
 function GetUrlParams(Param, Default)
 {
  const UrlParams = new URLSearchParams(window.location.search);
- const Result = UrlParams.get(Param);
- if (Result)
-  return Result
+ if (UrlParams.has(Param))
+  return UrlParams.get(Param)
  else
   return Default
+}
+
+
+function SetUrlParams(Param, Value)
+{
+ var UrlParams = new URLSearchParams(window.location.search);
+ UrlParams.set(Param, Value);
+ history.pushState(null, null, window.location.pathname + "?" + UrlParams.toString());
 }
 
 
@@ -129,24 +151,54 @@ function GetDates()
  return Result.join('\n');
 }
 
+function CreateMarkers(Map)
+{
+ for (const [Color, Value] of Object.entries(Group))
+  Value.clearLayers();
+ //
+ var GeoJsonLayer = L.geoJSON(Data, DataOption);
+ if (GeoJsonLayer.getLayers().length > 0)
+  Map.fitBounds(GeoJsonLayer.getBounds().pad(0.1));
+}
+
 
 // -=-=-=-=-=-
 
-
 var Map = L.map('map', MapOption);
-var Control = L.control.layers(BaseMaps, null).addTo(Map);
+var Filter = GetUrlParams('filter', null);
 
+CreateMarkers(Map);
+
+var Markers = L.DonutCluster({chunkedLoading: true}, MarkerOption);
 Markers.addTo(Map);
-var GeoJsonLayer = L.geoJSON(Data, DataOption);
-Map.fitBounds(GeoJsonLayer.getBounds().pad(0.1));
 
+var Layers = L.control.layers(BaseMaps, null).addTo(Map);
 for (const [Color, Layer] of Object.entries(Group))
 {
  Markers.checkIn(Layer);
- Control.addOverlay(Layer, Layer.options.title);
+ Layers.addOverlay(Layer, Layer.options.title);
  Layer.addTo(Map);
 };
-Control.addTo(Map);
+Layers.addTo(Map);
+
+var FilterBox = L.control.searchbox(FilterOption);
+FilterBox.addTo(Map);
+
+if (Filter)
+{
+ Filter = Filter.toLowerCase()
+ FilterBox.setValue(Filter);
+}
+
+FilterBox.onInput("keyup", function (e){
+ if (e.keyCode == 13) {
+  Filter = FilterBox.getValue();
+  Filter = Filter.toLowerCase()
+  SetUrlParams("filter", Filter);
+  CreateMarkers(Map);
+  FilterBox.hide();
+ }
+});
 
 
 // -=-=-=-=-=-

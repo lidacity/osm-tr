@@ -1,3 +1,12 @@
+var OptionIcon =
+{
+ iconSize: [25, 41],
+ iconAnchor: [12, 41],
+ popupAnchor: [1, -34],
+};
+
+var LeafIcon = L.Icon.extend({options: OptionIcon});
+
 var Group =
 {
  green: L.layerGroup([], {title: 'Всё в порядке', short: 'Ok', icon: new LeafIcon({iconUrl: './img/marker-icon-green.png'}), }),

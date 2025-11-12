@@ -4,3 +4,4 @@ https://github.com/Leaflet/Leaflet.markercluster  !! return L.markerClusterGroup
 https://github.com/ghybs/Leaflet.MarkerCluster.LayerSupport
 https://github.com/pointhi/leaflet-color-markers/
 https://github.com/ptma/Leaflet.Legend
+https://github.com/luka1199/Leaflet.AnimatedSearchBox/

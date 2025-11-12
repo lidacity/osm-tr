@@ -30400,8 +30400,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        30.349696,
-        53.859536
+        30.349667,
+        53.859579
       ]
     },
     "properties": {
@@ -30421,9 +30421,9 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": "n6458001365",
-      "shortCoords": "0nLDYe7oY8Hu",
+      "shortCoords": "0nLDYe7yRCHu",
       "contact": "info@eurotorg.by",
-      "distance": 1,
+      "distance": 7,
       "food": "",
       "status": "blue"
     }
@@ -83215,7 +83215,7 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.689436,
+        27.689036,
         53.815051
       ]
     },
@@ -83235,12 +83235,12 @@ const Data =
         32
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lrKQZ82MQGf",
+      "ID": "n13299349849",
+      "shortCoords": "0lrKQZ0cmFGd",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -83908,8 +83908,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.678301,
-        53.799744
+        27.694534,
+        53.854674
       ]
     },
     "properties": {
@@ -83927,12 +83927,12 @@ const Data =
         22
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lrIrdytY0Hc",
+      "ID": "n5378476273",
+      "shortCoords": "0lrLF9wNtpPc",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -84064,7 +84064,7 @@ const Data =
       "contact": "",
       "distance": 9,
       "food": "",
-      "status": "violet"
+      "status": "green"
     }
   },
   {
@@ -99369,8 +99369,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.511785,
-        54.224066
+        28.569707,
+        54.16708
       ]
     },
     "properties": {
@@ -99388,12 +99388,12 @@ const Data =
         22
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0nEhfDyDO6A8",
+      "ID": "n6956751396",
+      "shortCoords": "0nEiQe4h8sHu",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -99530,8 +99530,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.232832,
-        53.941922
+        27.745675,
+        53.968797
       ]
     },
     "properties": {
@@ -99549,12 +99549,12 @@ const Data =
         207
       ],
       "format:view.id": 4,
-      "ID": null,
-      "shortCoords": "0lpnt8Y36wPG",
+      "ID": "n13299306055",
+      "shortCoords": "0lraib8ISgG~",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -262385,8 +262385,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.005677,
-        53.326824
+        26.023162,
+        53.309984
       ]
     },
     "properties": {
@@ -262405,12 +262405,12 @@ const Data =
         99
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0k17vU8QOEFP",
+      "ID": "n4424560250",
+      "shortCoords": "0k3RA2OuS_Nj",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -539166,8 +539166,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.534943,
-        54.313699
+        28.692622,
+        54.268129
       ]
     },
     "properties": {
@@ -539186,12 +539186,12 @@ const Data =
         40
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0nEl3YgFzvGI",
+      "ID": "n6897590415",
+      "shortCoords": "0nEsfjZyB9I2",
       "contact": "a600010@beloil.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -539290,7 +539290,7 @@ const Data =
       "contact": "a600001@beloil.by",
       "distance": 14,
       "food": "",
-      "status": "violet"
+      "status": "green"
     }
   },
   {
@@ -539323,7 +539323,7 @@ const Data =
       "contact": "a600002@beloil.by",
       "distance": 4,
       "food": "",
-      "status": "violet"
+      "status": "green"
     }
   },
   {
@@ -539331,8 +539331,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.534943,
-        54.313699
+        28.690165,
+        54.270389
       ]
     },
     "properties": {
@@ -539351,12 +539351,12 @@ const Data =
         32
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0nEl3YgFzvGI",
+      "ID": "n6897590413",
+      "shortCoords": "0nEsfa1c1jGt",
       "contact": "a600003@beloil.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -539364,8 +539364,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.679385,
-        53.609067
+        26.764153,
+        53.533705
       ]
     },
     "properties": {
@@ -539384,12 +539384,12 @@ const Data =
         40
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0liv1Lc3LlC3",
+      "ID": "n4483970347",
+      "shortCoords": "0loEhSAe~dEg",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -539529,8 +539529,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.534943,
-        54.313699
+        28.498412,
+        54.271641
       ]
     },
     "properties": {
@@ -539548,12 +539548,12 @@ const Data =
         70
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0nEl3YgFzvGI",
+      "ID": "n7027794086",
+      "shortCoords": "0nEkX__NYQPv",
       "contact": "a600007@beloil.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -539561,8 +539561,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.679385,
-        53.609067
+        26.765036,
+        53.532663
       ]
     },
     "properties": {
@@ -539581,12 +539581,12 @@ const Data =
         40
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0liv1Lc3LlC3",
+      "ID": "n4483970346",
+      "shortCoords": "0loEhGyzU4Bs",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -539619,7 +539619,7 @@ const Data =
       "contact": "a600054@beloil.by",
       "distance": 5,
       "food": "",
-      "status": "violet"
+      "status": "green"
     }
   },
   {
@@ -540020,8 +540020,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.545138,
-        54.198332
+        28.545121,
+        54.198355
       ]
     },
     "properties": {
@@ -540040,10 +540040,10 @@ const Data =
         32
       ],
       "format:view.id": 1,
-      "ID": "n7030694719",
-      "shortCoords": "0nEhsSqO5jEq",
+      "ID": "n796226272",
+      "shortCoords": "0nEhsSqaUaEq",
       "contact": "",
-      "distance": 2,
+      "distance": 4,
       "food": "",
       "status": "violet"
     }
@@ -540086,8 +540086,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        29.139851,
-        54.317196
+        29.114097,
+        54.320915
       ]
     },
     "properties": {
@@ -540105,12 +540105,12 @@ const Data =
         22
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0nGagJrra~Ca",
+      "ID": "n4048945198",
+      "shortCoords": "0nGaIUS6JVFE",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -540118,8 +540118,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        29.121624,
-        54.324123
+        29.31577,
+        54.374681
       ]
     },
     "properties": {
@@ -540138,12 +540138,12 @@ const Data =
         108
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0nGaJnj9BWJ4",
+      "ID": "n5310273806",
+      "shortCoords": "0nGzkaU36XGl",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -540314,8 +540314,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.232832,
-        53.941922
+        27.599797,
+        53.970543
       ]
     },
     "properties": {
@@ -540333,12 +540333,12 @@ const Data =
         164
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lpnt8Y36wPG",
+      "ID": "n6916730231",
+      "shortCoords": "0lrYBCkPpNAp",
       "contact": "a600075@beloil.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -540612,8 +540612,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.232832,
-        53.941922
+        27.497031,
+        53.969241
       ]
     },
     "properties": {
@@ -540631,12 +540631,12 @@ const Data =
         426
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lpnt8Y36wPG",
+      "ID": "n1780098977",
+      "shortCoords": "0lrQo8np0VPJ",
       "contact": "a600088@beloil.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -540735,7 +540735,7 @@ const Data =
       "contact": "",
       "distance": 2,
       "food": "",
-      "status": "violet"
+      "status": "green"
     }
   },
   {
@@ -540842,8 +540842,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.288037,
-        54.093221
+        28.288104,
+        54.093251
       ]
     },
     "properties": {
@@ -540862,12 +540862,12 @@ const Data =
         32
       ],
       "format:view.id": 1,
-      "ID": "n1588283577",
-      "shortCoords": "0nBW9s35RmLN",
+      "ID": "n6947244061",
+      "shortCoords": "0nBW9toCHnLa",
       "contact": "a600053@beloil.by",
       "distance": 3,
       "food": "",
-      "status": "violet"
+      "status": "green"
     }
   },
   {
@@ -540875,8 +540875,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.232832,
-        53.941922
+        27.686965,
+        54.055061
       ]
     },
     "properties": {
@@ -540895,12 +540895,12 @@ const Data =
         32
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lpnt8Y36wPG",
+      "ID": "n8110991320",
+      "shortCoords": "0lreAHFIU9Bx",
       "contact": "e600061@beloil.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -540908,8 +540908,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.748775,
-        53.895737
+        26.756182,
+        53.902895
       ]
     },
     "properties": {
@@ -540928,12 +540928,12 @@ const Data =
         32
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lpENns_WvJ7",
+      "ID": "n13299275157",
+      "shortCoords": "0lpEabcBflG3",
       "contact": "a600034@beloil.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -540974,8 +540974,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.731737,
-        53.488595
+        26.733281,
+        53.489948
       ]
     },
     "properties": {
@@ -540994,12 +540994,12 @@ const Data =
         61
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0loBDGPmHrBj",
+      "ID": "n13299311228",
+      "shortCoords": "0loBDYliH2GJ",
       "contact": "a600021@beloil.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -655539,8 +655539,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        30.91905,
-        54.30928
+        30.938291,
+        54.30938
       ]
     },
     "properties": {
@@ -655558,12 +655558,12 @@ const Data =
         9
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0nOv8Zw1WMGc",
+      "ID": "n13206289885",
+      "shortCoords": "0nkFUR0hpoEd",
       "contact": "a800066@beloil.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -655700,8 +655700,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        30.981504,
-        54.289413
+        30.963637,
+        54.262324
       ]
     },
     "properties": {
@@ -655719,12 +655719,12 @@ const Data =
         22
       ],
       "format:view.id": 1,
-      "ID": "w1127557057",
-      "shortCoords": "0nkFlARYi7AE",
+      "ID": "n6950322572",
+      "shortCoords": "0nkEcLBdBmCw",
       "contact": "a800003@beloil.by",
       "distance": 28,
       "food": "",
-      "status": "violet"
+      "status": "green"
     }
   },
   {
