@@ -309,6 +309,36 @@ const Data8 =
       "geometry": {
         "type": "Point",
         "coordinates": [
+          23.695205,
+          53.540779
+        ]
+      },
+      "properties": {
+        "ID": "n4458758643",
+        "ref:BY:trade_register": 168461,
+        "status": "gold"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.697242,
+          53.540014
+        ]
+      },
+      "properties": {
+        "ID": "n4458758730",
+        "ref:BY:trade_register": 168461,
+        "status": "gold"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           26.860737,
           54.295169
         ]
