@@ -33,8 +33,10 @@ function Popup(Feature, Layer)
   Content.push(`<div class="popup-field"><strong>Название</strong> (альтернативное): ${Properties['alt_name']}</div>`);
  if (Properties['alt_name#2'])
   Content.push(`<div class="popup-field"><strong>Название</strong> (альтернативное): ${Properties['alt_name#2']}</div>`);
- Content.push(`<div class="popup-field"><strong>Номер в реестре</strong>: <a href="?ID=${Properties['ref:BY:trade_register']}">${Properties['ref:BY:trade_register']}</a></div>`);
- Content.push(`<div class="popup-field"><strong>Дата регистрации</strong>: ${Properties['start_date']}</div>`);
+ if (Properties['ref:BY:trade_register'])
+  Content.push(`<div class="popup-field"><strong>Номер в реестре</strong>: <a href="?ID=${Properties['ref:BY:trade_register']}">${Properties['ref:BY:trade_register']}</a></div>`);
+ if (Properties['start_date'])
+  Content.push(`<div class="popup-field"><strong>Дата регистрации</strong>: ${Properties['start_date']}</div>`);
  if (Properties['MTD'])
   Content.push(`<div class="popup-field"><strong>Состояние МНС</strong>: ${Properties['MTD']}</div>`);
  if (Content.length > 0)

@@ -63,15 +63,10 @@ function GetStyle(Feature)
 
 function GetFilter(Feature, Layer)
 {
- return true;
-}
-
-
-function IsFilter(Filter, Properties)
-{
  if (!Filter)
   return true;
  //
+ const Properties = Feature.properties;
  for (const [Key, Value] of Object.entries(Properties))
  {
   if (Key.substr(Key.length-3) == ".id")
@@ -91,6 +86,7 @@ function IsFilter(Filter, Properties)
    if (Value.toLowerCase().includes(Filter))
     return true;
  }
+ //
  return false
 }
 
@@ -101,14 +97,11 @@ function PointToLayer(Feature, LatLng)
 {
  if ('status' in Feature.properties)
  {
-  if (IsFilter(Filter, Feature.properties))
-  {
-   var Icon = Group[Feature.properties.status].options.icon;
-   var Marker = L.marker(LatLng, {icon: Icon, title: Feature.properties.status});
-   Marker.addTo(Group[Feature.properties.status]);
-   Storage.set(Feature.properties['ref:BY:trade_register'], Marker);
-   return Marker;
-  }
+  var Icon = Group[Feature.properties.status].options.icon;
+  var Marker = L.marker(LatLng, {icon: Icon, title: Feature.properties.status});
+  Marker.addTo(Group[Feature.properties.status]);
+  Storage.set(Feature.properties['ref:BY:trade_register'], Marker);
+  return Marker;
  }
 }
 
@@ -151,23 +144,73 @@ function GetDates()
  return Result.join('\n');
 }
 
-function CreateMarkers(Map)
+
+function GetLegend()
 {
- for (const [Color, Value] of Object.entries(Group))
-  Value.clearLayers();
- //
+ var Result = new Array();
+ for (const [Color, Layer] of Object.entries(Group))
+ {
+  const Legend =
+  {
+   label: Layer.options.title + ' (' + Layer.getLayers().length + ')',
+   type: "image",
+   url: Layer.options.icon.options.iconUrl,
+  }
+  Result.push(Legend);
+ }
+ return Result
+}
+
+
+function GetCount()
+{
+ var Result = 0;
+ for (const [Color, Layer] of Object.entries(Group))
+  Result += Layer.getLayers().length;
+ return Result
+}
+
+
+function LoadGeojson(Map)
+{
  var GeoJsonLayer = L.geoJSON(Data, DataOption);
  if (GeoJsonLayer.getLayers().length > 0)
   Map.fitBounds(GeoJsonLayer.getBounds().pad(0.1));
+ //
+ LegendBox.remove(Map);
+ LegendBox = L.control.Legend({
+  position: "bottomright",
+  title: "Статистика",
+  content: GetDates() + `\nВсего: ${GetCount()}`,
+  opacity: 0.5,
+  legends: GetLegend(),
+  collapsed: true,
+ });
+ LegendBox.addTo(Map);
+}
+
+
+function ClearMarkers()
+{
+ for (var [Color, Value] of Object.entries(Group))
+  Value.clearLayers();
 }
 
 
 // -=-=-=-=-=-
 
 var Map = L.map('map', MapOption);
-var Filter = GetUrlParams('filter', null);
 
-CreateMarkers(Map);
+var Filter = GetUrlParams('filter', null);
+var FilterBox = L.control.searchbox(FilterOption);
+FilterBox.addTo(Map);
+
+var LegendBox = L.control.Legend();
+LegendBox.addTo(Map);
+
+Map.spin(true);
+LoadGeojson(Map);
+Map.spin(false);
 
 var Markers = L.DonutCluster({chunkedLoading: true}, MarkerOption);
 Markers.addTo(Map);
@@ -181,8 +224,6 @@ for (const [Color, Layer] of Object.entries(Group))
 };
 Layers.addTo(Map);
 
-var FilterBox = L.control.searchbox(FilterOption);
-FilterBox.addTo(Map);
 
 if (Filter)
 {
@@ -195,9 +236,16 @@ FilterBox.onInput("keyup", function (e){
   Filter = FilterBox.getValue();
   Filter = Filter.toLowerCase()
   SetUrlParams("filter", Filter);
-  CreateMarkers(Map);
   FilterBox.hide();
+  Map.spin(true);
+  ClearMarkers();
+  LoadGeojson(Map);
+  Map.spin(false);
  }
+});
+
+FilterBox.onButton("click", function (){
+ FilterBox.hide();
 });
 
 
@@ -225,31 +273,6 @@ Map.on('contextmenu', function(e) {
 Map.on('click', function(e) {
  console.log('[' + e.latlng.lat + ', ' + e.latlng.lng + ']');
 });
-
-var Legends = new Array();
-var Total = 0;
-for (const [Color, Layer] of Object.entries(Group))
-{
- var Count = Layer.getLayers().length;
- Total += Count;
- var Legend =
- {
-  label: Layer.options.title + ' (' + Count + ')',
-  type: "image",
-  url: Layer.options.icon.options.iconUrl,
- }
- Legends.push(Legend);
-};
-
-
-L.control.Legend({
- position: "bottomright",
- title: "Статистика",
- content: GetDates() + `\nВсего: ${Total}`,
- opacity: 0.5,
- legends: Legends,
- collapsed: true,
-}).addTo(Map);
 
 
 const MarkerId = GetUrlParams('ID', null);

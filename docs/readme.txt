@@ -5,3 +5,4 @@ https://github.com/ghybs/Leaflet.MarkerCluster.LayerSupport
 https://github.com/pointhi/leaflet-color-markers/
 https://github.com/ptma/Leaflet.Legend
 https://github.com/luka1199/Leaflet.AnimatedSearchBox/
+https://github.com/makinacorpus/Leaflet.Spin
