@@ -2667,8 +2667,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.080729,
-        54.530553
+        26.083514,
+        54.530718
       ]
     },
     "properties": {
@@ -2687,12 +2687,12 @@ const Data =
         44
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lnA2~edVjP3",
+      "ID": "w309369908",
+      "shortCoords": "0lnA9CKfs6Ai",
       "contact": "375159373565",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -2931,8 +2931,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.923328,
-        54.501362
+        26.928465,
+        54.502191
       ]
     },
     "properties": {
@@ -2951,12 +2951,12 @@ const Data =
         45
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0ltIJxu9AXMb",
+      "ID": "w241923157",
+      "shortCoords": "0ltILUyyPKFM",
       "contact": "+375172406227 dororsorg@mail.ru",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -226599,8 +226599,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.371393,
-        52.147335
+        24.370248,
+        52.147482
       ]
     },
     "properties": {
@@ -226619,12 +226619,12 @@ const Data =
         123
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0kYmZJindQCY",
+      "ID": "n13300288804",
+      "shortCoords": "0kYmZDsr6UA7",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -469100,8 +469100,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        25.579523,
-        53.46502
+        25.580293,
+        53.46611
       ]
     },
     "properties": {
@@ -469120,12 +469120,12 @@ const Data =
         61
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lgKRIKxCZCC",
+      "ID": "n6802326869",
+      "shortCoords": "0lgKRLREQeC0",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
