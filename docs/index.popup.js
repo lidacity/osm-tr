@@ -73,8 +73,8 @@ function Popup(Feature, Layer)
    <hr />`;
  //
  Content = new Array();
- if (Properties['operator:ref:BY:PAN'])
-  Content.push(`<div class="popup-field"><strong>УНП</strong>: <a target="_blank" href="https://etalonline.by/egr-status/${Properties['operator:ref:BY:PAN']}/">${Properties['operator:ref:BY:PAN']}</a></div>`);
+ if (Properties['ref:vatin'])
+  Content.push(`<div class="popup-field"><strong>УНП</strong>: <a target="_blank" href="https://etalonline.by/egr-status/${Properties['ref:vatin']}/">${Properties['ref:vatin']}</a></div>`);
  if (Properties['contact'])
   Content.push(`<div class="popup-field"><strong>Контакт</strong>: ${Properties['contact']}</div>`);
  if (Properties['type.id'])
