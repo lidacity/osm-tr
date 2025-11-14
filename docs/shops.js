@@ -21529,8 +21529,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.31088,
-        52.46907
+        26.30686,
+        52.469603
       ]
     },
     "properties": {
@@ -21550,7 +21550,7 @@ const Data =
       ],
       "format:view.id": 2,
       "ID": null,
-      "shortCoords": "0kzLd56~_EOe",
+      "shortCoords": "0kzLd0FhlTNB",
       "contact": "",
       "distance": null,
       "food": "",
@@ -99822,8 +99822,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        25.157798,
-        53.731421
+        25.37615,
+        53.828583
       ]
     },
     "properties": {
@@ -99842,12 +99842,12 @@ const Data =
         32
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lK8T6ItN5Oi",
+      "ID": "n3619122739",
+      "shortCoords": "0lhA3pYtYeKW",
       "contact": "Guryan.AE@gazprom-neft.by",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -235765,8 +235765,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.131305,
-        52.063816
+        26.135573,
+        52.06817
       ]
     },
     "properties": {
@@ -235785,12 +235785,12 @@ const Data =
         88
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0kyCZ1HvFsNR",
+      "ID": "n12146359288",
+      "shortCoords": "0kyCc7cpBRO3",
       "contact": "",
-      "distance": null,
+      "distance": 565,
       "food": "",
-      "status": "red"
+      "status": "blue"
     }
   },
   {
@@ -236161,8 +236161,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.31088,
-        52.46907
+        26.305092,
+        52.471142
       ]
     },
     "properties": {
@@ -236182,7 +236182,7 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": null,
-      "shortCoords": "0kzLd56~_EOe",
+      "shortCoords": "0kzOII5IXCCO",
       "contact": "",
       "distance": null,
       "food": "",
@@ -236227,8 +236227,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.219952,
-        52.01874
+        26.227856,
+        52.018436
       ]
     },
     "properties": {
@@ -236248,7 +236248,7 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": null,
-      "shortCoords": "0kndZx8JdzMf",
+      "shortCoords": "0kndbZkZzYGZ",
       "contact": "",
       "distance": null,
       "food": "",
@@ -237566,8 +237566,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.172477,
-        52.049953
+        26.169011,
+        52.051228
       ]
     },
     "properties": {
@@ -237588,7 +237588,7 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": null,
-      "shortCoords": "0kyCtND3p1DQ",
+      "shortCoords": "0kyCn7i0I1O4",
       "contact": "",
       "distance": null,
       "food": "",
@@ -287136,8 +287136,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        26.31088,
-        52.46907
+        26.306073,
+        52.470017
       ]
     },
     "properties": {
@@ -287157,7 +287157,7 @@ const Data =
       ],
       "format:view.id": 1,
       "ID": null,
-      "shortCoords": "0kzLd56~_EOe",
+      "shortCoords": "0kzLdfKqovHy",
       "contact": "+375299640019 +375299640019",
       "distance": null,
       "food": "",
@@ -469459,8 +469459,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        24.182405,
-        53.670608
+        23.684665,
+        53.531885
       ]
     },
     "properties": {
@@ -469479,12 +469479,12 @@ const Data =
         23
       ],
       "format:view.id": 1,
-      "ID": null,
-      "shortCoords": "0lIbGHF3sBBx",
+      "ID": "n4458758704",
+      "shortCoords": "0lCmLpnTOcKZ",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
