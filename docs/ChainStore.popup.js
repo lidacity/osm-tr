@@ -1,30 +1,18 @@
 function Popup(Feature, Layer)
 {
- var Properties = Feature['properties'];
+ var Properties = Feature.properties;
  var Result = '';
+ var Tag = "";
  //
  var Content = new Array();
- if (Properties['name:be'])
-  Content.push(`<h3>${Properties['name:be']}</h3>`);
- if (Properties['name:ru'])
-  Content.push(`<div class="popup-field"><strong>Название</strong>: ${Properties['name:ru']}</div>`);
- if (Properties['addr:full'])
-  Content.push(`<div class="popup-field"><strong>Адрес</strong>: ${Properties['addr:full']}</div>`);
- if (Content.length > 0)
-  Result += `
-   <div class="popup-content">
-    ${Content.join('\n ')}
-   </div>
-   <hr />`;
- Content = new Array();
- if (Properties['shop'])
-  Content.push(`<div class="popup-field"><strong>Тип магазина</strong>: ${Properties['shop']}</div>`);
- if (Properties['ref'])
-  Content.push(`<div class="popup-field"><strong>Идентификатор</strong>: ${Properties['ref']}</div>`);
- if (Properties['brand'])
-  Content.push(`<div class="popup-field"><strong>Брэнд</strong>: ${Properties['brand']}</div>`);
- if (Properties['operator:wikidata'])
-  Content.push(`<div class="popup-field"><strong>Вики</strong>: <a target="_blank" href="https://wikidata.org/wiki/${Properties['operator:wikidata']}/">${Properties['operator:wikidata']}</a></div>`);
+ if (Tag = Properties['name:be'])
+  Content.push(`<h3>${Tag}</h3>`);
+ if (Tag = Properties['shop'])
+  Content.push(`<div class="popup-field"><strong>Тип магазина</strong>: ${Tag}</div>`);
+ if (Tag = Properties['ref'])
+  Content.push(`<div class="popup-field"><strong>Идентификатор</strong>: ${Tag}</div>`);
+ if (Tag = Properties['addr:full'])
+  Content.push(`<div class="popup-field"><strong>Адрес</strong>: ${Tag}</div>`);
  if (Content.length > 0)
   Result += `
    <div class="popup-content">
@@ -33,10 +21,34 @@ function Popup(Feature, Layer)
    <hr />`;
  //
  Content = new Array();
- if (Properties['ref:vatin'])
-  Content.push(`<div class="popup-field"><strong>УНП</strong>: <a target="_blank" href="https://etalonline.by/egr-status/${Properties['ref:vatin']}/">${Properties['ref:vatin']}</a></div>`);
- if (Properties['ref:BY:trade_register'])
-  Content.push(`<div class="popup-field"><strong>Номер в торговом реестре</strong>: <a href="?ID=${Properties['ref:BY:trade_register']}">${Properties['ref:BY:trade_register']}</a></div>`);
+
+ if (Tag = Properties['name:ru'])
+  Content.push(`<div class="popup-field"><strong>Название</strong>: ${Tag}</div>`);
+ if (Tag = Properties['brand'])
+ {
+  const Wikidata = Properties['brand:wikidata']
+  Content.push(`<div class="popup-field"><strong>Брэнд</strong>: ${Tag} (<a target="_blank" href="https://wikidata.org/wiki/${Wikidata}/">${Wikidata}</a>)</div>`);
+ }
+ if (Tag = Properties['operator'])
+ {
+  const Wikidata = Properties['operator:wikidata']
+  Content.push(`<div class="popup-field"><strong>Оператор</strong>: ${Tag} (<a target="_blank" href="https://wikidata.org/wiki/${Wikidata}/">${Wikidata}</a>)</div>`);
+ }
+ if (Content.length > 0)
+  Result += `
+   <div class="popup-content">
+    ${Content.join('\n ')}
+   </div>
+   <hr />`;
+ //
+ Content = new Array();
+ if (Tag = Properties['ref:vatin'])
+ {
+  Content.push(`<div class="popup-field"><strong>УНП</strong>: <a target="_blank" href="https://etalonline.by/egr-status/${Tag}/">${Tag}</a></div>`);
+  Properties['ref:vatin'] = `BY${Tag}`;
+ }
+ if (Tag = Properties['ref:BY:trade_register'])
+  Content.push(`<div class="popup-field"><strong>Номер в торговом реестре</strong>: <a href="?ID=${Tag}">${Tag}</a></div>`);
  if (Content.length > 0)
   Result += `
    <div class="popup-content">
@@ -46,17 +58,27 @@ function Popup(Feature, Layer)
  //
  if (Properties['status'] != "green")
  {
-  Result += `
+  Content = new Array();
+  const Keys = ["shop", "operator", "operator:wikidata", "brand", "brand:wikidata", "ref:vatin", "name:be", "name:ru", "ref:BY:trade_register", "ref", "ref:shop"];
+  var Temp = GetClipboardText(Properties, Keys);
+  if (Temp.length > 0)
+  {
+   Text = Temp.join("<br />");
+   Clip = encodeURIComponent(Temp.join("\\n"))
+   Content.push(`<div class="popup-field">${Text}<br /><button id="clipboard" onclick="Clipboard('${Clip}');">копировать</button></div>`);
+   if (Content.length > 0)
+    Result += `
    <div class="popup-content">
-    <div class="popup-field">ref:BY:trade_register=${Properties['ref:BY:trade_register']} &nbsp; <button id="clipboard" onclick="Clipboard('ref:BY:trade_register=${Properties['ref:BY:trade_register']}');">копировать</button></div>
+    ${Content.join('\n ')}
    </div>
    <hr />`;
+  }
  }
  //
  Content = new Array();
  var Lat = Feature.geometry.coordinates[1];
  var Lon = Feature.geometry.coordinates[0];
- var FullID = Properties['ID'];
+ var FullID = Feature.id;
  if (FullID)
  {
   var ShortType = Array.from(FullID)[0];

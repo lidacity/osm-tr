@@ -16,8 +16,8 @@ var MapOption =
 
 var FilterOption =
 {
- position: "topright",
- expand: "left",
+ position: "topleft",
+ expand: "right",
  iconPath: "./img/filter_icon.png",
 }
 
@@ -109,12 +109,6 @@ function PointToLayer(Feature, LatLng)
 function JsonEachFeature(Feature, Layer)
 {
  Popup(Feature, Layer)
-}
-
-
-function Clipboard(Text)
-{
- navigator.clipboard.writeText(Text);
 }
 
 
@@ -299,3 +293,4 @@ function LoadObject(ID)
  document.getElementById('JOSM').src = `http://localhost:8111/load_object?objects=${ID}&relation_members=true&referrers=true`;
  return false;
 }
+

@@ -1,44 +1,61 @@
-function Unpack3NF(Properties, Name)
+function GetClipboardText(Properties, Keys)
 {
- var ID = Properties[`${Name}.id`];
- return Data3NF[Name][ID];
+ var Result = [];
+ for (const [Key, Value] of Object.entries(Properties))
+  if (Keys.includes(Key))
+   Result.push(`${Key}=${Value}`)
+ return Result 
 }
 
 
-function Unpack3NFsub(Properties, Name)
+function Clipboard(Text)
+{
+ Text = decodeURIComponent(Text);
+ Text = Text.replaceAll("\\n", "\n");
+ navigator.clipboard.writeText(Text);
+}
+
+
+function Unpack3NF(ID, Name)
+{
+ return Data3NF[Name][ID]
+}
+
+
+function Unpack3NFsub(IDs, Name, Join)
 {
  Result = new Array();
- var IDs = Properties[`${Name}.ids`];
  for (Index in IDs)
  {
   ID = IDs[Index];
   Value = Data3NF[Name][ID];
   Result.push(Value);
  }
- return Result.join('\n');
+ return Result.join(Join)
 }
 
 
 function Popup(Feature, Layer)
 {
- var Properties = Feature['properties'];
+ var Properties = Feature.properties;
  var Result = '';
+ var Tag = "";
  //
  var Content = new Array();
- if (Properties['official_name'])
-  Content.push(`<h3>${Properties['official_name']}</h3>`);
- if (Properties['name'])
-  Content.push(`<div class="popup-field"><strong>Название</strong>: ${Properties['name']}</div>`);
- if (Properties['alt_name'])
-  Content.push(`<div class="popup-field"><strong>Название</strong> (альтернативное): ${Properties['alt_name']}</div>`);
- if (Properties['alt_name#2'])
-  Content.push(`<div class="popup-field"><strong>Название</strong> (альтернативное): ${Properties['alt_name#2']}</div>`);
- if (Properties['ref:BY:trade_register'])
-  Content.push(`<div class="popup-field"><strong>Номер в реестре</strong>: <a href="?ID=${Properties['ref:BY:trade_register']}">${Properties['ref:BY:trade_register']}</a></div>`);
- if (Properties['start_date'])
-  Content.push(`<div class="popup-field"><strong>Дата регистрации</strong>: ${Properties['start_date']}</div>`);
- if (Properties['MTD'])
-  Content.push(`<div class="popup-field"><strong>Состояние МНС</strong>: ${Properties['MTD']}</div>`);
+ if (Tag = Properties['official_name'])
+  Content.push(`<h3>${Tag}</h3>`);
+ if (Tag = Properties['name'])
+  Content.push(`<div class="popup-field"><strong>Название</strong>: ${Tag}</div>`);
+ if (Tag = Properties['alt_name'])
+  Content.push(`<div class="popup-field"><strong>Название</strong> (альтернативное): ${Tag}</div>`);
+ if (Tag = Properties['alt_name#2'])
+  Content.push(`<div class="popup-field"><strong>Название</strong> (альтернативное): ${Tag}</div>`);
+ if (Tag = Properties['ref:BY:trade_register'])
+  Content.push(`<div class="popup-field"><strong>Номер в реестре</strong>: <a href="?ID=${Tag}">${Tag}</a></div>`);
+ if (Tag = Properties['start_date'])
+  Content.push(`<div class="popup-field"><strong>Дата регистрации</strong>: ${Tag}</div>`);
+ if (Tag = Properties['MTD'])
+  Content.push(`<div class="popup-field"><strong>Состояние МНС</strong>: ${Tag}</div>`);
  if (Content.length > 0)
   Result += `
    <div class="popup-content">
@@ -47,80 +64,110 @@ function Popup(Feature, Layer)
    <hr />`;
  //
  Content = new Array();
- if (Properties['addr:region'])
-  Content.push(`${Properties['addr:region']} область`);
- if (Properties['addr:district'])
-  Content.push(`${Properties['addr:district']} район`);
- if (Properties['addr:city'])
-  Content.push(`населенный пункт ${Properties['addr:city']}`);
- if (Properties['addr:street'])
-  Content.push(`улица ${Properties['addr:street']}`);
- if (Properties['addr:housenumber'])
-  Content.push(`${Properties['addr:housenumber']}`);
- if (Properties['addr:door'])
-  Content.push(`${Properties['addr:door']}`);
+ if (Tag = Properties['addr:region'])
+  Content.push(`${Tag} область`);
+ if (Tag = Properties['addr:district'])
+  Content.push(`${Tag} район`);
+ if (Tag = Properties['addr:city'])
+  Content.push(`${Tag}`);
+ if (Tag = Properties['addr:street'])
+  Content.push(`${Tag}`);
+ if (Tag = Properties['addr:housenumber'])
+  Content.push(`${Tag}`);
+ if (Tag = Properties['addr:door'])
+  Content.push(`${Tag}`);
  if (Content.length > 0)
   Result += `
    <div class="popup-content">
     <div class="popup-field"><strong>Адрес</strong>: ${Content.join(', ')}</div>
    </div>
    <hr />`
- else if (Properties['addr:full'])
+ else if (Tag = Properties['addr:full'])
   Result += `
    <div class="popup-content">
-    <div class="popup-field"><strong>Адрес</strong>: ${Properties['addr:full']}</div>
+    <div class="popup-field"><strong>Адрес</strong>: ${Tag}</div>
    </div>
    <hr />`;
  //
  Content = new Array();
- if (Properties['ref:vatin'])
-  Content.push(`<div class="popup-field"><strong>УНП</strong>: <a target="_blank" href="https://etalonline.by/egr-status/${Properties['ref:vatin']}/">${Properties['ref:vatin']}</a></div>`);
- if (Properties['contact'])
-  Content.push(`<div class="popup-field"><strong>Контакт</strong>: ${Properties['contact']}</div>`);
- if (Properties['type.id'])
-  Content.push(`<div class="popup-field"><strong>Тип объекта</strong>: ${Unpack3NF(Properties, 'type')}</div>`);
- if (Properties['format:view.id'])
-  Content.push(`<div class="popup-field"><strong>Вид торгового объекта</strong>: ${Unpack3NF(Properties, 'format:view')}</div>`);
- if (Properties['place:view.id'])
-  Content.push(`<div class="popup-field"><strong>Месторасположение</strong>: ${Unpack3NF(Properties, 'place:view')}</div>`);
- if (Properties['assortment:view.id'])
-  Content.push(`<div class="popup-field"><strong>Ассортимент</strong>: ${Unpack3NF(Properties, 'assortment:view')}</div>`);
- if (Properties['firm:is'])
+ if (Tag = Properties['ref:vatin'])
+  Content.push(`<div class="popup-field"><strong>УНП</strong>: <a target="_blank" href="https://etalonline.by/egr-status/${Tag}/">${Tag}</a></div>`);
+ if (Tag = Properties['contact'])
+  Content.push(`<div class="popup-field"><strong>Контакт</strong>: ${Tag}</div>`);
+ if (Tag = Properties['type.id'])
+ {
+  const Text = Unpack3NF(Tag, 'type');
+  Content.push(`<div class="popup-field"><strong>Тип объекта</strong>: ${Text}</div>`);
+ }
+ if (Tag = Properties['format:view.id'])
+ {
+  const Text = Unpack3NF(Tag, 'format:view');
+  Content.push(`<div class="popup-field"><strong>Вид торгового объекта</strong>: ${Text}</div>`);
+ }
+ if (Tag = Properties['place:view.id'])
+ {
+  const Text = Unpack3NF(Tag, 'place:view');
+  Content.push(`<div class="popup-field"><strong>Месторасположение</strong>: ${Text}</div>`);
+ }
+ if (Tag = Properties['assortment:view.id'])
+ {
+  const Text = Unpack3NF(Tag, 'assortment:view');
+  Content.push(`<div class="popup-field"><strong>Ассортимент</strong>: ${Text}</div>`);
+ }
+ if (Tag = Properties['firm:is'])
   Content.push(`<div class="popup-field"><strong>Вид</strong>: Фирменный</div>`);
- if (Properties['amenity:type.id'])
-  Content.push(`<div class="popup-field"><strong>Тип торгового объекта</strong>: ${Unpack3NF(Properties, 'amenity:type')}</div>`);
- if (Properties['trade:area'])
-  Content.push(`<div class="popup-field"><strong>Площадь торгового объекта</strong>: ${Properties['trade:area']} м²</div>`);
+ if (Tag = Properties['amenity:type.id'])
+ {
+  const Text = Unpack3NF(Tag, 'amenity:type');
+  Content.push(`<div class="popup-field"><strong>Тип торгового объекта</strong>: ${Text}</div>`);
+ }
+ if (Tag = Properties['trade:area'])
+  Content.push(`<div class="popup-field"><strong>Площадь торгового объекта</strong>: ${Tag} м²</div>`);
  if (Properties['retail:is'])
   Content.push(`<div class="popup-field"><strong>Вид торговли</strong>: Розничная</div>`);
  if (Properties['trade:is'])
   Content.push(`<div class="popup-field"><strong>Вид торговли</strong>: Оптовая</div>`);
- if (Properties['retail:place.id'])
-  Content.push(`<div class="popup-field"><strong>Форма розничной торговли</strong>: ${Unpack3NF(Properties, 'retail:place')}</div>`);
+ if (Tag = Properties['retail:place.id'])
+ {
+  const Text = Unpack3NF(Tag, 'retail:place');
+  Content.push(`<div class="popup-field"><strong>Форма розничной торговли</strong>: ${Text}</div>`);
+ }
  if (Properties['place:is'])
   Content.push(`<div class="popup-field"><strong>Оптовая торговля</strong>: Без торгового объекта</div>`);
- if (Properties['cafe:type.id'])
-  Content.push(`<div class="popup-field"><strong>Тип объекта общественного питания</strong>: ${Unpack3NF(Properties, 'cafe:type')}</div>`);
- if (Properties['amenity:cafe:capacity'])
-  Content.push(`<div class="popup-field"><strong>Мест</strong>: ${Properties['amenity:cafe:capacity']}</div>`);
- if (Properties['amenity:canteen:capacity'])
-  Content.push(`<div class="popup-field"><strong>Общедоступных мест</strong>: ${Properties['amenity:canteen:capacity']}</div>`);
- if (Properties['mall:specialization.id'])
-  Content.push(`<div class="popup-field"><strong>Специализация торгового центра</strong>: ${Unpack3NF(Properties, 'mall:specialization')}</div>`);
- if (Properties['mall:capacity'])
-  Content.push(`<div class="popup-field"><strong>Торговых объектов</strong>: ${Properties['mall:capacity']}</div>`);
- if (Properties['foodcourt:capacity'])
-  Content.push(`<div class="popup-field"><strong>Объектов общественного питания</strong>: ${Properties['foodcourt:capacity']}</div>`);
- if (Properties['building:area'])
-  Content.push(`<div class="popup-field"><strong>Площадь торгового центра</strong>: ${Properties['building:area']} м²</div>`);
- if (Properties['marketplace:type.id'])
-  Content.push(`<div class="popup-field"><strong>Тип рынка</strong>: ${Unpack3NF(Properties, 'marketplace:type')}</div>`);
- if (Properties['marketplace:specialization.id'])
-  Content.push(`<div class="popup-field"><strong>Специализация рынка</strong>: ${Unpack3NF(Properties, 'marketplace:specialization')}</div>`);
- if (Properties['marketplace:capacity'])
-  Content.push(`<div class="popup-field"><strong>Торговых мест</strong>: ${Properties['marketplace:capacity']}</div>`);
- if (Properties['marketplace:object:capacity'])
-  Content.push(`<div class="popup-field"><strong>Торговых объектов</strong>: ${Properties['marketplace:object:capacity']}</div>`);
+ if (Tag = Properties['cafe:type.id'])
+ {
+  const Text = Unpack3NF(Tag, 'cafe:type');
+  Content.push(`<div class="popup-field"><strong>Тип объекта общественного питания</strong>: ${Text}</div>`);
+ }
+ if (Tag = Properties['amenity:cafe:capacity'])
+  Content.push(`<div class="popup-field"><strong>Мест</strong>: ${Tag}</div>`);
+ if (Tag = Properties['amenity:canteen:capacity'])
+  Content.push(`<div class="popup-field"><strong>Общедоступных мест</strong>: ${Tag}</div>`);
+ if (Tag = Properties['mall:specialization.id'])
+ {
+  const Text = Unpack3NF(Tag, 'mall:specialization');
+  Content.push(`<div class="popup-field"><strong>Специализация торгового центра</strong>: ${Text}</div>`);
+ }
+ if (Tag = Properties['mall:capacity'])
+  Content.push(`<div class="popup-field"><strong>Торговых объектов</strong>: ${Tag}</div>`);
+ if (Tag = Properties['foodcourt:capacity'])
+  Content.push(`<div class="popup-field"><strong>Объектов общественного питания</strong>: ${Tag}</div>`);
+ if (Tag = Properties['building:area'])
+  Content.push(`<div class="popup-field"><strong>Площадь торгового центра</strong>: ${Tag} м²</div>`);
+ if (Tag = Properties['marketplace:type.id'])
+ {
+  const Text = Unpack3NF(Tag, 'marketplace:type');
+  Content.push(`<div class="popup-field"><strong>Тип рынка</strong>: ${Text}</div>`);
+ }
+ if (Tag = Properties['marketplace:specialization.id'])
+ {
+  const Text = Unpack3NF(Tag, 'marketplace:specialization');
+  Content.push(`<div class="popup-field"><strong>Специализация рынка</strong>: ${Text}</div>`);
+ }
+ if (Tag = Properties['marketplace:capacity'])
+  Content.push(`<div class="popup-field"><strong>Торговых мест</strong>: ${Tag}</div>`);
+ if (Tag = Properties['marketplace:object:capacity'])
+  Content.push(`<div class="popup-field"><strong>Торговых объектов</strong>: ${Tag}</div>`);
  if (Content.length > 0)
   Result += `
    <div class="popup-content">
@@ -129,12 +176,24 @@ function Popup(Feature, Layer)
    <hr />`;
  //
  Content = new Array();
- if (Properties['category:class.ids'])
-  Content.push(`<div class="popup-field"><strong>Класс</strong>: ${Unpack3NFsub(Properties, 'category:class')}</div>`);
- if (Properties['category:group.ids'])
-  Content.push(`<div class="popup-field" title="${Unpack3NFsub(Properties, 'category:group')}"><strong>Группа</strong>: {скрыто}</div>`);
- if (Properties['category:subgroup.ids'])
-  Content.push(`<div class="popup-field" title="${Unpack3NFsub(Properties, 'category:subgroup')}"><strong>Подгруппа</strong>: {скрыто}</div>`);
+ if (Tag = Properties['category:class.ids'])
+ {
+  const Title = Unpack3NFsub(Tag, 'category:class', "\n");
+  const Text = Unpack3NFsub(Tag, 'category:class', "; ").substring(0, 128);
+  Content.push(`<div class="popup-field" title="${Title}"><strong>Класс</strong>: <small>${Text}…</small></div>`);
+ }
+ if (Tag = Properties['category:group.ids'])
+ {
+  const Title = Unpack3NFsub(Tag, 'category:group', "\n");
+  const Text = Unpack3NFsub(Tag, 'category:group', "; ").substring(0, 128);
+  Content.push(`<div class="popup-field" title="${Title}"><strong>Группа</strong>: <small>${Text}…</small></div>`);
+ }
+ if (Tag = Properties['category:subgroup.ids'])
+ {
+  const Title = Unpack3NFsub(Tag, 'category:subgroup', "\n");
+  const Text = Unpack3NFsub(Tag, 'category:subgroup', "; ").substring(0, 128);
+  Content.push(`<div class="popup-field" title="${Title}"><strong>Подгруппа</strong>: <small>${Text}…</small></div>`);
+ }
  if (Content.length > 0)
   Result += `
    <div class="popup-content">
@@ -154,7 +213,7 @@ function Popup(Feature, Layer)
  Content = new Array();
  var Lat = Feature.geometry.coordinates[1];
  var Lon = Feature.geometry.coordinates[0];
- var FullID = Properties['ID'];
+ var FullID = Feature.id;
  if (FullID)
  {
   var ShortType = Array.from(FullID)[0];
@@ -191,7 +250,6 @@ var DateLegend =
  Trade: "Дата торгового реестра",
  Geofabrik: "Дата geofabrik", //
  MTD: "Дата МНС", 
- Nominatim: "Дата nominatim", //
  Address: "Дата адресов",
  Update: "Дата обновления",
 };

@@ -4,38 +4,22 @@ const Data8 =
   "features": [
     {
       "type": "Feature",
+      "id": "n1020344117",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          30.975311,
-          54.041196
+          25.277833,
+          53.893159
         ]
       },
       "properties": {
-        "official_name": "Индивидуальный предприниматель Божко Виктор Константинович",
-        "operator:ref:BY:PAN": 200423618,
-        "addr:full": "225710, Брестская обл., г. Пинск, ул. Сухая, д. 45, ком. 53, 225710,БРЕСТСКАЯ ОБЛ.,Г.ПИНСК,УЛ.РЕВОЛЮЦИОННАЯ,5,КВ.77",
-        "type.id": 1,
-        "addr:street": "Солнечная",
-        "addr:housenumber": "1",
-        "firm:is": false,
-        "retail:is": false,
-        "trade:is": false,
-        "retail:place.id": 2,
-        "place:is": false,
-        "category:class.ids": [
-          1
-        ],
-        "category:group.ids": [
-          40
-        ],
-        "ref:BY:trade_register": 154391,
-        "start_date": "16.10.2014",
-        "status": "orange"
+        "ref:BY:trade_register": 109086,
+        "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n2460079079",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -44,13 +28,58 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n2460079079",
         "ref:BY:trade_register": "ref:BY:trade_register=13551",
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n4545273492",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.292249,
+          53.897879
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 445245,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n7179144370",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.625659,
+          53.923893
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 477654,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n7222131185",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.077193,
+          54.247169
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 436962,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n7684674185",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -59,13 +88,58 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n7684674185",
         "ref:BY:trade_register": 349963,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n8077649564",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.519703,
+          53.889155
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 428309,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n9076698985",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.606221,
+          53.835487
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 466957,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n10823660136",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.708084,
+          52.072947
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 721240,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n11497187405",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -74,13 +148,28 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n11497187405",
         "ref:BY:trade_register": 498535,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n12964034229",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.733815,
+          52.10368
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 516870,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n13046508144",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -89,13 +178,43 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13046508144",
         "ref:BY:trade_register": 544259,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13112587567",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          24.575512,
+          51.956921
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 721623,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n13158797322",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.070775,
+          54.255417
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 379638,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n13160416208",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -104,13 +223,43 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13160416208",
         "ref:BY:trade_register": 437899,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13186721771",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.497266,
+          53.902037
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 574698,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n13243341717",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.051765,
+          54.013067
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 468006,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n13243455996",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -119,13 +268,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13243455996",
         "ref:BY:trade_register": 302110,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13243455997",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -134,13 +283,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13243455997",
         "ref:BY:trade_register": 517889,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13243479703",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -149,13 +298,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13243479703",
         "ref:BY:trade_register": 510223,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13247511087",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -164,13 +313,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13247511087",
         "ref:BY:trade_register": 516336,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13247511089",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -179,13 +328,43 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13247511089",
         "ref:BY:trade_register": 120493,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13249786137",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.316639,
+          53.906281
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 527500,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n13254095783",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          25.263255,
+          53.886712
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 562721,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n13261949399",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -194,13 +373,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13261949399",
         "ref:BY:trade_register": 439952,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13261957537",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -209,13 +388,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13261957537",
         "ref:BY:trade_register": 519789,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13295036922",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -224,13 +403,58 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n13295036922",
         "ref:BY:trade_register": 306207,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "n13323711488",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.26435,
+          54.010409
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 356707,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n13323711500",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.260294,
+          54.012228
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 356703,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "w109739821",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.726796,
+          52.111337
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 75211,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "w137331286",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -239,13 +463,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "w137331286",
         "ref:BY:trade_register": 503716,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "w375573428",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -254,13 +478,43 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "w375573428",
         "ref:BY:trade_register": 256783,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "w423856304",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.825152,
+          54.488814
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 723700,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "w751978660",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.967437,
+          55.111737
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 746461,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "w766528775",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -269,13 +523,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "w766528775",
         "ref:BY:trade_register": 753536,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "w979721955",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -284,13 +538,43 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "w979721955",
         "ref:BY:trade_register": 546529,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "w1152703718",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.605122,
+          51.755849
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 466233,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "w1160653472",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          26.18341,
+          54.399818
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 213218,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "w1422016269",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -299,13 +583,28 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "w1422016269",
         "ref:BY:trade_register": 470201,
         "status": "black"
       }
     },
     {
       "type": "Feature",
+      "id": "w1443089107",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.275327,
+          54.050772
+        ]
+      },
+      "properties": {
+        "ref:BY:trade_register": 448843,
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n4458758643",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -314,13 +613,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n4458758643",
         "ref:BY:trade_register": 168461,
         "status": "gold"
       }
     },
     {
       "type": "Feature",
+      "id": "n4458758730",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -329,13 +628,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n4458758730",
         "ref:BY:trade_register": 168461,
         "status": "gold"
       }
     },
     {
       "type": "Feature",
+      "id": "n2175223354",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -344,13 +643,13 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n2175223354",
         "ref:BY:trade_register": 383135,
         "status": "gold"
       }
     },
     {
       "type": "Feature",
+      "id": "n4157975258",
       "geometry": {
         "type": "Point",
         "coordinates": [
@@ -359,7 +658,6 @@ const Data8 =
         ]
       },
       "properties": {
-        "ID": "n4157975258",
         "ref:BY:trade_register": 383135,
         "status": "gold"
       }
