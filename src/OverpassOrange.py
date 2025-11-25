@@ -9,7 +9,8 @@ from loguru import logger
 from haversine import haversine
 import geojson
 
-from Utils import GetOverpass, SetDate, LoadGeoJson, LoadJson, SaveGeoJson, DeNormalize
+from Settings import LOG, DOCS, TEMP
+from Utils import GetOverpass, SetDate, LoadGeoJson, LoadJson, SaveGeoJson, DeNormalize, GetID
 
 
 Shop = {
@@ -145,15 +146,17 @@ def GetCoord(Lat, Lon, Elements):
   Length1 = haversine((Lat, Lon), (Item['lat'], Item['lon']))
   if Length > Length1:
    Length, Result = Length1, Item
- return { 'ID': f"{Item['type'][0]}{Item['id']}", 'Coordinates': [Item['lon'], Item['lat']] }
+ return { 'ID': GetID(Item), 'Coordinates': [Item['lon'], Item['lat']] }
 
 
+@logger.catch
 def GetBlue(Lat, Lon, Names):
  for Name in Names:
   Overpass = f"[out:json];(node['name'~'{Name}'](around:150.0,{Lat},{Lon});node['name:ru'~'{Name}'](around:150.0,{Lat},{Lon}););out qt center;"
   Result = GetOverpass(Overpass, URL="http://localhost:8091/api/interpreter")
-  if len(Result['elements']) > 0:
-   return GetCoord(Lat, Lon, Result['elements'])
+  if 'elements' in Result:
+   if len(Result['elements']) > 0:
+    return GetCoord(Lat, Lon, Result['elements'])
  return None
 
 
@@ -165,6 +168,7 @@ def GetKeys(Key, Properties, NF3, Array):
   return []
 
 
+@logger.catch
 def GetViolet(Lat, Lon, Keys):
  Overpass = "[out:json];("
  for Key in Keys:
@@ -179,12 +183,9 @@ def GetViolet(Lat, Lon, Keys):
 
 
 def Generate():
- DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
- SetDate("../docs/date.js", 'Address', DateTime)
- #
  logger.info("read json")
- Data = LoadGeoJson("../.temp/tr.3.json")
- NF3 = LoadJson("../docs/tr.nf3.js", Const="Data3NF")
+ Data = LoadGeoJson(f"{TEMP}/tr.3.json")
+ NF3 = LoadJson(f"{DOCS}/tr.nf3.js", Const="Data3NF")
  #
  logger.info("parse orange")
  #
@@ -197,29 +198,29 @@ def Generate():
     Lon, Lat = Geometry['coordinates']
     Coord = GetBlue(Lat, Lon, Name)
     if Coord is not None:
-     Properties['ID'] = Coord['ID']
+     Feature['id'] = Coord['ID']
      Lon, Lat = Coord['Coordinates']
      Geometry['coordinates'] = geojson.Point((Lon, Lat))
      Properties['status'] = "blue"
-     #logger.info(f"{Properties.get('ref:BY:trade_register', "?")} {Properties.get('name', "")} blue = {Lon}, {Lat}")
+     #logger.info("{ref} {name} blue = {Lon}, {Lat}", ref=Properties.get('ref:BY:trade_register', "?"), name=Properties.get('name', ""), Lon=Lon, Lat=Lat)
     else:
      Keys = GetKeys('amenity:type', Properties, NF3, Shop) + GetKeys('cafe:type', Properties, NF3, Cafe)
      if Keys:
       Coord = GetViolet(Lat, Lon, Keys)
       if Coord is not None:
-       Properties['ID'] = Coord['ID']
+       Feature['id'] = Coord['ID']
        Lon, Lat = Coord['Coordinates']
        Geometry['coordinates'] = geojson.Point((Lon, Lat))
        Properties['status'] = "violet"
-       #logger.info(f"{Properties.get('ref:BY:trade_register', "?")} {Properties.get('name', "")} orange = {Lon}, {Lat}")
+       #logger.info("{ref} {name} orange = {Lon}, {Lat}", ref=Properties.get('ref:BY:trade_register', "?"), name=Properties.get('name', ""), Lon=Lon, Lat=Lat)
   #
   if Index % 10000 == 0:
    if Index > 0:
-    logger.info(f"обработано {Index} записей")
- logger.info(f"обработано всего {Index+1} записей")
+    logger.info("обработано {count} записей", count=Index)
+ logger.info("обработано всего {count} записей", count=Index+1)
  #
  logger.info("write json")
- SaveGeoJson("../.temp/tr.4.json", Data)
+ SaveGeoJson(f"{TEMP}/tr.4.json", Data)
 
 
 
@@ -227,8 +228,9 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(Path("../.log/tr.log"))
+ logger.add(LOG)
  logger.info("Start overpass orange to blue/violet")
  Generate()
+ DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
+ SetDate(f"{DOCS}/tr.date.js", 'Address', DateTime)
  logger.info("Done overpass orange to blue/violet")
-

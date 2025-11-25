@@ -1,9 +1,11 @@
-﻿loguru
-geojson
+﻿nominatim-db
 nominatim-api
-GitPy
+osmium
+loguru
+geojson
 requests
 haversine
 python-dateutil
+GitPy
 Jinja2
-osmium
+psycopg2-binary

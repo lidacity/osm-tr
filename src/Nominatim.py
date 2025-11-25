@@ -9,7 +9,7 @@ import nominatim_api as napi
 import geojson
 from pathlib import Path
 
-import Download
+from Settings import LOG, TEMP
 from Utils import SetDate, LoadGeoJson, SaveGeoJson
 import UtilsTrade
 
@@ -27,13 +27,8 @@ def GetDateFromFileName(FileName):
 
 
 def Generate():
- OSM = Download.PBF(Download=False)
- #!!
- Date = OSM.ReadState()
- SetDate("../docs/date.js", 'Nominatim', Date)
- #
  logger.info("read json")
- Data = LoadGeoJson("../.temp/tr.2.json")
+ Data = LoadGeoJson(f"{TEMP}/tr.2.json")
  #
  logger.info("parse nominatim")
  for Index, Feature in enumerate(Data['features']):
@@ -51,7 +46,7 @@ def Generate():
       Geometry['coordinates'] = geojson.Point((Lon, Lat))
       break
      else:
-      logger.warning(f"адрес для {Properties.get('ref:BY:trade_register', "?")} ({Address[:-Count]} => '{Addr}') не найден")
+      logger.warning("адрес для {ref} ({address} => '{Addr}') не найден", ref=Properties.get('ref:BY:trade_register', "?"), address=Address[:-Count], Addr=Addr)
     else:
      continue
     break
@@ -69,21 +64,21 @@ def Generate():
       Geometry['coordinates'] = geojson.Point((Lon, Lat))
       if Count == 1:
        Properties['status'] = "orange"
-      #logger.info(f"{Addr} = {Lon}, {Lat}")
+      #logger.info("{Addr} = {Lon}, {Lat}", Addr=Addr, Lon=Lon, Lat=Lat)
       break
      else: # дадзены адрас не знойдзены, перайсці да наступнага кроку, паменшыць дакладнасць
-      logger.warning(f"адрес для {Properties.get('ref:BY:trade_register', "?")} ({Address[:-Count]} => '{Addr}') не найден")
+      logger.warning("адрес для {ref} ({address} => '{Addr}') не найден", ref=Properties.get('ref:BY:trade_register', "?"), address=Address[:-Count], Addr=Addr)
     else:
      continue
     break
   #
   if Index % 10000 == 0:
    if Index > 0:
-    logger.info(f"обработано {Index} записей")
- logger.info(f"обработано всего {Index+1} записей")
+    logger.info("обработано {count} записей", count=Index)
+ logger.info("обработано всего {count} записей", count=Index+1)
  #
  logger.info("write json")
- SaveGeoJson("../.temp/tr.3.json", Data)
+ SaveGeoJson(f"{TEMP}/tr.3.json", Data)
 
 
 
@@ -91,7 +86,7 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(Path("../.log/tr.log"))
+ logger.add(LOG)
  logger.info("Start nominatim to red\\orange")
  Generate()
  logger.info("Done nominatim to red\\orange")

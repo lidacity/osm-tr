@@ -1,7 +1,7 @@
 
 KeyList = {
  'Полное наименование юр. лица или ФИО ИП': "official_name",
- 'УНП': "operator:ref:BY:PAN",
+ 'УНП': "ref:vatin",
  'Место нахождения юр. лица/место жительства ИП': "addr:full",
  'Тип объекта': "type",
  'Наименование объекта/доменное имя интернет-магазина': "alt_name#2",
@@ -108,4 +108,3 @@ def GetAddress(Properties, Full=True):
     Result.append(Addr)
  #
  return Result
-

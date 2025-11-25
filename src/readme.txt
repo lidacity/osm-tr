@@ -1,26 +1,36 @@
-	Utils.py
-	Git.py
-1	TradeRegister.py	1 раз в месяц (при чтении нового торгового реестра)
-2	MTD.py			1 раз в месяц	"" -> gray
-3	Nominantim.py		1 раз в неделю	"" gray red orange -> red orange
-4	OverpassOrange.py	1 раз в неделю	orange -> blue violet
-5       Check.py		1 раз в неделю	red orange blue violet | delete
-6	Stat.py			1 раз в неделю
-7	oshCounter.py		1 раз в неделю
-8	OverpassGreen.py	1 раз в час	all -> green gold black
-9	Convert.py		1 раз в час
+e-pasluga.by 3.13.06
+python ./Geofabrik.py
+# https://nominatim.org/
+python ./NominatimDB.py
+#https://download.geofabrik.de/bz2.html
+python ./PBFtoOSM.py
+#https://wiki.openstreetmap.org/wiki/User:Breki/Overpass_API_Installation
+#https://dev.overpass-api.de/overpass-doc/en/more_info/setup.html
+python ./Init_Osm3s.py
+# 0->1, один раз в месяц, при чтении нового торгового реестра
+python ./TradeRegister.py
+# 1->2, "" -> gray
+python ./MTD.py
+# 2->3, "" gray red orange -> red orange
+python ./Nominatim.py
+# 3->4, orange -> blue violet
+python ./OverpassOrange.py
+# 4->5 red orange blue violet | delete
+python ./Check.py
+#
+python ./Stat.py
+python ./oshCounter.py
+# 5->6, один раз в час, all -> green gold black
+python ./OverpassGreen.py
+#
+python ./Convert.py
+python ./ConvertMapillaryBYShopsValidator.py
+python ./Git.py
 
-
-https://download.geofabrik.de/bz2.html
-https://wiki.openstreetmap.org/wiki/User:Breki/Overpass_API_Installation
-https://dev.overpass-api.de/overpass-doc/en/more_info/setup.html
-
-osmium cat belarus-250924-internal.osm.pbf -o myfile.osm.bz2
-osm-3s_v0.7.62.8/bin/init_osm3s.sh myfile.osm.bz2 osm-3s_v0.7.62.8/db osm-3s_v0.7.62.8
-bunzip2 <myfile.osm.bz2 | osm-3s_v0.7.62.8/bin/update_database --db-dir="osm-3s_v0.7.62.8/db/"
-./osm-3s_v0.7.62.8/bin/osm3s_query --db-dir=db
-
-nohup osm-3s_v0.7.62.8/bin/dispatcher --osm-base --db-dir=db --meta &
-./osm-3s_v0.7.62.8/bin/osm3s_query < my_query > my_query_result
 
 --allow-duplicate-queries=(yes|no)
+user ALL=NOPASSWD:/bin/systemctl stop overpass.service,/bin/systemctl start overpass.service,/bin/systemctl status overpass.service
+
+8	OverpassGreen.py	
+9	Convert.py
+	Git.py

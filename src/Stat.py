@@ -9,10 +9,8 @@ from loguru import logger
 from jinja2 import Environment, FileSystemLoader
 from dateutil import parser
 
-from Utils import GetOverpass, GetDate
-
-
-#URL = 
+from Settings import LOG, DOCS
+from Utils import GetOverpass, GetDate, GetID
 
 
 def GetJson():
@@ -61,7 +59,7 @@ def GetUsers(List):
   Result.append(User)
   Index += 1
  #
- return { 'Users': Result, 'DateTime': datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 'PBFDateTime': GetDate("../docs/date.js", 'Geofabrik') }
+ return { 'Users': Result, 'DateTime': datetime.now().strftime("%Y-%m-%d %H:%M:%S"), 'PBFDateTime': GetDate(f"{DOCS}/tr.date.js", 'Geofabrik') }
 
 
 def Jinja(Users):
@@ -69,7 +67,7 @@ def Jinja(Users):
  Env = Environment(loader=Loader)
  Template = Env.get_template("Stat.htm")
  Render = Template.render(Users)
- FileName = Path("../docs/stat.html")
+ FileName = Path(f"{DOCS}/stat.html")
  with open(FileName, mode="w", encoding="utf-8") as File:
   File.write(Render)
 
@@ -90,15 +88,15 @@ def Generate():
      if User not in Result:
       Result[User] = []
      Item = {}
-     Item['ID'] = f"{Type[0]}{ID}"
+     Item['ID'] = GetID(Element)
      Item['timestamp'] = History['timestamp']
      Result[User].append(Item)
      break
   #
   if Index % 100 == 0:
    if Index > 0:
-    logger.info(f"обработано {Index} записей")
- logger.info(f"обработано всего {Index+1} записей")
+    logger.info("обработано {count} записей", count=Index)
+ logger.info("обработано всего {count} записей", count=Index+1)
  #
  logger.info("generate html")
  Users = GetUsers(Result)
@@ -110,7 +108,7 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(Path("../.log/tr.log"))
+ logger.add(LOG)
  logger.info("Start stat")
  Generate()
  logger.info("Done stat")

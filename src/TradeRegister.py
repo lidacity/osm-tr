@@ -10,13 +10,14 @@ from pathlib import Path
 import geojson
 from loguru import logger
 
+from Settings import LOG, DOCS, DATA, TEMP
 from Utils import GetDate, SetDate, SaveJson, SaveGeoJson, Normalize
 import UtilsTrade
 
 
 Bool = ['firm:is', 'retail:is', 'trade:is', 'place:is', ]
 Float = ['trade:area', 'building:area', ]
-Int = ['operator:ref:BY:PAN', 'amenity:cafe:capacity', 'amenity:canteen:capacity', 'mall:capacity', 'foodcourt:capacity', 'marketplace:capacity', 'marketplace:object:capacity', 'ref:BY:trade_register', ]
+Int = ['ref:vatin', 'amenity:cafe:capacity', 'amenity:canteen:capacity', 'mall:capacity', 'foodcourt:capacity', 'marketplace:capacity', 'marketplace:object:capacity', 'ref:BY:trade_register', ]
 Date = ['start_date', ]
 NF3 = { 'type', 'format:view', 'place:view', 'assortment:view', 'amenity:type', 'retail:place', 'cafe:type', 'mall:specialization', 'marketplace:type', 'marketplace:specialization', }
 NF3sub = { 'category:class', 'category:group', 'category:subgroup', }
@@ -34,15 +35,13 @@ def GetDateFromFileName(FileName):
 
 
 def GetLastFile():
- ListOfFiles = glob(Path("../.data/*.csv"))
+ PathName = Path(f"{DATA}/*.csv").as_posix()
+ ListOfFiles = glob(PathName)
  return max(ListOfFiles, key=os.path.getctime)
 
 
 
 def Generate(FileName):
- Date = GetDateFromFileName(FileName)
- SetDate("../docs/date.js", 'Trade', Date)
- #
  logger.info("parse csv")
  Features = []
  Base3NF = {}
@@ -91,7 +90,7 @@ def Generate(FileName):
      elif Key in Float:
       Items[Key] = float(Value)
      elif Key in Bool:
-      Items[Key] = True if Value == "Да" else False if Value == "Нет" else logger.error(f"{Key}: неизвестный bool {Value}")
+      Items[Key] = True if Value == "Да" else False if Value == "Нет" else logger.error("{Key}: неизвестный bool {Value}", Key=Key, Value=Value)
      elif Key in Date:
       Items[Key] = ConvertDate(Value)
      else:
@@ -105,8 +104,8 @@ def Generate(FileName):
  #
  logger.info("write json")
  FeatureCollection = geojson.FeatureCollection(Features)
- SaveJson("../docs/tr.nf3.js", Base3NF, Const="Data3NF")
- SaveGeoJson("../.temp/tr.1.json", FeatureCollection)
+ SaveJson(f"{DOCS}/tr.nf3.js", Base3NF, Const="Data3NF")
+ SaveGeoJson(f"{TEMP}/tr.1.json", FeatureCollection)
 
 
 
@@ -114,13 +113,15 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(Path("../.log/tr.log"))
+ logger.add(LOG)
  logger.info("Start trade register")
  FileName = GetLastFile()
- Temp = GetDate("../docs/date.js", 'File')
+ Temp = GetDate(f"{DOCS}/date.js", 'File')
  if Temp != FileName:
   Generate(FileName)
-  SetDate("../docs/date.js", 'File', FileName)
+  SetDate(f"{DOCS}/date.js", 'File', FileName)
+  Date = GetDateFromFileName(FileName.name)
+  SetDate(f"{DOCS}/tr.date.js", 'Trade', Date)
  else:
   logger.warning("already converted")
  logger.info("Done trade register")

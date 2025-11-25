@@ -8,45 +8,120 @@ import json
 from loguru import logger
 import geojson
 import requests
-from fake_useragent import UserAgent
 
 sys.path.insert(1, "..")
-from Utils import GetRequest, LoadGeoJson, SaveJson, SaveGeoJson
+from Settings import LOG2_CS, TEMP2
+from Utils import GetRequest, GetOverpass, SaveJson, SaveGeoJson, LoadGeoJson, GetID
+from UtilsChainStore import Headers, GetCoord, Check, GetItemsWithVATin
 
 
+InfoName = "Евроторг"
 Info = {
- 'name': "Евроторг",
- 'operator': "ООО \"Евроторг\"",
- 'shops': {
-   'Евроопт Минимаркет': { 'operator:ref:BY:PAN': 101168731, 'shop': "convenience", 'operator:wikidata': "Q65455911", 'name:ru': "Евроопт Минимаркет", 'name:be': "Еўраопт Мінімаркет", 'brand': "Евроопт Минимаркет", 'website': "https://evroopt.by", },
-   'Евроопт Маркет': { 'operator:ref:BY:PAN': 101168732, 'shop': "convenience", 'operator:wikidata': "Q65455869", 'name:ru': "Евроопт Маркет", 'name:be': "Еўраопт Маркет", 'brand': "Евроопт Market", 'website': "https://evroopt.by", },
-   'Евроопт Супермаркет': { 'operator:ref:BY:PAN': 101168733, 'shop': "supermarket", 'operator:wikidata': "Q65455960", 'name:ru': "Евроопт Супер", 'name:be': "Еўраопт Супер", 'brand': "Евроопт Super", 'website': "https://evroopt.by", },
-   'Евроопт Гипермаркет': { 'operator:ref:BY:PAN': 101168734, 'shop': "supermarket", 'operator:wikidata': "Q65455975", 'name:ru': "Евроопт Гипер", 'name:be': "Еўраопт Гіпер", 'brand': "Евроопт Hyper", 'website': "https://evroopt.by", },
-   'Евроопт Prime': { 'operator:ref:BY:PAN': 101168735, 'shop': "supermarket", 'operator:wikidata': "Q136750549", 'name:ru': "Евроопт Прайм", 'name:be': "Еўраопт Прайм", 'brand': "Евроопт Prime", 'website': "https://evroopt.by", },
-   'Хит!': { 'operator:ref:BY:PAN': 101168736, 'shop': "convenience", 'operator:wikidata': "Q126720469", 'name:ru': "Хит! Экспресс", 'name:be': "Хіт! Экспрэс", 'brand': "Хит! Экспресс", 'website': "https://hitdiscount.by/", },
-   'Хит! Стандарт': { 'operator:ref:BY:PAN': 101168737, 'shop': "convenience", 'operator:wikidata': "Q136670971", 'name:ru': "Хит! Стандарт", 'name:be': "Хіт! Стандарт", 'brand': "Хит! Стандарт", 'website': "https://hitdiscount.by/", },
-   'Грошык': { 'operator:ref:BY:PAN': 101168738, 'shop': "convenience", 'operator:wikidata': "Q136670774", 'name:ru': "Грошик", 'name:be': "Грошык",  'brand': "Грошык", 'website': "https://groshyk.by/", },
-   'Кафетерий': {},
+ 'Евроопт Минимаркет': {
+  'shop': "convenience",
+  'name:be': "Еўраопт Мінімаркет",
+  'name:ru': "Евроопт Минимаркет",
+  'brand': "Евроопт Минимаркет",
+  'brand:wikidata': "Q65455911",
+  'operator': "ООО \"Евроторг\"",
+  'operator:wikidata': "Q108565321",
+  'ref:vatin': 101168731,
+  'website': "https://evroopt.by/",
  },
+ 'Евроопт Маркет': {
+  'shop': "convenience",
+  'name:be': "Еўраопт Маркет",
+  'name:ru': "Евроопт Маркет",
+  'brand': "Евроопт Market",
+  'brand:wikidata': "Q65455869",
+  'operator': "ООО \"Евроторг\"",
+  'operator:wikidata': "Q108565321",
+  'ref:vatin': 101168731,
+  'website': "https://evroopt.by/",
+ },
+ 'Евроопт Супермаркет': {
+  'shop': "supermarket",
+  'name:be': "Еўраопт Супер",
+  'name:ru': "Евроопт Супер",
+  'brand': "Евроопт Super",
+  'brand:wikidata': "Q65455960",
+  'operator': "ООО \"Евроторг\"",
+  'operator:wikidata': "Q108565321",
+  'ref:vatin': 101168731,
+  'website': "https://evroopt.by/",
+ },
+ 'Евроопт Гипермаркет': {
+  'shop': "supermarket",
+  'name:be': "Еўраопт Гіпер",
+  'name:ru': "Евроопт Гипер",
+  'brand': "Евроопт Hyper",
+  'brand:wikidata': "Q65455975",
+  'operator': "ООО \"Евроторг\"",
+  'operator:wikidata': "Q108565321",
+  'ref:vatin': 101168731,
+  'website': "https://evroopt.by/",
+ },
+ 'Евроопт Prime': {
+  'shop': "supermarket",
+  'name:be': "Еўраопт Прайм",
+  'name:ru': "Евроопт Прайм",
+  'brand': "Евроопт Prime",
+  'brand:wikidata': "Q136750549",
+  'operator': "ООО \"Евроторг\"",
+  'operator:wikidata': "Q108565321",
+  'ref:vatin': 101168731,
+  'website': "https://evroopt.by/",
+ },
+ 'Хит!': {
+  'shop': "convenience",
+  'name:be': "Хіт! Экспрэс",
+  'name:ru': "Хит! Экспресс",
+  'brand': "Хит! Экспресс",
+  'brand:wikidata': "Q126720469",
+  'operator': "ООО \"Евроторг\"",
+  'operator:wikidata': "Q108565321",
+  'ref:vatin': 101168731,
+  'website': "https://hitdiscount.by/",
+ },
+ 'Хит! Стандарт': {
+  'shop': "convenience",
+  'name:be': "Хіт! Стандарт",
+  'name:ru': "Хит! Стандарт",
+  'brand': "Хит! Стандарт",
+  'brand:wikidata': "Q136670971",
+  'operator': "ООО \"Евроторг\"",
+  'operator:wikidata': "Q108565321",
+  'ref:vatin': 101168731,
+  'website': "https://hitdiscount.by/",
+ },
+ 'Грошык': {
+  'shop': "convenience",
+  'name:be': "Грошык",
+  'name:ru': "Грошик",
+  'brand': "Грошык",
+  'brand:wikidata': "Q136670774",
+  'operator': "ООО \"Евроторг\"",
+  'operator:wikidata': "Q108565321",
+  'ref:vatin': 101168731,
+  'website': "https://groshyk.by/",
+ },
+ 'Кафетерий': {},
 }
+
 
 
 def ConvertOpeningHours(S):
  return S
 
 
-Browser = UserAgent()
-Headers = {
- 'user-agent': Browser.random,
-}
-
-
-def GetRequestEvroopt(URL, Headers=None):
+def GetRequest1(URL, Headers=None):
+ MarkStart = "self.__next_f.push([1,\"2b:" #..23:.. 10 element of "self.__next_f.push"
+ MarkEnd = "\\n\"])"
  Response = requests.get(URL, headers=Headers)
  if Response.status_code == 200:
   Result = Response.text
-  Start = Result.find(f"self.__next_f.push([1,\"23:") + len(f"self.__next_f.push([1,\"23:")
-  End = Start + Result[Start::].find(f"\\n\"])")
+  Start = Result.find(MarkStart) + len(MarkStart)
+  End = Start + Result[Start::].find(MarkEnd)
   Result = Result[Start:End]
   Result = Result.replace("\\\"", "\"").replace("\\\\", "\\")
   Result = Result.replace("\n", "\\n").replace("\r", "\\r").strip()
@@ -56,23 +131,26 @@ def GetRequestEvroopt(URL, Headers=None):
   return {}
 
 
-def GetRequest2(URL, Headers=None):
- Result = GetRequest(URL, Headers=Headers)
- return Result['shops']
 
-
-
-def Generate(): 
- logger.info("get json")
- Result = LoadGeoJson("../../.temp/ChainStore.json")
- Features = Result['features']
+def Generate(TR=None):
+ logger.info("read json")
+ if TR is None:
+  TR = LoadGeoJson(f"{TEMP2}/tr.6.json")
+ RefInTR = GetItemsWithVATin(Info, TR)
  #
- logger.info("get ChainStore")
- Data = GetRequestEvroopt("https://evroopt.by/shops/", Headers=Headers)
- Data += GetRequest2("https://hitdiscount.by/mvc/publications/shops/points/", Headers=Headers)
- Data += GetRequest2("https://groshyk.by/mvc/publications/shops/points/", Headers=Headers)
+ logger.info("get site")
+ Data = GetRequest1("https://evroopt.by/shops/", Headers=Headers)
+ Data += GetRequest("https://hitdiscount.by/mvc/publications/shops/points/", Headers=Headers)['shops']
+ Data += GetRequest("https://groshyk.by/mvc/publications/shops/points/", Headers=Headers)['shops']
+ SaveJson(f"{TEMP2}/{InfoName}.site.json", Data)
+ #
+ logger.info("get overpass")
+ Overpass = GetOverpass("[out:json];area[name='Беларусь'];nw[shop~'^(convenience|supermarket|mall)$'][name~'(Еўраопт|Евроопт|Хіт|Хит|Грошык|Грошик)'](area);out center meta;")
+ SaveJson(f"{TEMP2}/{InfoName}.overpass.json", Overpass)
+ Elements = Overpass['elements']
  #
  logger.info("parse")
+ Features = []
  for Item in Data:
   if 'name' in Item:
    Name = Item['name']
@@ -81,31 +159,68 @@ def Generate():
   #
   if Name in ["Хит!", "Грошык", ]:
    Lat, Lon = Item['gps'].split(",")
-   Geometry = geojson.Point((float(Lon), float(Lat)))
+   Lat, Lon = float(Lat), float(Lon)
   else:
    Coordinates = Item['Coordinates'][0]
    Lat, Lon = Coordinates['Latitude'], Coordinates['Longitude']
-   Geometry = geojson.Point((Lon, Lat))
+  Geometry = geojson.Point((Lon, Lat))
   #
   Properties = {}
+  # з сеткі магазіна
   if Name in ["Хит!", "Грошык", ]:
-   Shop = Info['shops'][Name]
+   Shop = Info[Name]
+   Ref = Item['publication_id']
    Properties |= Shop
+   Properties['ref:shop'] = Ref
    Properties['addr:full'] = Item['address']
    Properties['opening_hours'] = ConvertOpeningHours(Item['description'])
   else:
-   Shop = Info['shops'][Name]
+   Shop = Info[Name]
    Properties |= Shop
-   Properties['ref'] = Item['ShopId']
+   Ref = Item['ShopId']
+   Properties['ref:shop'] = Ref
    Properties['addr:full'] = Item['ShopAddressInfo'][0]['AddressNameFull']
    Properties['opening_hours'] = ConvertOpeningHours(Item['ShopSchedule'])
    Properties['image'] = [ Item['ShopBrandIconUrl'], ]
-  Feature = geojson.Feature(geometry=Geometry, properties=Properties)
+  # шукаць у overpass і ў тарговым рэестры
+  ID = None
+  Properties['status'] = "red"
+  Store = GetCoord(Lat, Lon, Ref, Elements)
+  if Store is not None:
+   Tags = Store['tags']
+   if Check(Store, Shop):
+    Properties['status'] = "green"
+   elif 'ref:BY:trade_register' in Tags:
+    Properties['status'] = "violet"
+   else:
+    Properties['status'] = "blue"
+   ID = GetID(Store)
+   if 'ref:BY:trade_register' in Tags:
+    Properties['ref:BY:trade_register'] = Tags['ref:BY:trade_register']
+   else:
+    if ID in RefInTR:
+     Tags['ref:BY:trade_register'] = RefInTR[ID]
+   Geometry = geojson.Point((Store['lon'], Store['lat']))
+  #
+  Feature = geojson.Feature(id=ID, geometry=Geometry, properties=Properties)
+  Features.append(Feature)
+ # ёсць на карце, але адсутнічаюць у сетцы магазіна
+ for Item in Elements:
+  Lat, Lon = Item['lat'], Item['lon']
+  Geometry = geojson.Point((Lon, Lat))
+  Properties = {}
+  ID = GetID(Item)
+  Properties['name:ru'] = "?Евроопт"
+  Properties['status'] = "black"
+  #
+  Feature = geojson.Feature(id=ID, geometry=Geometry, properties=Properties)
   Features.append(Feature)
  #
  logger.info("save js")
- SaveJson(f"../../.temp/{Info['name']}.json", Data)
- SaveGeoJson("../../.temp/ChainStore.json", Result)
+ FeatureCollection = geojson.FeatureCollection(Features)
+ SaveGeoJson(f"{TEMP2}/{InfoName}.ChainStore.json", FeatureCollection)
+ logger.info("count {count}", count=len(Data))
+
 
 
 
@@ -113,7 +228,7 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(Path("../../.log/ChainStore.log"))
- logger.info(f"Start {Info['operator']}")
+ logger.add(LOG2_CS)
+ logger.info("Start {name}", name=InfoName)
  Generate()
- logger.info(f"Done {Info['operator']}")
+ logger.info("Done {name}", name=InfoName)

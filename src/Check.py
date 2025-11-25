@@ -7,7 +7,8 @@ from pathlib import Path
 
 from loguru import logger
 
-from Utils import LoadGeoJson, SaveGeoJson, SaveJson
+from Settings import LOG, DOCS, TEMP
+from Utils import LoadGeoJson, SaveGeoJson, LoadJson, SaveJson
 import UtilsTrade
 
 
@@ -28,8 +29,8 @@ def Check(Geometry, Properties):
 
 def Generate():
  logger.info("read json")
- Base3NF = LoadJson("../docs/tr.nf3.js")
- Data = LoadGeoJson("../.temp/tr.4.json")
+ Base3NF = LoadJson(f"{DOCS}/tr.nf3.js", Const="Data3NF")
+ Data = LoadGeoJson(f"{TEMP}/tr.4.json")
  Delete = []
  #
  logger.info("parse")
@@ -46,20 +47,20 @@ def Generate():
   elif Properties['type.id'] in Exclude:
    Delete.append(Feature)
  #
- logger.info(f"{len(Delete)} записей для удаления")
+ logger.info("{count} записей для удаления", count=len(Delete))
  #
  for Index, Feature in enumerate(Delete):
   Data['features'].remove(Feature)
   #
   if Index % 10000 == 0:
    if Index > 0:
-    logger.info(f"обработано {Index} записей")
+    logger.info("обработано {count} записей", count=Index)
  #
- logger.info(f"{len(Data['features'])} записей для сохранения")
+ logger.info("{count} записей для сохранения", count=len(Data['features']))
 
  logger.info("write json")
- SaveGeoJson("../.temp/tr.5.json", Data)
- SaveJson("../.temp/tr.5.delete.json", Delete)
+ SaveGeoJson(f"{TEMP}/tr.5.json", Data)
+ SaveJson(f"{TEMP}/tr.5.delete.json", Delete)
  
 
 
@@ -67,8 +68,7 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(Path("../.log/tr.log"))
+ logger.add(LOG)
  logger.info("Start check")
  Generate()
  logger.info("Done check")
-

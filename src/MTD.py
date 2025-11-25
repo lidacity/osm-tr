@@ -9,62 +9,71 @@ from pathlib import Path
 from loguru import logger
 import requests
 
-from Utils import SetDate, LoadGeoJson, SaveGeoJson
+from Settings import LOG, DOCS, TEMP
+from Utils import SetDate, LoadGeoJson, SaveGeoJson, SaveJson
 
+
+#VATin = json.loads(j, object_hook=KeysToInt)
+def KeysToInt(Items):
+ return { int(Key): Value for Key, Value in Items.items() }
+
+
+Int = ['vunp', 'nmns', ]
 
 #https://grp.nalog.gov.by/grp/rest-api
-def GetMTD(PAN):
- URL = f"http://grp.nalog.gov.by/api/grp-public/data?unp={PAN}&charset=UTF-8&type=json"
+def GetMTD(VATin):
+ URL = f"http://grp.nalog.gov.by/api/grp-public/data?unp={VATin}&charset=UTF-8&type=json"
  while True:
   Response = requests.get(URL)
   if Response.status_code == 200:
-   Result = Response.json()
-   return Result['row']
+   Result = Response.json()['row']
+   for Key, Value in Result.items():
+    if Key in Int:
+     Result[Key] = int(Value)
+   return Result
   elif Response.status_code == 400:
    return { 'ckodsost': "?", 'vkods': "Отсутствует", }
   else:
-   logger.error(f"Код ошибки {Response.status_code}: УНП={PAN}")
+   logger.error("Код ошибки {status_code}: УНП={vatin}", status_code=Response.status_code, vatin=VATin)
    time.sleep(15)
-
-
-def SetMTD(Features, PAN, Text):
- for Feature in Features:
-  Properties = Feature['properties']
-  if Properties['operator:ref:BY:PAN'] == PAN:
-   Properties['MTD'] = Text
-   Properties['status'] = "gray"
-   #logger.warning(f"УНП={PAN}: {Text}")
 
 
 
 def Generate():
- DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
- SetDate("../docs/date.js", 'MTD', DateTime)
- #
  logger.info("read json")
- Data = LoadGeoJson("../.temp/tr.1.json"))
+ Data = LoadGeoJson(f"{TEMP}/tr.1.json")
  #
- logger.info("parse nalog.gov.by")
- for Index, Feature in enumerate(Data['features']):
+ logger.info("parse vatin")
+ VATin = {}
+ for Feature in Data['features']:
   Properties = Feature['properties']
-  if 'MTD' not in Properties:
-   PAN = Properties['operator:ref:BY:PAN']
-   MTD = GetMTD(PAN)
-   if MTD['ckodsost'] != "1":
-    SetMTD(Data['features'], PAN, f"({MTD['ckodsost']}) {MTD['vkods']}")
-    ##Properties['MTD'] = f"({MTD['ckodsost']}) {MTD['vkods']}"
-    ##Properties['status'] = "gray"
-    #logger.warning(f"УНП={PAN}: {MTD['vnaimk']} - {MTD['vkods']} ({MTD['ckodsost']})")
+  if 'ref:vatin' in Properties:
+   Ref = Properties['ref:vatin']
+   VATin[Ref] = {}
+ logger.info("count vatin {features} -> {unique}", features=len(Data['features']), unique=len(VATin))
+ #
+ logger.info("read nalog.gov.by")
+ for Index, Key in enumerate(VATin.keys()):
+  VATin[str(Key)] = GetMTD(Key)
   #
   if Index % 5 == 0: # паўза каб сайт МНС не блакаваў
    time.sleep(1)
    if Index % 10000 == 0:
     if Index > 0:
-     logger.info(f"обработано {Index} записей")
- logger.info(f"обработано всего {Index+1} записей")
+     logger.info("обработано {count} записей", count=Index)
+ logger.info("обработано всего {count} записей", count=Index+1)
+ #
+ logger.info("parse")
+ for Feature in Data['features']:
+  Properties = Feature['properties']
+  Ref = str(Properties['ref:vatin'])
+  if VATin[Ref]['ckodsost'] != "1":
+   Properties['MTD'] = f"({VATin[Ref]['ckodsost']}) {VATin[Ref]['vkods']}"
+   Properties['status'] = "gray"
  #
  logger.info("write json")
- SaveGeoJson("../.temp/tr.2.json", Data)
+ SaveJson(f"{TEMP}/tr.2.vatin.json", VATin)
+ SaveGeoJson(f"{TEMP}/tr.2.json", Data)
  
 
 
@@ -72,7 +81,9 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(Path("../.log/tr.log"))
+ logger.add(LOG)
  logger.info("Start MTD to gray")
  Generate()
+ DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
+ SetDate(f"{DOCS}/tr.date.js", 'MTD', DateTime)
  logger.info("Done MTD to gray")

@@ -9,7 +9,8 @@ from pathlib import Path
 import geojson
 from loguru import logger
 
-from Utils import GetOverpass, SetDate, LoadGeoJson, SaveGeoJson, SaveJson
+from Settings import LOG, DOCS, TEMP
+from Utils import GetOverpass, SetDate, LoadGeoJson, SaveGeoJson, SaveJson, GetID
 
 
 def GetCoord(Elements):
@@ -20,9 +21,9 @@ def GetCoord(Elements):
   if Ref not in Result:
    Result[Ref] = []
   if Element['type'] == "node":
-   Result[Ref].append({ 'ID': f"n{Element['id']}", 'Coordinates': [Element['lon'], Element['lat']] })
+   Result[Ref].append({ 'ID': GetID(Element), 'Coordinates': (Element['lon'], Element['lat']) })
   elif Element['type'] == "way":
-   Result[Ref].append({ 'ID': f"w{Element['id']}", 'Coordinates': [Element['center']['lon'], Element['center']['lat']] })
+   Result[Ref].append({ 'ID': GetID(Element), 'Coordinates': (Element['center']['lon'], Element['center']['lat']) })
  return Result
 
 
@@ -33,16 +34,13 @@ def GetCoord(Elements):
 
 
 def Generate():
- DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
- SetDate("../docs/date.js", 'Update', DateTime)
- #
  logger.info("read json")
- Data = LoadGeoJson("../.temp/tr.5.json")
+ Data = LoadGeoJson(f"{TEMP}/tr.5.json")
  #
  logger.info("read overpass")
  Greens = GetOverpass("[out:json];area[name='Беларусь'];nw['ref:BY:trade_register'](area);out center;")
  Elements = GetCoord(Greens['elements'])
- SaveJson("../.temp/tr.6.overpass.json", Greens)
+ SaveJson(f"{TEMP}/tr.6.overpass.json", Greens)
  #
  logger.info("parse green")
  for Feature in Data['features']:
@@ -52,7 +50,7 @@ def Generate():
    Value = Elements.pop(Ref)
    if len(Value) == 1:
     Item = Value[0]
-    Properties['ID'] = Item['ID']
+    Feature['id'] = Item['ID']
     Lon, Lat = Item['Coordinates']
     Geometry['coordinates'] = geojson.Point((Lon, Lat))
     if Properties['status'] in ["red", "orange", "blue", "violet", "green"]:
@@ -65,24 +63,26 @@ def Generate():
  for Key, Value in Elements.items():
   if len(Value) == 1:
    Item = Value[0]
+   ID = Item['ID']
    Lon, Lat = Item['Coordinates']
    Geometry = geojson.Point((Lon, Lat))
-   Properties = { 'ID': Item['ID'], 'ref:BY:trade_register': Key, 'status': "black", } # "black" if isinstance(Key, int) else "gold"
-   Feature = geojson.Feature(geometry=Geometry, properties=Properties)
+   Properties = { 'ref:BY:trade_register': Key, 'status': "black", } # "black" if isinstance(Key, int) else "gold"
+   Feature = geojson.Feature(id=ID, geometry=Geometry, properties=Properties)
    Data['features'].append(Feature)
   else:
    for Item in Value:
+    ID = Item['ID']
     Lon, Lat = Item['Coordinates']
     Geometry = geojson.Point((Lon, Lat))
-    Properties = { 'ID': Item['ID'], 'ref:BY:trade_register': Key, 'status': "gold", }
-    Feature = geojson.Feature(geometry=Geometry, properties=Properties)
+    Properties = { 'ref:BY:trade_register': Key, 'status': "gold", }
+    Feature = geojson.Feature(id=ID, geometry=Geometry, properties=Properties)
     Data['features'].append(Feature)
  #
- logger.info(f"обработано всего {len(Greens['elements'])} записей")
+ logger.info("обработано всего {count} записей", count=len(Greens['elements']))
  #
  logger.info("write json")
- SaveGeoJson("../.temp/tr.6.json", Data)
- #SaveJson("../.temp/tr.6.absent.json", Elements)
+ SaveGeoJson(f"{TEMP}/tr.6.json", Data)
+ SaveJson(f"{TEMP}/tr.6.absent.json", Elements)
  
 
 
@@ -90,8 +90,9 @@ if __name__ == "__main__":
  sys.stdin.reconfigure(encoding="utf-8")
  sys.stdout.reconfigure(encoding="utf-8")
  #
- logger.add(Path("../.log/tr.log"))
+ logger.add(LOG)
  logger.info("Start overpass all -> green\\gold\\black")
  Generate()
+ DateTime = datetime.now().strftime("%Y-%m-%dT%H:%M:00Z")
+ SetDate(f"{DOCS}/tr.date.js", 'Update', DateTime)
  logger.info("Done overpass all -> green\\gold\\black")
-
