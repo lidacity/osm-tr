@@ -86090,12 +86090,11 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "n882386025",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.479435,
-        53.842372
+        27.47929,
+        53.842206
       ]
     },
     "properties": {
@@ -86116,11 +86115,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "101.3",
       "start_date": "29.01.2015",
-      "shortCoords": "0lrBjT7IevE_",
+      "shortCoords": "0lrBjTtLm~E7",
       "contact": "",
-      "distance": 20,
+      "distance": null,
       "food": "",
-      "status": "violet"
+      "status": "red"
     }
   },
   {
@@ -86229,12 +86228,12 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "n305686307",
+    "id": "n6874213597",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.644447,
-        53.8526
+        27.644466,
+        53.852504
       ]
     },
     "properties": {
@@ -86255,11 +86254,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "107.3",
       "start_date": "03.02.2015",
-      "shortCoords": "0lrJlYQkjAGE",
+      "shortCoords": "0lrJlYFjL6GB",
       "contact": "",
-      "distance": 12,
+      "distance": 14,
       "food": "",
-      "status": "blue"
+      "status": "violet"
     }
   },
   {
@@ -86369,12 +86368,12 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "n5378025639",
+    "id": "n13330053225",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.713103,
-        53.952366
+        27.713318,
+        53.952471
       ]
     },
     "properties": {
@@ -86395,9 +86394,9 @@ const Data =
       "format:view.id": 1,
       "trade:area": "114.2",
       "start_date": "04.02.2015",
-      "shortCoords": "0lrPZxUxChMV",
+      "shortCoords": "0lrPZxX8WvMV",
       "contact": "",
-      "distance": 24,
+      "distance": 7,
       "food": "",
       "status": "violet"
     }
@@ -283839,8 +283838,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.61451,
-        53.87361
+        27.614672,
+        53.873579
       ]
     },
     "properties": {
@@ -283860,9 +283859,9 @@ const Data =
       "format:view.id": 1,
       "trade:area": "348.9",
       "start_date": "06.07.2020",
-      "shortCoords": "0lrJXlJCPgJS",
+      "shortCoords": "0lrJXlKR6pJS",
       "contact": "",
-      "distance": 496,
+      "distance": 508,
       "food": "",
       "status": "blue"
     }
@@ -360116,12 +360115,11 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "w159003284",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        30.37998,
-        54.436324
+        30.380457,
+        54.435919
       ]
     },
     "properties": {
@@ -360142,11 +360140,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "26.0",
       "start_date": "19.08.2021",
-      "shortCoords": "0nOWzcRDjhHE",
+      "shortCoords": "0nOWzcIvvLHC",
       "contact": "sima__jana@mail.ru",
-      "distance": 54,
+      "distance": null,
       "food": "",
-      "status": "violet"
+      "status": "red"
     }
   },
   {

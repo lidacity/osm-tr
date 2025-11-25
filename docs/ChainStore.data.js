@@ -15599,6 +15599,81 @@ const Data =
     },
     {
       "type": "Feature",
+      "id": "n5506500013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          27.421285,
+          53.909758
+        ]
+      },
+      "properties": {
+        "shop": "convenience",
+        "name:be": "Еўраопт Маркет",
+        "name:ru": "Евроопт Маркет",
+        "brand": "Евроопт Market",
+        "brand:wikidata": "Q65455869",
+        "operator": "ООО \"Евроторг\"",
+        "operator:wikidata": "Q108565321",
+        "ref:vatin": 101168731,
+        "website": "https://evroopt.by/",
+        "ref:shop": 533,
+        "addr:full": "Минск, ул. Неманская, 3",
+        "opening_hours": [
+          {
+            "MondaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "23:00"
+              }
+            ],
+            "TuesdaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "23:00"
+              }
+            ],
+            "WednesdaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "23:00"
+              }
+            ],
+            "ThursdaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "23:00"
+              }
+            ],
+            "FridaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "23:00"
+              }
+            ],
+            "SaturdaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "23:00"
+              }
+            ],
+            "SundaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "23:00"
+              }
+            ]
+          }
+        ],
+        "image": [
+          "https://smartapp.evroopt.by/images/TEST_MP/ShopLogo/shop_euroopt.png?_t=1707400783"
+        ],
+        "status": "violet",
+        "ref:BY:trade_register": "167591"
+      }
+    },
+    {
+      "type": "Feature",
       "id": "w315813888",
       "geometry": {
         "type": "Point",
@@ -34578,7 +34653,8 @@ const Data =
         "image": [
           "https://smartapp.evroopt.by/images/TEST_MP/ShopLogo/shop_euroopt.png?_t=1707400783"
         ],
-        "status": "blue"
+        "status": "violet",
+        "ref:BY:trade_register": "430575"
       }
     },
     {
@@ -39912,6 +39988,80 @@ const Data =
     },
     {
       "type": "Feature",
+      "id": "n8146128652",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.207108,
+          55.200535
+        ]
+      },
+      "properties": {
+        "shop": "convenience",
+        "name:be": "Еўраопт Маркет",
+        "name:ru": "Евроопт Маркет",
+        "brand": "Евроопт Market",
+        "brand:wikidata": "Q65455869",
+        "operator": "ООО \"Евроторг\"",
+        "operator:wikidata": "Q108565321",
+        "ref:vatin": 101168731,
+        "website": "https://evroopt.by/",
+        "ref:shop": 6380,
+        "addr:full": "Витебск, ул. Ленина, 56",
+        "opening_hours": [
+          {
+            "MondaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "22:00"
+              }
+            ],
+            "TuesdaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "22:00"
+              }
+            ],
+            "WednesdaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "22:00"
+              }
+            ],
+            "ThursdaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "22:00"
+              }
+            ],
+            "FridaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "22:00"
+              }
+            ],
+            "SaturdaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "22:00"
+              }
+            ],
+            "SundaySchedule": [
+              {
+                "TimeBegin": "09:00",
+                "TimeEnd": "22:00"
+              }
+            ]
+          }
+        ],
+        "image": [
+          "https://smartapp.evroopt.by/images/TEST_MP/ShopLogo/shop_euroopt.png?_t=1707400783"
+        ],
+        "status": "blue"
+      }
+    },
+    {
+      "type": "Feature",
       "id": "n8693454126",
       "geometry": {
         "type": "Point",
@@ -40307,43 +40457,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "19:00"
+                "TimeEnd": "18:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "19:00"
+                "TimeEnd": "18:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "19:00"
+                "TimeEnd": "18:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "19:00"
+                "TimeEnd": "18:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "19:00"
+                "TimeEnd": "18:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "19:00"
+                "TimeEnd": "18:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "19:00"
+                "TimeEnd": "18:00"
               }
             ]
           }
@@ -41268,31 +41418,31 @@ const Data =
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "17:30"
+                "TimeEnd": "17:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "17:30"
+                "TimeEnd": "17:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "17:30"
+                "TimeEnd": "17:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "17:30"
+                "TimeEnd": "17:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "17:30"
+                "TimeEnd": "16:30"
               }
             ]
           }
@@ -49167,43 +49317,43 @@ const Data =
           {
             "MondaySchedule": [
               {
-                "TimeBegin": "09:00",
+                "TimeBegin": "08:30",
                 "TimeEnd": "22:00"
               }
             ],
             "TuesdaySchedule": [
               {
-                "TimeBegin": "09:00",
+                "TimeBegin": "08:30",
                 "TimeEnd": "22:00"
               }
             ],
             "WednesdaySchedule": [
               {
-                "TimeBegin": "09:00",
+                "TimeBegin": "08:30",
                 "TimeEnd": "22:00"
               }
             ],
             "ThursdaySchedule": [
               {
-                "TimeBegin": "09:00",
+                "TimeBegin": "08:30",
                 "TimeEnd": "22:00"
               }
             ],
             "FridaySchedule": [
               {
-                "TimeBegin": "09:00",
+                "TimeBegin": "08:30",
                 "TimeEnd": "22:00"
               }
             ],
             "SaturdaySchedule": [
               {
-                "TimeBegin": "09:00",
+                "TimeBegin": "08:30",
                 "TimeEnd": "22:00"
               }
             ],
             "SundaySchedule": [
               {
-                "TimeBegin": "09:00",
+                "TimeBegin": "08:30",
                 "TimeEnd": "22:00"
               }
             ]
@@ -54747,32 +54897,6 @@ const Data =
     },
     {
       "type": "Feature",
-      "id": "n8146128652",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          30.207108,
-          55.200535
-        ]
-      },
-      "properties": {
-        "shop": "convenience",
-        "name:be": "Хіт! Экспрэс",
-        "name:ru": "Хит! Экспресс",
-        "brand": "Хит! Экспресс",
-        "brand:wikidata": "Q126720469",
-        "operator": "ООО \"Евроторг\"",
-        "operator:wikidata": "Q108565321",
-        "ref:vatin": 101168731,
-        "website": "https://hitdiscount.by/",
-        "ref:shop": 6380,
-        "addr:full": "Витебск, ул. Ленина, 56",
-        "opening_hours": "Режим работы: 09:00-22:00",
-        "status": "blue"
-      }
-    },
-    {
-      "type": "Feature",
       "id": "w164686172",
       "geometry": {
         "type": "Point",
@@ -57253,7 +57377,7 @@ const Data =
         "website": "https://hitdiscount.by/",
         "ref:shop": 6602,
         "addr:full": "Минск, ул. Либкнехта Карла, 118",
-        "opening_hours": "Режим работы: 09:00-22:30",
+        "opening_hours": "Режим работы: 09:00-22:00",
         "status": "violet",
         "ref:BY:trade_register": "527775"
       }
@@ -63732,21 +63856,6 @@ const Data =
     },
     {
       "type": "Feature",
-      "id": "n5506500013",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          27.421285,
-          53.909758
-        ]
-      },
-      "properties": {
-        "name:ru": "?Евроопт",
-        "status": "black"
-      }
-    },
-    {
-      "type": "Feature",
       "id": "n5616604221",
       "geometry": {
         "type": "Point",
@@ -66930,11 +67039,12 @@ const Data =
     },
     {
       "type": "Feature",
+      "id": "n13321319197",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.5682,
-          53.845195
+          27.568613,
+          53.845125
         ]
       },
       "properties": {
@@ -66950,7 +67060,7 @@ const Data =
         "ref:shop": "118342",
         "addr:full": "Минск, ул. Игуменский тракт, д.16",
         "opening_hours": "9:00-23:00",
-        "status": "red"
+        "status": "blue"
       }
     },
     {
@@ -71298,8 +71408,8 @@ const Data =
       "geometry": {
         "type": "Point",
         "coordinates": [
-          27.61451,
-          53.87361
+          27.614672,
+          53.873579
         ]
       },
       "properties": {

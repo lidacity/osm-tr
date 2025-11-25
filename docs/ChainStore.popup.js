@@ -112,7 +112,6 @@ function Popup(Feature, Layer)
 
 DateLegend =
 {
- Trade: "Дата торгового реестра",
  Update: "Дата обновления",
 };
 
