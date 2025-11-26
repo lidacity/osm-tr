@@ -1586,43 +1586,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ]
           }
@@ -2034,43 +2034,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ]
           }
@@ -8717,43 +8717,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:30"
+                "TimeEnd": "22:00"
               }
             ]
           }
@@ -17853,43 +17853,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ]
           }
@@ -19376,7 +19376,8 @@ const Data =
         "image": [
           "https://smartapp.evroopt.by/images/TEST_MP/ShopLogo/shop_euroopt.png?_t=1707400783"
         ],
-        "status": "blue"
+        "status": "violet",
+        "ref:BY:trade_register": "294656"
       }
     },
     {
@@ -23709,43 +23710,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ]
           }
@@ -24494,7 +24495,8 @@ const Data =
         "image": [
           "https://smartapp.evroopt.by/images/TEST_MP/ShopLogo/shop_euroopt.png?_t=1707400783"
         ],
-        "status": "blue"
+        "status": "violet",
+        "ref:BY:trade_register": "281278"
       }
     },
     {
@@ -30825,43 +30827,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ]
           }
@@ -32975,43 +32977,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "23:00"
+                "TimeEnd": "22:00"
               }
             ]
           }
@@ -34459,43 +34461,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ]
           }
@@ -43381,43 +43383,43 @@ const Data =
             "MondaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "TuesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "WednesdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "ThursdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "FridaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "SaturdaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ],
             "SundaySchedule": [
               {
                 "TimeBegin": "09:00",
-                "TimeEnd": "22:00"
+                "TimeEnd": "21:00"
               }
             ]
           }
@@ -46642,43 +46644,43 @@ const Data =
           {
             "MondaySchedule": [
               {
-                "TimeBegin": "07:00",
+                "TimeBegin": "09:00",
                 "TimeEnd": "22:00"
               }
             ],
             "TuesdaySchedule": [
               {
-                "TimeBegin": "07:00",
+                "TimeBegin": "09:00",
                 "TimeEnd": "22:00"
               }
             ],
             "WednesdaySchedule": [
               {
-                "TimeBegin": "07:00",
+                "TimeBegin": "09:00",
                 "TimeEnd": "22:00"
               }
             ],
             "ThursdaySchedule": [
               {
-                "TimeBegin": "07:00",
+                "TimeBegin": "09:00",
                 "TimeEnd": "22:00"
               }
             ],
             "FridaySchedule": [
               {
-                "TimeBegin": "07:00",
+                "TimeBegin": "09:00",
                 "TimeEnd": "22:00"
               }
             ],
             "SaturdaySchedule": [
               {
-                "TimeBegin": "07:00",
+                "TimeBegin": "09:00",
                 "TimeEnd": "22:00"
               }
             ],
             "SundaySchedule": [
               {
-                "TimeBegin": "07:00",
+                "TimeBegin": "09:00",
                 "TimeEnd": "22:00"
               }
             ]
@@ -54998,32 +55000,6 @@ const Data =
         "opening_hours": "Режим работы: 09:00-23:00",
         "status": "violet",
         "ref:BY:trade_register": "517691"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "n7766874117",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          29.213754,
-          52.033027
-        ]
-      },
-      "properties": {
-        "shop": "convenience",
-        "name:be": "Хіт! Экспрэс",
-        "name:ru": "Хит! Экспресс",
-        "brand": "Хит! Экспресс",
-        "brand:wikidata": "Q126720469",
-        "operator": "ООО \"Евроторг\"",
-        "operator:wikidata": "Q108565321",
-        "ref:vatin": 101168731,
-        "website": "https://hitdiscount.by/",
-        "ref:shop": 320,
-        "addr:full": "Мозырь, б-р Юности, 16",
-        "opening_hours": "Режим работы: 08:00-23:00",
-        "status": "blue"
       }
     },
     {
@@ -64552,6 +64528,21 @@ const Data =
         "coordinates": [
           29.248316,
           52.030011
+        ]
+      },
+      "properties": {
+        "name:ru": "?Евроопт",
+        "status": "black"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "n7766874117",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.213754,
+          52.033027
         ]
       },
       "properties": {
