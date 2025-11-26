@@ -9,11 +9,11 @@ from loguru import logger
 
 from Settings import LOG, DOCS, TEMP
 from Utils import LoadGeoJson, SaveGeoJson, LoadJson, SaveJson
-import UtilsTrade
+from UtilsTrade import GetAddress
 
 
 def Check(Geometry, Properties):
-    Address = UtilsTrade.GetAddress(Properties, Full=False)
+    Address = GetAddress(Properties, Full=False)
     if Geometry['coordinates'] == [0.0, 0.0]:
         return False
     elif Properties['official_name'][:30] == "Индивидуальный предприниматель" and Address == []:

@@ -11,7 +11,7 @@ from pathlib import Path
 
 from Settings import LOG, TEMP
 from Utils import SetDate, LoadGeoJson, SaveGeoJson
-import UtilsTrade
+from UtilsTrade import GetAddress
 
 
 async def Search(Query):
@@ -35,7 +35,7 @@ def Generate():
         Geometry, Properties = Feature['geometry'], Feature['properties']
         Status = Properties.get('status', "")
         #
-        Addresses = UtilsTrade.GetAddress(Properties, Full=False)
+        Addresses = GetAddress(Properties, Full=False)
         if Status in ["gray"]:
             for Address in Addresses:
                 for Count in range(1, len(Address)):

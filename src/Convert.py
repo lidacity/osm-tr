@@ -9,7 +9,7 @@ from loguru import logger
 
 from Settings import LOG, DOCS, TEMP
 from Utils import LoadGeoJson, SaveGeoJson
-import UtilsTrade
+from UtilsTrade import GetAddress
 
 
 Regions = {
@@ -32,7 +32,7 @@ def Generate():
     logger.info("convert")
     for Feature in Data['features']:
         Geometry, Properties = Feature['geometry'], Feature['properties']
-        Address = UtilsTrade.GetAddress(Properties, Full=False)
+        Address = GetAddress(Properties, Full=False)
         if Address:
             R = Address[0][0]
             if R in Regions:
