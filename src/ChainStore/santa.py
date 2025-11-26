@@ -9,8 +9,8 @@ from loguru import logger
 import geojson
 import requests
 
-sys.path.insert(1, "..")
-from Settings import LOG2_CS, TEMP2
+#sys.path.insert(1, "..")
+from Settings import LOG_CS, TEMP
 from Utils import GetRequest, GetOverpass, SaveJson, SaveGeoJson, LoadGeoJson, GetID
 from UtilsChainStore import Headers, GetCoord, Check, GetItemsWithVATin
 
@@ -99,19 +99,17 @@ def GetRequest1(URL, Headers=None):
 
 
 
-def Generate(TR=None):
- logger.info("read json")
- if TR is None:
-  TR = LoadGeoJson(f"{TEMP2}/tr.6.json")
- RefInTR = GetItemsWithVATin(Info, TR)
+def Generate(Json):
+ logger.info("Start {name}", name=InfoName)
+ RefInTR = GetItemsWithVATin(Info, Json)
  #
  logger.info("get site")
  Data = GetRequest1("https://santaretail.by/adresa-magazinov/", Headers=Headers)
- SaveJson(f"{TEMP2}/{InfoName}.site.json", Data)
+ SaveJson(f"{TEMP}/{InfoName}.site.json", Data)
  #
  logger.info("get overpass")
  Overpass = GetOverpass("[out:json];area[name='Беларусь'];nw[shop~'^(convenience|supermarket|wholesale)$'][name~'(Санта)'](area);out center meta;")
- SaveJson(f"{TEMP2}/{InfoName}.overpass.json", Overpass)
+ SaveJson(f"{TEMP}/{InfoName}.overpass.json", Overpass)
  Elements = Overpass['elements']
  #
  logger.info("parse")
@@ -169,17 +167,6 @@ def Generate(TR=None):
  #
  logger.info("save js")
  FeatureCollection = geojson.FeatureCollection(Features)
- SaveGeoJson(f"{TEMP2}/{InfoName}.ChainStore.json", FeatureCollection)
+ SaveGeoJson(f"{TEMP}/{InfoName}.ChainStore.json", FeatureCollection)
  logger.info("count {count}", count=len(Data))
-
-
-
-
-if __name__ == "__main__":
- sys.stdin.reconfigure(encoding="utf-8")
- sys.stdout.reconfigure(encoding="utf-8")
- #
- logger.add(LOG2_CS)
- logger.info("Start {name}", name=InfoName)
- Generate()
  logger.info("Done {name}", name=InfoName)

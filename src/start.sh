@@ -1,1 +1,0 @@
-python ./TradeRegister.py && python ./MTD.py && python ./Nominatim.py && python ./OverpassOrange.py && python ./Check.py && python ./Stat.py && python ./oshCounter.py && python ./OverpassGreen.py && python ./Convert.py && && python ConvertMapillaryBYShopsValidator.py && python ./Git.py

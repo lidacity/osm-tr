@@ -30,7 +30,3 @@ python ./Git.py
 
 --allow-duplicate-queries=(yes|no)
 user ALL=NOPASSWD:/bin/systemctl stop overpass.service,/bin/systemctl start overpass.service,/bin/systemctl status overpass.service
-
-8	OverpassGreen.py	
-9	Convert.py
-	Git.py

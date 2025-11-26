@@ -195,7 +195,7 @@ if __name__ == "__main__":
     Exec = Path("~/osm-3s").expanduser()
     #
     if Monitor.IsActive():
-     Monitor.Stop()
+        Monitor.Stop()
     Clear(DB)
     Generate(PlanetFile, DB, Exec)
     Monitor.Start()

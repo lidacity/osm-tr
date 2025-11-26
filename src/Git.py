@@ -25,7 +25,7 @@ def GitPush(Message):
         return Repo.git.diff('HEAD~1')
     except:
         logger.exception('Some error occured while pushing the code')
-     return None
+    return None
 
 
 if __name__ == "__main__":
