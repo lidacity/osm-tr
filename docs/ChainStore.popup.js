@@ -13,6 +13,8 @@ function Popup(Feature, Layer)
   Content.push(`<div class="popup-field"><strong>Идентификатор</strong>: ${Tag}</div>`);
  if (Tag = Properties['addr:full'])
   Content.push(`<div class="popup-field"><strong>Адрес</strong>: ${Tag}</div>`);
+ if (Tag = Properties['opening_hours'])
+  Content.push(`<div class="popup-field"><strong>Время работы</strong>: ${Tag}</div>`);
  if (Content.length > 0)
   Result += `
    <div class="popup-content">
@@ -59,7 +61,7 @@ function Popup(Feature, Layer)
  if (Properties['status'] != "green")
  {
   Content = new Array();
-  const Keys = ["shop", "operator", "operator:wikidata", "brand", "brand:wikidata", "ref:vatin", "name:be", "name:ru", "ref:BY:trade_register", "ref", "ref:shop"];
+  const Keys = ['shop', 'operator', 'operator:wikidata', 'brand', 'brand:wikidata', 'ref:vatin', 'name', 'name:be', 'name:ru', 'ref:BY:trade_register', 'ref', 'ref:shop'];
   var Temp = GetClipboardText(Properties, Keys);
   if (Temp.length > 0)
   {

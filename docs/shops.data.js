@@ -14441,12 +14441,11 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "w35866367",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.441501,
-        53.861516
+        27.441497,
+        53.86149
       ]
     },
     "properties": {
@@ -14467,11 +14466,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "444.0",
       "start_date": "16.10.2006",
-      "shortCoords": "0lrBTpYJjHKW",
+      "shortCoords": "0lrBTpNcbfKT",
       "contact": "sman115@rublevski.by",
-      "distance": 2,
+      "distance": null,
       "food": "",
-      "status": "blue"
+      "status": "red"
     }
   },
   {
@@ -59742,8 +59741,8 @@ const Data =
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.537417,
-        53.959401
+        27.537565,
+        53.959302
       ]
     },
     "properties": {
@@ -59764,7 +59763,7 @@ const Data =
       "format:view.id": 1,
       "trade:area": "182.7",
       "start_date": "27.04.2021",
-      "shortCoords": "0lrHdgCQzHIA",
+      "shortCoords": "0lrHc1XvldNV",
       "contact": "info@eurotorg.by",
       "distance": null,
       "food": "",
@@ -78210,7 +78209,7 @@ const Data =
       "contact": "+375293836808 +375293836808 info@sosedi.by",
       "distance": 3,
       "food": "",
-      "status": "violet"
+      "status": "blue"
     }
   },
   {
@@ -91018,12 +91017,12 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "n5631109589",
+    "id": "n1510031179",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.351125,
-        54.106134
+        28.296771,
+        54.09593
       ]
     },
     "properties": {
@@ -91043,11 +91042,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "384.7",
       "start_date": "16.06.2014",
-      "shortCoords": "0nBdhx2JDZMd",
+      "shortCoords": "0nBW~2VmA8Nl",
       "contact": "r10@bmk.by",
       "distance": 668,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -133214,12 +133213,12 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "n5881310986",
+    "id": "n13334007969",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.354251,
-        54.10591
+        28.298513,
+        54.097655
       ]
     },
     "properties": {
@@ -133239,11 +133238,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "78.5",
       "start_date": "26.05.2023",
-      "shortCoords": "0nBdh5vas_Ob",
+      "shortCoords": "0nBXqpNsdPKT",
       "contact": "info@dobronom.by",
       "distance": 848,
       "food": "",
-      "status": "blue"
+      "status": "green"
     }
   },
   {
@@ -135285,11 +135284,12 @@ const Data =
   },
   {
     "type": "Feature",
+    "id": "n5881310986",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.34325,
-        54.109992
+        28.354251,
+        54.10591
       ]
     },
     "properties": {
@@ -135309,11 +135309,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "162.9",
       "start_date": "16.11.2023",
-      "shortCoords": "0nBdOtvKWKLb",
+      "shortCoords": "0nBdh5vas_Ob",
       "contact": "info@dobronom.by",
-      "distance": null,
+      "distance": 848,
       "food": "",
-      "status": "red"
+      "status": "blue"
     }
   },
   {
@@ -163894,12 +163894,11 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "n2162340624",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.420915,
-        53.89139
+        27.420794,
+        53.891441
       ]
     },
     "properties": {
@@ -163918,11 +163917,11 @@ const Data =
       "format:view.id": 2,
       "trade:area": "2.0",
       "start_date": "14.06.2016",
-      "shortCoords": "0lpuu7ILTrOy",
+      "shortCoords": "0lpuu7C2k6Ow",
       "contact": "",
-      "distance": 9,
+      "distance": null,
       "food": "",
-      "status": "violet"
+      "status": "red"
     }
   },
   {
@@ -172892,12 +172891,11 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "n6354133686",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.425181,
-        53.883031
+        27.425133,
+        53.883032
       ]
     },
     "properties": {
@@ -172917,11 +172915,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "51.6",
       "start_date": "09.08.2016",
-      "shortCoords": "0lrEBIecQgCH",
+      "shortCoords": "0lrEBIc_4lCH",
       "contact": "",
-      "distance": 3,
+      "distance": null,
       "food": "",
-      "status": "violet"
+      "status": "red"
     }
   },
   {
@@ -205218,12 +205216,11 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "w678320695",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.421586,
-        53.925076
+        27.421596,
+        53.925075
       ]
     },
     "properties": {
@@ -205243,11 +205240,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "70.1",
       "start_date": "04.07.2022",
-      "shortCoords": "0lpvq_oZkTPq",
+      "shortCoords": "0lpvq_oZupPq",
       "contact": "",
-      "distance": 0,
+      "distance": null,
       "food": "",
-      "status": "violet"
+      "status": "red"
     }
   },
   {
@@ -286475,7 +286472,7 @@ const Data =
       "contact": "",
       "distance": 4,
       "food": "",
-      "status": "violet"
+      "status": "green"
     }
   },
   {
@@ -549918,11 +549915,12 @@ const Data =
   },
   {
     "type": "Feature",
+    "id": "n4120755099",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.360798,
-        54.104816
+        28.367121,
+        54.103376
       ]
     },
     "properties": {
@@ -549943,11 +549941,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "55.0",
       "start_date": "21.09.2015",
-      "shortCoords": "0nBdjP20u3D9",
+      "shortCoords": "0nBdpBcKjMAX",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -560995,11 +560993,12 @@ const Data =
   },
   {
     "type": "Feature",
+    "id": "w510524531",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.360798,
-        54.104816
+        28.364584,
+        54.104303
       ]
     },
     "properties": {
@@ -561019,11 +561018,11 @@ const Data =
       "format:view.id": 1,
       "trade:area": "50.1",
       "start_date": "20.02.2020",
-      "shortCoords": "0nBdjP20u3D9",
+      "shortCoords": "0nBdjtK2aNLS",
       "contact": "",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -586232,12 +586231,11 @@ const Data =
   },
   {
     "type": "Feature",
-    "id": "n2162340624",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        27.420915,
-        53.89139
+        27.420794,
+        53.891441
       ]
     },
     "properties": {
@@ -586258,11 +586256,11 @@ const Data =
       "format:view.id": 3,
       "trade:area": "7.5",
       "start_date": "13.12.2016",
-      "shortCoords": "0lpuu7ILTrOy",
+      "shortCoords": "0lpuu7C2k6Ow",
       "contact": "",
-      "distance": 9,
+      "distance": null,
       "food": "",
-      "status": "violet"
+      "status": "red"
     }
   },
   {
@@ -607399,11 +607397,12 @@ const Data =
   },
   {
     "type": "Feature",
+    "id": "n13334007968",
     "geometry": {
       "type": "Point",
       "coordinates": [
-        28.356327,
-        54.105649
+        28.356813,
+        54.10612
       ]
     },
     "properties": {
@@ -607422,11 +607421,11 @@ const Data =
       "format:view.id": 2,
       "trade:area": "50.1",
       "start_date": "22.11.2022",
-      "shortCoords": "0nBdjRKl17ES",
+      "shortCoords": "0nBdjR5fdEEe",
       "contact": "vishshibrod@mail.ru",
       "distance": null,
       "food": "",
-      "status": "red"
+      "status": "green"
     }
   },
   {
@@ -692661,7 +692660,7 @@ const Data =
       "contact": "",
       "distance": 9,
       "food": "",
-      "status": "violet"
+      "status": "blue"
     }
   },
   {
